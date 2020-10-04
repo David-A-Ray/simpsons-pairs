@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
+
+/* ************************************ General/Global styles *********************************************** */
+
+body {
+  font-family: 'Caveat Brush', cursive, sans-serif;
+}
+
+.modal-content {
+  background-color: #e9f547;
+}
+
+/* ************************************ index.html *********************************************** */
+
+.opening-screen {
+  position: absolute;
+}
+
+.opening-screen img {
+  display: block;
+}
+
+#the, #pairs {
+  position: relative;
+  left: 55px;
+}
+
+.main-menu {
+  background-image: url("../images/simpson_clouds.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  font-family: 'Caveat Brush', cursive, sans-serif;
+}
+
+.menu-items {
+  background-color: yellow;
+  width: 25%;
+  visibility: hidden;
+  border-radius: 15px;
+}
+
+.main-menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.main-menu h1 {
+  padding: 20px 0;
+}
+
+.menu-buttons {
+  border-radius: 10px;
+  background-color: blue;
+  width: 150px;
+  margin: 20px 0;
+  font-size: 26px;
+  color: #fafafa;
+}

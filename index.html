@@ -4,8 +4,38 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>The Simpsons Pairs</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"><script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script type="text/javascript" src="assets/scripts/script.js" defer></script>
+    <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body>
+    <section class="main-menu container-fluid d-flex align-items-center justify-content-center">
+      <div class="opening-screen animate__animated animate__zoomIn animate__slow">
+        <img src="https://fontmeme.com/permalink/201001/6da6208d100cd4fe636b57733aa5ea0d.png" alt="Simpsons 'The' Text" id="the">
+        <img src="https://fontmeme.com/permalink/201001/0cb85113694d9f052341577674f24001.png" alt="Simpsons 'Simpsons' text" id="simpsons">
+        <img src="https://fontmeme.com/permalink/201001/749c96107cab0af6e6881d0c8e0313c9.png" alt="Simpsons 'Pairs' text" id="pairs">
+      </div>
+        <div class="menu-items text-center">
+          <h1>The Simpsons Pairs</h1>
+          <ul>
+            <li>
+              <button type="button" name="button" id="new-game" class="btn menu-buttons" data-toggle="modal" data-target=".newGameModal">New Game</button>
+            </li>
+            <li>
+              <a href="high_scores.html"><button type="button" name="button" id="highScores" class="btn menu-buttons">High scores</button></a>
+            </li>
+            <li>
+              <button type="button" name="button" id="settings" class="btn menu-buttons" data-toggle="modal" data-target=".settingsModal">Settings</button>
+            </li>
+          </ul>
+        </div>
+    </section>
+
+
 
   </body>
 </html>
