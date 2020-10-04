@@ -10,10 +10,6 @@ $( document ).ready(function() {
 
   },3000);
 
-  });
-
-    // **************************** game.html  *********************************************
-
   var card = $('.easy .card');
   // var card = $('.active div');
   var cards = [];
@@ -50,178 +46,181 @@ $( document ).ready(function() {
   // Check for any high scores in local Storage
   checkDataStorage();
 
+
   $('#easy').click(function() {
-    sessionStorage.setItem("gameMode", "easy");
+  sessionStorage.setItem("gameMode", "easy");
   });
   $('#medium').click(function() {
-    sessionStorage.setItem("gameMode", "medium");
+  sessionStorage.setItem("gameMode", "medium");
   });
   $('#hard').click(function() {
-    sessionStorage.setItem("gameMode", "hard");
+  sessionStorage.setItem("gameMode", "hard");
   });
 
   // Check which game mode has been selected
 
   switch (gameMode) {
-    case ("easy"):
-      console.log("Easy selected");
-      $('.medium-remove').remove();
-      $('.hard-remove').remove();
-      maxPairs = 6;
-      matchPoints = 40;
-      timePenalty = 2000;
-      timeBonus = 5000;
-      card = $('.easy .card');
-      break;
-    case ("medium"):
-      $('.hard-remove').remove();
-      maxPairs = 10;
-      matchPoints = 50;
-      timePenalty = 3000;
-      timeBonus = 6000;
-      card = $('.medium .card');
-      break;
-    console.log("Medium selected");
-    case ("hard"):
-      console.log("Hard selected");
-      maxPairs = 14;
-      matchPoints = 60;
-      timePenalty = 4000;
-      timeBonus = 7000;
-      card = $('.hard .card');
-    Default:
-    console.log(gameMode);
+  case ("easy"):
+    console.log("Easy selected");
+    $('.medium-remove').remove();
+    $('.hard-remove').remove();
+    maxPairs = 6;
+    matchPoints = 40;
+    timePenalty = 2000;
+    timeBonus = 5000;
+    card = $('.easy .card');
+    break;
+  case ("medium"):
+    $('.hard-remove').remove();
+    maxPairs = 10;
+    matchPoints = 50;
+    timePenalty = 3000;
+    timeBonus = 6000;
+    card = $('.medium .card');
+    break;
+  console.log("Medium selected");
+  case ("hard"):
+    console.log("Hard selected");
+    maxPairs = 14;
+    matchPoints = 60;
+    timePenalty = 4000;
+    timeBonus = 7000;
+    card = $('.hard .card');
+  Default:
+  console.log(gameMode);
   }
+
+  cardShuffle(cardPictures);
 
   // *********************  Main Functionality of the game *********************************
   $.each(card, function(index) {
-    $(card[index]).click(function() {
-      firstClick++;
-      if (firstClick == 1) {
-        timer(60);
-      }
-      //Prevent clicking the same card twice to produce false True result
-      if ((cardIndex == index)&&(!$(card[index]).hasClass('is-flipped'))) {console.log("here here here 1")}
-      // Prevent card still flipping at 0 seconds
-      else if (gameOver) {}
-      else {
-        clickCount++;
-        cardIndex = index;
-          if ((matchedPairs == maxPairs - 1)&&(clickCount == 2)) {
-            clearInterval(gameTime);
-          }
-          // Prevent more than 2 cards being selected
-          if (clickCount <= 2) {
-            card[index].classList.remove('is-flipped');
-            cards[z] = card[index];
-            flippedCardIndex[z] = index;
-            z++;
-            card1Seen = false;
-            card2Seen = false;
+  $(card[index]).click(function() {
+    firstClick++;
+    if (firstClick == 1) {
+      timer(60);
+    }
+    //Prevent clicking the same card twice to produce false True result
+    if ((cardIndex == index)&&(!$(card[index]).hasClass('is-flipped'))) {console.log("here here here 1")}
+    // Prevent card still flipping at 0 seconds
+    else if (gameOver) {}
+    else {
+      clickCount++;
+      cardIndex = index;
+        if ((matchedPairs == maxPairs - 1)&&(clickCount == 2)) {
+          clearInterval(gameTime);
+        }
+        // Prevent more than 2 cards being selected
+        if (clickCount <= 2) {
+          card[index].classList.remove('is-flipped');
+          cards[z] = card[index];
+          flippedCardIndex[z] = index;
+          z++;
+          card1Seen = false;
+          card2Seen = false;
 
-            if (cards[1]){
-              let a = $(cards[0]).attr("class").split(" ")[1];
-              let b = $(cards[1]).attr("class").split(" ")[1];
-              if (flippedCards) {
-                for (let i = 0 ; i < flippedCards.length ; i++) {
-                  if (flippedCards[i].index ==  flippedCardIndex[0]) {
-                    console.log("Card 1 already seen!!")
-                    card1Seen = true;
-                  }
-                }
-                for (let i = 0 ; i < flippedCards.length ; i++) {
-                  if (flippedCards[i].index ==  flippedCardIndex[1]) {
-                    console.log("Card 2 already seen!!")
-                    card2Seen = true;
-                  }
-                }
-                if (card1Seen == false) {
-                  flippedCards.push({"picture": a,"index": flippedCardIndex[0]});
-                  console.log("Card 1 not seen before");
-                }
-                if (card2Seen == false) {
-                  flippedCards.push({"picture": b,"index": flippedCardIndex[1]});
-                  console.log("Card 2 not seen before");
+          if (cards[1]){
+            let a = $(cards[0]).attr("class").split(" ")[1];
+            let b = $(cards[1]).attr("class").split(" ")[1];
+            if (flippedCards) {
+              for (let i = 0 ; i < flippedCards.length ; i++) {
+                if (flippedCards[i].index ==  flippedCardIndex[0]) {
+                  console.log("Card 1 already seen!!")
+                  card1Seen = true;
                 }
               }
-              else {
+              for (let i = 0 ; i < flippedCards.length ; i++) {
+                if (flippedCards[i].index ==  flippedCardIndex[1]) {
+                  console.log("Card 2 already seen!!")
+                  card2Seen = true;
+                }
+              }
+              if (card1Seen == false) {
                 flippedCards.push({"picture": a,"index": flippedCardIndex[0]});
-                flippedCards.push({"picture": b,"index": flippedCardIndex[1]});
+                console.log("Card 1 not seen before");
               }
-              console.log(flippedCards)
-              let c = {"picture": a,"index": flippedCardIndex[0]};
-              console.log(`First flipped Card Picture = ${c.picture} ${c.index}`);
+              if (card2Seen == false) {
+                flippedCards.push({"picture": b,"index": flippedCardIndex[1]});
+                console.log("Card 2 not seen before");
+              }
+            }
+            else {
+              flippedCards.push({"picture": a,"index": flippedCardIndex[0]});
+              flippedCards.push({"picture": b,"index": flippedCardIndex[1]});
+            }
+            console.log(flippedCards)
+            let c = {"picture": a,"index": flippedCardIndex[0]};
+            console.log(`First flipped Card Picture = ${c.picture} ${c.index}`);
 
-              // Added timeout to enable card flip animations to complete
-              setTimeout(function() {
-                // Check for matching pair
-                if ((a === b)&&(!gameOver)) {
-                  console.log("TRUE");
-                  adjustScore(50);
-                  z= 0;
-                  matchedPairs++;
-                  timeAdjust -= timeBonus;
-                  console.log("Number of Matched pairs: " + matchedPairs);
-                  $.each(cards, function(index) {
-                    cards[index].classList.add('animate__animated','animate__bounceOutUp', 'animate__slow');
-                  });
-                  cards[1] = null;
-                  clickCount = 0;
+            // Added timeout to enable card flip animations to complete
+            setTimeout(function() {
+              // Check for matching pair
+              if ((a === b)&&(!gameOver)) {
+                console.log("TRUE");
+                adjustScore(50);
+                z= 0;
+                matchedPairs++;
+                timeAdjust -= timeBonus;
+                console.log("Number of Matched pairs: " + matchedPairs);
+                $.each(cards, function(index) {
+                  cards[index].classList.add('animate__animated','animate__bounceOutUp', 'animate__slow');
+                });
+                cards[1] = null;
+                clickCount = 0;
 
-                  // Check if all pairs have been matched
-                  if (matchedPairs === maxPairs) {
-                    gameOver = true;
-                    adjustScore(timeRemaining);
-                      var scorePosition = highScorePos()
-                      if (scorePosition){
-                        gameCompletePopup(scorePosition);
-                      }
-                      else {
-                        gameOverPopup();
-                      }
-                  }
-                  else if (gameOver){
-                  }
+                // Check if all pairs have been matched
+                if (matchedPairs === maxPairs) {
+                  gameOver = true;
+                  adjustScore(timeRemaining);
+                    var scorePosition = highScorePos()
+                    if (scorePosition){
+                      gameCompletePopup(scorePosition);
+                    }
+                    else {
+                      gameOverPopup();
+                    }
                 }
-                else if (a != b){
-                  if (flippedCards) {
-                    var matchKnown = false;
-                    var check = 0;
-                    for (let i = 0 ; i < flippedCards.length ; i++) {
-                      // Check if matching card has already been seen
-                      if (flippedCards[i].picture == c.picture && flippedCards[i].index != c.index) {
-                        matchKnown = true;
-                        console.log("The match was already seen!!  PENALTY !!!!! ");
-                        adjustScore(-5);
-                        timeAdjust += timePenalty;
+                else if (gameOver){
+                }
+              }
+              else if (a != b){
+                if (flippedCards) {
+                  var matchKnown = false;
+                  var check = 0;
+                  for (let i = 0 ; i < flippedCards.length ; i++) {
+                    // Check if matching card has already been seen
+                    if (flippedCards[i].picture == c.picture && flippedCards[i].index != c.index) {
+                      matchKnown = true;
+                      console.log("The match was already seen!!  PENALTY !!!!! ");
+                      adjustScore(-5);
+                      timeAdjust += timePenalty;
 
-                        mistakes++;
-                        $('#mistakes').html(`Mistakes: ${mistakes}`)
-                      }
-                      else {
-                        check++;
-                      }
+                      mistakes++;
+                      $('#mistakes').html(`Mistakes: ${mistakes}`)
                     }
-                    $.each(cards, function(index) {
-                      cards[index].classList.add('is-flipped');
-                    });
-                    cards[1] = null;
-                    clickCount = 0;
-                    z = 0;
+                    else {
+                      check++;
                     }
                   }
-                else {
-                  console.log("FALSE");
                   $.each(cards, function(index) {
                     cards[index].classList.add('is-flipped');
                   });
                   cards[1] = null;
                   clickCount = 0;
                   z = 0;
+                  }
                 }
-              }, 1000);
-            }
+              else {
+                console.log("FALSE");
+                $.each(cards, function(index) {
+                  cards[index].classList.add('is-flipped');
+                });
+                cards[1] = null;
+                clickCount = 0;
+                z = 0;
+              }
+            }, 1000);
           }
+        }
       }
     });
   });
@@ -490,3 +489,13 @@ $( document ).ready(function() {
         console.log("Here Here 2")
       }
     }
+    if (storage) {
+      if (JSON.parse(storage.getItem("highScores"))) {
+        highScores = JSON.parse(storage.getItem("highScores"));
+
+        for(let i = 0; (i < highScores.length) && (i < 10) ; i++) {
+            $(score[i]).append(`<td>${highScores[i][0]}</td><td>${highScores[i][1]}</td><td style="text-transform: uppercase;">${highScores[i][2]}</td>`);
+        }
+      }
+    }
+  });

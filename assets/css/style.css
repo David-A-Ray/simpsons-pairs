@@ -276,3 +276,136 @@ input:checked + .slider:before {
 .card.is-flipped {
   transform: rotateY(180deg);
 }
+
+/* *************** Card Pictures ********************** */
+
+.homer {
+  background-image: url(../images/homer_simpson.png);
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 2px solid white;
+}
+
+.bart {
+  background-image: url(../images/bart_simpson.png);
+  background-size: 90%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 2px solid white;
+}
+
+.marge {
+  background-image: url(../images/marge_simpson.png);
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 2px solid white;
+}
+
+.lisa {
+  background-image: url(../images/lisa_simpson.png);
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 2px solid white;
+}
+
+.maggie {
+  background-image: url(../images/maggie.png);
+  background-size: 90%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 2px solid white;
+}
+
+.flanders {
+  background-image: url(../images/ned_flanders.png);
+  background-size: 85%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 2px solid white;
+}
+
+.apu {
+  background-image: url(../images/apu_nahasapeemapetilon.png);
+  background-size: 55%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 2px solid white;
+}
+
+.wiggum {
+  background-image: url(../images/chief_wiggum.png);
+  background-size: 90%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 2px solid white;
+}
+
+.skinner {
+  background-image: url(../images/skinner.png);
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 2px solid white;
+}
+
+.lovejoy {
+  background-image: url(../images/lovejoy.png);
+  background-size: 90%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 2px solid white;
+}
+
+.moe {
+  background-image: url(../images/moe_szyslak.png);
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 2px solid white;
+}
+
+.willie {
+  background-image: url(../images/groundskeeper_willie.png);
+  background-size: 90%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 2px solid white;
+}
+
+.milhouse {
+  background-image: url(../images/milhouse_van_houten.png);
+  background-size: 90%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 2px solid white;
+}
+
+.krusty {
+  background-image: url(../images/krusty_the_clown.png);
+  background-size: 85%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 2px solid white;
+}
+
+
+
+#gameCompleteText button {
+  margin: auto;
+}
+
+#gameCompleteText button a {
+  text-decoration: none;
+}
+
+#gameCompleteText button a:hover {
+  text-decoration: none;
+}
+
+.center-buttons {
+  text-align: center;
+  margin: 20px;
+}
