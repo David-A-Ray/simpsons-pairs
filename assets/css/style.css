@@ -409,3 +409,72 @@ input:checked + .slider:before {
   text-align: center;
   margin: 20px;
 }
+
+/* ************************************ high_scores.html *********************************************** */
+
+.high-scores-background {
+  background-image: url(../images/simpsons_chalkboard.jpg);
+  background-repeat: no-repeat;
+  background-position: 0% 0%;
+
+  background-size: 210vh;
+  overflow: hidden;
+}
+
+.high-scores {
+  transform:translate(-55px, 130px);
+  color: #f2f2f2;
+  font-size: 26px;
+  font-weight: 100;
+}
+
+.high-scores table {
+  margin: auto;
+}
+
+.high-scores table th, .high-scores table td  {
+  padding: 5px 20px;
+}
+
+#exit {
+  font-size: 30px;
+  transform: translate(20px, 30px);
+  width: 140px;
+  border-radius: 10px;
+  outline: none;
+  background-color: #edede8;
+  color: #24d146;
+}
+
+#exit:hover {
+  background-color: #fafafa;
+  color: #0ffc03;
+}
+
+#exit:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translate(20px, 34px);
+}
+
+#clearScores {
+
+  display: block;
+  margin: auto;
+  transform: translate(-50px, 170px);
+  width: 150px;
+  font-size: 26px;
+  border-radius: 10px;
+  outline: none;
+  background-color: grey;
+}
+
+#clearScores:hover {
+  background-color: #cbf2c9;
+}
+
+#clearScores:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translate(-50px, 174px);
+}

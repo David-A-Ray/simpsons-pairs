@@ -498,4 +498,19 @@ $( document ).ready(function() {
         }
       }
     }
+
+// **************************** HIGH SCORES FUNCTIONS *********************************************
+
+    $('#clearScores').click(function() {
+      $('#clearScoresModal').modal('toggle');
+
+      $('#confirmClearScores').click(function() {
+        sessionStorage.clear();
+        localStorage.clear();
+        window.location.reload();
+      });
+    });
+
+
+
   });
