@@ -175,7 +175,7 @@ input:checked + .slider:before {
 }
 
 .game {
-  background-image: url(../images/table.png);
+  background-image: url(../images/game_table.png);
   background-repeat: no-repeat;
   background-size:contain;
   display: table;
