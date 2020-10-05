@@ -377,7 +377,7 @@ input:checked + .slider:before {
 
 .milhouse {
   background-image: url(../images/milhouse_van_houten.png);
-  background-size: 90%;
+  background-size: 75%;
   background-repeat: no-repeat;
   background-position: center;
   border: 2px solid white;

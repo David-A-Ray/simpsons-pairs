@@ -1,15 +1,5 @@
 $( document ).ready(function() {
 
-
-  // **************************** index.html  *********************************************
-
-  setTimeout(function() {
-    $('.opening-screen')[0].classList.add('animate__zoomOutUp')
-    $('.menu-items').css('visibility','visible');
-    $('.menu-items')[0].classList.add('animate__animated', 'animate__backInUp', 'animate__delay-1s')
-
-  },3000);
-
   var card = $('.easy .card');
   // var card = $('.active div');
   var cards = [];
@@ -46,19 +36,7 @@ $( document ).ready(function() {
   // Check for any high scores in local Storage
   checkDataStorage();
 
-
-  $('#easy').click(function() {
-  sessionStorage.setItem("gameMode", "easy");
-  });
-  $('#medium').click(function() {
-  sessionStorage.setItem("gameMode", "medium");
-  });
-  $('#hard').click(function() {
-  sessionStorage.setItem("gameMode", "hard");
-  });
-
   // Check which game mode has been selected
-
   switch (gameMode) {
   case ("easy"):
     console.log("Easy selected");
