@@ -203,6 +203,11 @@ $( document ).ready(function() {
     });
   });
 
+  $('.exit-buttons').click(function() {
+    sessionStorage.setItem('exitButtonUsed', true);
+  });
+
+
   // **************************** GAME FUNCTIONS *********************************************
 
 
@@ -477,17 +482,7 @@ $( document ).ready(function() {
       }
     }
 
-// **************************** HIGH SCORES FUNCTIONS *********************************************
 
-    $('#clearScores').click(function() {
-      $('#clearScoresModal').modal('toggle');
-
-      $('#confirmClearScores').click(function() {
-        sessionStorage.clear();
-        localStorage.clear();
-        window.location.reload();
-      });
-    });
 
 
 

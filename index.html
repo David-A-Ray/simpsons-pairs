@@ -13,15 +13,26 @@
     <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body>
+
+    <div class="modal fade startGameModal" tabindex="-1" aria-labelledby="startGameModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button type="button" name="button" data-dismiss="modal" id="startButton">Push to start</button>
+          </div>
+      </div>
+    </div>
+  </div>
+
     <section class="main-menu container-fluid d-flex align-items-center justify-content-center">
-      <div class="opening-screen animate__animated animate__zoomIn animate__slow">
+      <div class="opening-screen">
         <img src="https://fontmeme.com/permalink/201001/6da6208d100cd4fe636b57733aa5ea0d.png" alt="Simpsons 'The' Text" id="the">
         <img src="https://fontmeme.com/permalink/201001/0cb85113694d9f052341577674f24001.png" alt="Simpsons 'Simpsons' text" id="simpsons">
         <img src="https://fontmeme.com/permalink/201001/749c96107cab0af6e6881d0c8e0313c9.png" alt="Simpsons 'Pairs' text" id="pairs">
       </div>
         <div class="menu-items text-center">
           <h1>The Simpsons Pairs</h1>
-          <audio autoplay>
+          <audio loop>
             <source src="assets/audio/simpsons_theme_song.mp3" type="audio/mp3">
             <p>Your browser doesn't support HTML5 audio. Here is a <a href="viper.mp3">link to the audio</a> instead.</p>
           </audio>
@@ -53,7 +64,7 @@
               <div class="container-fluid">
                 <div class="row">
                   <div class="col-6">
-                    <span class="setting">Game sound effects</span>
+                    <span class="setting">Sound effects</span>
                   </div>
                   <div class="col-6">
                     <label class="switch">
@@ -64,7 +75,7 @@
                 </div>
                 <div class="row">
                   <div class="col-6">
-                    <span class="setting">Background sound effects</span>
+                    <span class="setting">Music</span>
                   </div>
                   <div class="col-6">
                     <label class="switch">

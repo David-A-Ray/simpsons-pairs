@@ -15,7 +15,7 @@
   <body>
     <header class="game-header">
       <!-- <button type="button" name="button" id="quitButton"><a href="index.html">Quit</a> </button> -->
-      <a href="index.html"><button type="button" name="button" id="quitButton" class="btn menu-buttons">Quit</button></a>
+      <a href="index.html"><button type="button" name="button" id="quitButton" class="btn menu-buttons exit-buttons">Quit</button></a>
       <span id='timer'>1m 00s</span>
       <span id="score">Score: 0</span>
       <span id="mistakes">Mistakes: 0</span>
@@ -221,7 +221,7 @@
               <div id="gameCompleteText" class="container">
                 <div class="row center-buttons">
                   <div class="col-6">
-                    <button type="button" class="btn btn-danger"><a href="index.html">Exit to Main Menu</a></button>
+                    <button type="button" class="btn btn-danger"><a href="index.html" class="exit-buttons" >Exit to Main Menu</a></button>
                   </div>
                   <div class="col-6">
                     <button type="button" class="btn btn-primary"><a href="game.html">New Game</a></button>
@@ -269,7 +269,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-success" data-dismiss="modal" id="nameEntry">OK</button>
-              <a href="index.html"><button type="button" class="btn btn-danger">Exit to Main Menu</button></a>
+              <a href="index.html"><button type="button" class="btn btn-danger" class="exit-buttons">Exit to Main Menu</button></a>
               <a href="game.html"><button type="button" class="btn btn-primary">New Game</button></a>
             </div>
           </div>

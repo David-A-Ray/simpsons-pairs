@@ -9,3 +9,7 @@
         window.location.reload();
       });
     });
+
+    $('.exit-buttons').click(function() {
+      sessionStorage.setItem('exitButtonUsed', true);
+    });

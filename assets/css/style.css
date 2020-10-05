@@ -8,12 +8,14 @@ body {
 
 .modal-content {
   background-color: #e9f547;
+  font-size: 20px;
 }
 
 /* ************************************ index.html *********************************************** */
 
 .opening-screen {
   position: absolute;
+  visibility: hidden;
 }
 
 .opening-screen img {
@@ -390,8 +392,6 @@ input:checked + .slider:before {
   background-position: center;
   border: 2px solid white;
 }
-
-
 
 #gameCompleteText button {
   margin: auto;
