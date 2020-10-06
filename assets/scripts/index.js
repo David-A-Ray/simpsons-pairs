@@ -16,8 +16,6 @@ if (JSON.parse(localStorage.getItem('backgroundMusic')) != "undefined") {
   }
 }
 
-
-
 if (JSON.parse(sessionStorage.getItem('exitButtonUsed'))) {
   console.log("Exit button was used");
   openingScreenAnimations();
@@ -27,21 +25,10 @@ if (JSON.parse(sessionStorage.getItem('exitButtonUsed'))) {
     $('.startGameModal').modal('toggle');
   }
 
-// Workaround for Chrome block audio autoplay
-
-
+// Workaround for Chrome blocking audio autoplay
 $('#startButton').click(function() {
   openingScreenAnimations();
 });
-
-
-if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
-  console.info( "This page is reloaded" );
-} else {
-  console.info( "This page is not reloaded");
-}
-
-
 
 $('#apply').click(function() {
   gameSoundEffects = $('#gsfx').is(':checked')

@@ -212,7 +212,7 @@
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="gameOverModalLabel">GAME OVER</h5>
+              <h2 class="modal-title" id="gameOverModalLabel">GAME OVER</h2>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -221,10 +221,10 @@
               <div id="gameCompleteText" class="container">
                 <div class="row center-buttons">
                   <div class="col-6">
-                    <button type="button" class="btn btn-danger"><a href="index.html" class="exit-buttons" >Exit to Main Menu</a></button>
+                    <a href="index.html"><button type="button" class="btn btn-danger exit-buttons">No</button><a>
                   </div>
                   <div class="col-6">
-                    <button type="button" class="btn btn-primary"><a href="game.html">New Game</a></button>
+                    <a href="game.html"><button type="button" class="btn btn-primary">Yes</button></a>
                   </div>
                 </div>
                 <div class="row score-stats">
@@ -269,8 +269,8 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-success" data-dismiss="modal" id="nameEntry">OK</button>
-              <a href="index.html"><button type="button" class="btn btn-danger" class="exit-buttons">Exit to Main Menu</button></a>
-              <a href="game.html"><button type="button" class="btn btn-primary">New Game</button></a>
+              <a href="index.html"><button type="button" class="btn btn-danger" class="exit-buttons">No</button></a>
+              <a href="game.html"><button type="button" class="btn btn-primary">Yes</button></a>
             </div>
           </div>
         </div>

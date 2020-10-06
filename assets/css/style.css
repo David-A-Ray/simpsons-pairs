@@ -8,7 +8,13 @@ body {
 
 .modal-content {
   background-color: #e9f547;
-  font-size: 20px;
+  font-size: 22px;
+}
+
+.btn{
+  font-size: 26px;
+  min-width: 80px;
+  margin-right: 20px;
 }
 
 /* ************************************ index.html *********************************************** */
@@ -77,20 +83,6 @@ a.game-level {
     background-color: green;
     color: #fff;
     font-size: 20px;
-}
-
-.game-level a:hover {
-  /* text-decoration: none;
-  font-size: 20px; */
-}
-
-.settingsModal #apply, .settingsModal #cancel {
-  font-size: 26px;
-  margin-right: 20px;
-}
-
-.settingsModal .modal-content {
-  font-size: 22px;
 }
 
 .setting {
@@ -279,6 +271,29 @@ input:checked + .slider:before {
   transform: rotateY(180deg);
 }
 
+
+#gameCompleteText button {
+  margin: auto;
+}
+
+#gameCompleteText button a {
+  text-decoration: none;
+}
+
+#gameCompleteText button a:hover {
+  text-decoration: none;
+}
+
+.center-buttons {
+  text-align: center;
+  margin: 20px;
+}
+
+.player-name {
+  margin-top: 15px;
+  font-size: 26px;
+}
+
 /* *************** Card Pictures ********************** */
 
 .homer {
@@ -393,22 +408,6 @@ input:checked + .slider:before {
   border: 2px solid white;
 }
 
-#gameCompleteText button {
-  margin: auto;
-}
-
-#gameCompleteText button a {
-  text-decoration: none;
-}
-
-#gameCompleteText button a:hover {
-  text-decoration: none;
-}
-
-.center-buttons {
-  text-align: center;
-  margin: 20px;
-}
 
 /* ************************************ high_scores.html *********************************************** */
 

@@ -26,7 +26,6 @@ $( document ).ready(function() {
   var backgroundSoundEffects = true;
   var storage;
   var persistentHighScoreData;
-  var score = $('.score');
   var cardPictures = ['homer','bart','marge','lisa','maggie','milhouse','krusty','willie', 'wiggum', 'apu', 'lovejoy', 'flanders', 'moe', 'skinner'];
   var maxPairs = 14;
   var gameMode = sessionStorage.getItem("gameMode");
@@ -75,7 +74,7 @@ $( document ).ready(function() {
   $(card[index]).click(function() {
     firstClick++;
     if (firstClick == 1) {
-      timer(60);
+      timer(5);
     }
     //Prevent clicking the same card twice to produce false True result
     if ((cardIndex == index)&&(!$(card[index]).hasClass('is-flipped'))) {console.log("here here here 1")}
@@ -325,8 +324,9 @@ $( document ).ready(function() {
     setTimeout(function() {
       $('#gameOverModal').modal('toggle');
       let score = gameScore - timeRemaining;
-      $('#gameCompleteText').html("<p>Sorry you ran out of time</p>");
-      $('.modal-footer').html('<button type="button" class="btn btn-secondary"><a href="index.html">Exit to Main Menu</a></button><button type="button" class="btn btn-primary"><a href="game.html">New Game</a></button>')
+      $('.modal-footer button:first').remove();
+      $('#gameCompleteText').html("<p>Sorry you ran out of time</p><p>Would you like to try again?</p>");
+      // $('.modal-footer').html('<button type="button" class="btn btn-secondary"><a href="index.html">Exit to Main Menu</a></button><button type="button" class="btn btn-primary"><a href="game.html">New Game</a></button>')
     }, 500);
   }
 
@@ -381,11 +381,11 @@ $( document ).ready(function() {
         placeHighScore(name, scorePos);
         $('#gameCompleteText button:first').show();
         $('#gameCompleteText button:eq(1)').show();
-        $('#gameCompleteText button:first a').html("No");
-        $('#gameCompleteText button:eq(1) a').html("Yes");
+        // $('#gameCompleteText button:first').html("No");
+        // $('#gameCompleteText button:eq(1)').html("Yes");
          $('.score-stats, .player-name').remove();
         $('.modal-footer').remove();
-        $('.modal-header').html("Would you like to try again?");
+        $('.modal-header').html("<h2>Would you like to try again?</h2>");
       }
     }, 1500);
   }
@@ -441,49 +441,27 @@ $( document ).ready(function() {
     function checkDataStorage() {
       if (localStorage.getItem("persistentHighScoreData")) {
         persistentHighScoreData = JSON.parse(localStorage.getItem("persistentHighScoreData"));
-        console.log("PHSD" + persistentHighScoreData);
         if(!$('#phsd').is(':checked') && persistentHighScoreData == true) {
-          console.log("phsd is off");
           $('#phsd').prop('checked', true);
           storage = localStorage;
-          storageModeChanged = false;
         }
         else if ($('#phsd').is(':checked') && persistentHighScoreData == false) {
           $('#phsd').prop('checked', false);
-          console.log("phsd is on");
           storage = sessionStorage;
-          storageModeChanged = true;
+
         }
         else if (!$('#phsd').is(':checked') && persistentHighScoreData == false){
           storage = sessionStorage;
-          console.log("Here Here 1")
-          storageModeChanged = true;
         }
         else {
-          console.log("Here I am")
           storage = localStorage;
-          storageModeChanged = false;
         }
       }
       else {
         persistentHighScoreData = true;
-        storageModeChanged = false;
         storage = localStorage;
-        console.log("Here Here 2")
+
       }
     }
-    if (storage) {
-      if (JSON.parse(storage.getItem("highScores"))) {
-        highScores = JSON.parse(storage.getItem("highScores"));
-
-        for(let i = 0; (i < highScores.length) && (i < 10) ; i++) {
-            $(score[i]).append(`<td>${highScores[i][0]}</td><td>${highScores[i][1]}</td><td style="text-transform: uppercase;">${highScores[i][2]}</td>`);
-        }
-      }
-    }
-
-
-
-
 
   });
