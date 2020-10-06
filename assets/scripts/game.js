@@ -74,7 +74,7 @@ $( document ).ready(function() {
   $(card[index]).click(function() {
     firstClick++;
     if (firstClick == 1) {
-      timer(5);
+      timer(60);
     }
     //Prevent clicking the same card twice to produce false True result
     if ((cardIndex == index)&&(!$(card[index]).hasClass('is-flipped'))) {console.log("here here here 1")}
@@ -343,6 +343,7 @@ $( document ).ready(function() {
       $('.game-results:eq(2)').html(timeRemaining);
       $('.game-results:last').html(gameScore);
       $('.modal-footer button:first').remove();
+      $('#gameCompleteText').append(`<p style="font-size: 24px; margin-top: 20px;">Would you like to play again?</p>`);
 
     }, 500);
   }
@@ -352,7 +353,7 @@ $( document ).ready(function() {
       let score = gameScore - timeRemaining
       $('#gameCompleteText button:first').hide();
       $('#gameCompleteText button:eq(1)').hide();
-      $('#gameOverModal h5').html(`Congratulations ${scorePos} place`)
+      $('#gameOverModal h2').html(`Congratulations ${scorePos} place`)
       $('#gameOverModal').modal('toggle');
       $('.game-results:first').html(mistakes);
       //https://stackoverflow.com/questions/20782590/jquery-selector-with-nth-of-type

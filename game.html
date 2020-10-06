@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>The Simpsons Pairs</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
@@ -15,7 +16,7 @@
   <body>
     <header class="game-header">
       <!-- <button type="button" name="button" id="quitButton"><a href="index.html">Quit</a> </button> -->
-      <a href="index.html"><button type="button" name="button" id="quitButton" class="btn menu-buttons exit-buttons">Quit</button></a>
+      <a href="index.html"><button type="button" name="button" id="quitButton" class="btn menu-buttons exit-buttons button-click">Quit</button></a>
       <span id='timer'>1m 00s</span>
       <span id="score">Score: 0</span>
       <span id="mistakes">Mistakes: 0</span>
@@ -221,10 +222,10 @@
               <div id="gameCompleteText" class="container">
                 <div class="row center-buttons">
                   <div class="col-6">
-                    <a href="index.html"><button type="button" class="btn btn-danger exit-buttons">No</button><a>
+                    <a href="index.html"><button type="button" class="btn btn-danger exit-buttons button-click">No</button><a>
                   </div>
                   <div class="col-6">
-                    <a href="game.html"><button type="button" class="btn btn-primary">Yes</button></a>
+                    <a href="game.html"><button type="button" class="btn btn-primary button-click">Yes</button></a>
                   </div>
                 </div>
                 <div class="row score-stats">
@@ -268,9 +269,9 @@
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-success" data-dismiss="modal" id="nameEntry">OK</button>
-              <a href="index.html"><button type="button" class="btn btn-danger" class="exit-buttons">No</button></a>
-              <a href="game.html"><button type="button" class="btn btn-primary">Yes</button></a>
+              <button type="button" class="btn btn-success button-click" data-dismiss="modal" id="nameEntry">OK</button>
+              <a href="index.html"><button type="button" class="btn btn-danger button-click" class="exit-buttons">No</button></a>
+              <a href="game.html"><button type="button" class="btn btn-primary button-click">Yes</button></a>
             </div>
           </div>
         </div>

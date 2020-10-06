@@ -18,7 +18,7 @@
       <div class="modal-dialog modal-dialog-centered modal-md">
         <div class="modal-content">
           <div class="modal-body">
-            <button type="button" name="button" data-dismiss="modal" id="startButton">Push to start</button>
+            <button type="button" name="button" data-dismiss="modal" id="startButton" class="button-click">Push to start</button>
           </div>
       </div>
     </div>
@@ -34,17 +34,17 @@
           <h1>The Simpsons Pairs</h1>
           <audio loop>
             <source src="assets/audio/simpsons_theme_song.mp3" type="audio/mp3">
-            <p>Your browser doesn't support HTML5 audio. Here is a <a href="viper.mp3">link to the audio</a> instead.</p>
+            <p>Your browser doesn't support HTML5 audio. Here is a <a href="assets/audio/simpsons_theme_song.mp3">link to the audio</a> instead.</p>
           </audio>
           <ul>
             <li>
-              <button type="button" name="button" id="new-game" class="btn menu-buttons" data-toggle="modal" data-target=".newGameModal">New Game</button>
+              <button type="button" name="button" id="new-game" class="btn menu-buttons button-click" data-toggle="modal" data-target=".newGameModal">New Game</button>
             </li>
             <li>
-              <a href="high_scores.html"><button type="button" name="button" id="highScores" class="btn menu-buttons">High scores</button></a>
+              <a href="high_scores.html"><button type="button" name="button" id="highScores" class="btn menu-buttons button-click">High scores</button></a>
             </li>
             <li>
-              <button type="button" name="button" id="settings" class="btn menu-buttons" data-toggle="modal" data-target=".settingsModal">Settings</button>
+              <button type="button" name="button" id="settings" class="btn menu-buttons button-click" data-toggle="modal" data-target=".settingsModal">Settings</button>
             </li>
           </ul>
         </div>
@@ -99,8 +99,8 @@
             </form>
           </div>
           <div class="modal-footer">
-            <input type="button" class="btn btn-success" id="apply" data-dismiss="modal" value="Apply">
-            <button type="button" class="btn btn-danger" id="cancel" data-dismiss="modal">Cancel</button>
+            <input type="button" class="btn btn-success button-click" id="apply" data-dismiss="modal" value="Apply">
+            <button type="button" class="btn btn-danger button-click" id="cancel" data-dismiss="modal">Cancel</button>
           </div>
         </div>
       </div>
@@ -110,7 +110,7 @@
       <div class="modal-dialog modal-dialog-centered modal-md">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="newGameModalLabel">Game Difficulty</h5>
+            <h2 class="modal-title" id="newGameModalLabel">Game Difficulty</h2>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -118,13 +118,13 @@
           <div class="modal-body">
             <div class="level-buttons">
               <!-- <a href="game.html"><button type="button" name="button" class="game-level d-block" id="easy">Easy</a> -->
-              <a href="game.html" class="game-level d-block" id="easy">Easy</a>
-              <a href="game.html" class="game-level d-block" id="medium">Medium</a>
-              <a href="game.html" class="game-level d-block" id="hard">Hard</a>
+              <a href="game.html" class="game-level d-block button-click" id="easy">Easy</a>
+              <a href="game.html" class="game-level d-block button-click" id="medium">Medium</a>
+              <a href="game.html" class="game-level d-block button-click" id="hard">Hard</a>
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-danger button-click" data-dismiss="modal">Cancel</button>
         </div>
       </div>
     </div>

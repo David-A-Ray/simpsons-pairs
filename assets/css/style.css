@@ -17,6 +17,11 @@ body {
   margin-right: 20px;
 }
 
+.button-click:active {
+  box-shadow: 0 5px #666;
+  transform: translate(2px, 4px);
+}
+
 /* ************************************ index.html *********************************************** */
 
 .opening-screen {
@@ -80,9 +85,14 @@ a.game-level {
     width: 150px;
     border-radius: 10px;
     border-width: 0;
-    background-color: green;
+    background-color: #0be04f;
     color: #fff;
-    font-size: 20px;
+    font-size: 24px;
+}
+
+a.game-level:hover {
+  color: #42f57b;
+  background-color: green;
 }
 
 .setting {
@@ -294,6 +304,10 @@ input:checked + .slider:before {
   font-size: 26px;
 }
 
+#quitButton:hover {
+  background-color: #990000;
+}
+
 /* *************** Card Pictures ********************** */
 
 .homer {
@@ -476,4 +490,80 @@ input:checked + .slider:before {
   background-color: #3e8e41;
   box-shadow: 0 5px #666;
   transform: translate(-50px, 174px);
+}
+
+
+/* ******************************** Media Queries ****************************************** */
+
+@media screen and (max-width: 1690px) {
+
+}
+
+@media screen and (max-width: 1580px) {
+
+}
+
+@media screen and (max-width: 1560px) {
+
+}
+
+@media screen and (max-width: 1500px) {
+
+}
+
+@media screen and (max-width: 1300px) {
+
+}
+
+@media screen and (max-width: 1140px) {
+
+}
+
+@media screen and (max-width: 1025px) {
+
+}
+
+@media screen and (max-width: 800px) {
+
+}
+
+@media screen and (max-width: 610px) {
+
+}
+
+@media screen and (max-width: 415px) {
+
+}
+
+@media screen and (max-width: 385px) {
+  .menu-items {
+    width: 75%;
+  }
+  .card-flip {
+    -webkit-transform: scale(0.5); /* Saf3.1+, Chrome */
+    -moz-transform: scale(0.5); /* FF3.5+ */
+     -ms-transform: scale(0.5); /* IE9 */
+      -o-transform: scale(0.5); /* Opera 10.5+ */
+         transform: scale(0.5);
+    margin: -20px;
+  }
+
+  .cards .row {
+    margin: -30px;
+    display: flex;
+    box-sizing: content-box;
+  }
+  .opening-screen {
+    -webkit-transform: scale(0.7); /* Saf3.1+, Chrome */
+    -moz-transform: scale(0.7); /* FF3.5+ */
+     -ms-transform: scale(0.7); /* IE9 */
+      -o-transform: scale(0.7); /* Opera 10.5+ */
+         transform: scale(0.7);
+  }
+
+
+}
+
+@media screen and (max-width: 320px) {
+
 }

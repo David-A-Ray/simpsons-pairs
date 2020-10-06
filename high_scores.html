@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pairs</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
@@ -13,7 +14,7 @@
   </head>
   <body class="high-scores-background">
     <header>
-      <a href="index.html"><button type="button" name="button" class="exit-buttons" id="exit">Exit</button></a>
+      <a href="index.html"><button type="button" name="button" class="exit-buttons button-click" id="exit">Exit</button></a>
     </header>
     <audio autoplay>
       <source src="assets/audio/simpsons_closing_theme.mp3" type="audio/mp3">
@@ -78,8 +79,8 @@
               <span>Are you sure you want to erase of the scores?</span>
             </div>
             <div class="">
-              <button type="button" name="button" id="confirmClearScores">Yes</button>
-              <button type="button" name="button" data-dismiss="modal">No</button>
+              <button type="button" name="button" id="confirmClearScores" class="button-click">Yes</button>
+              <button type="button" name="button" data-dismiss="modal" class="button-click">No</button>
             </div>
           </div>
 
