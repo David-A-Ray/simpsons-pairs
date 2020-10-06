@@ -1,71 +1,48 @@
 $( document ).ready(function() {
 
-  var card = $('.easy .card');
+  let card = $('.easy .card');
   // var card = $('.active div');
-  var cards = [];
-  var z = 0;
-  var clickCount = 0;
-  var firstClick = 0;
-  var matchedPairs = 0;
-  var cardIndex;
-  var gameOver = false;
-  var gameTime;
-  var gameScore = 0;
-  var timeAdjust = 0;
-  var timePenalty = 0;
-  var timeBonus = 0;
-  var mistakes = 0;
-  var timeRemaining;
-  var highScores = [];
-  var flippedCards = [];
-  var card1Seen = false;
-  var card2Seen = false;
-  var flippedCardIndex = []
-  var storageModeChanged;
-  var gameSoundEffects = true;
-  var backgroundSoundEffects = true;
-  var storage;
-  var persistentHighScoreData;
-  var cardPictures = ['homer','bart','marge','lisa','maggie','milhouse','krusty','willie', 'wiggum', 'apu', 'lovejoy', 'flanders', 'moe', 'skinner'];
-  var maxPairs = 14;
-  var gameMode = sessionStorage.getItem("gameMode");
-  var scorePositions = ["1st","2nd","3rd","4th","5th","6th","7th","8th","9th","10th"];
-  var matchPoints;
+  let cards = [];
+  let z = 0;
+  let clickCount = 0;
+  let firstClick = 0;
+  let matchedPairs = 0;
+  let cardIndex;
+  let gameOver = false;
+  let gameTime;
+  let gameScore = 0;
+  let timeAdjust = 0;
+  let timePenalty = 0;
+  let timeBonus = 0;
+  let mistakes = 0;
+  let timeRemaining;
+  let highScores = [];
+  let flippedCards = [];
+  let card1Seen = false;
+  let card2Seen = false;
+  let flippedCardIndex = []
+  let storageModeChanged;
+  let gameSoundEffects = true;
+  let backgroundSoundEffects = true;
+  let storage;
+  let persistentHighScoreData;
+  const cardPictures = ['homer','bart','marge','lisa','maggie','milhouse','krusty','willie', 'wiggum', 'apu', 'lovejoy', 'flanders', 'moe', 'skinner'];
+  let maxPairs = 14;
+  let gameMode = sessionStorage.getItem("gameMode");
+  let scorePositions = ["1st","2nd","3rd","4th","5th","6th","7th","8th","9th","10th"];
+  let matchPoints;
+  let easyGameWidth = "510px";
+  let mediumGameWidth = "625px";
+  let hardGameWidth = "860px";
 
   // Check for any high scores in local Storage
   checkDataStorage();
+  //
+  gameSetup();
 
-  // Check which game mode has been selected
-  switch (gameMode) {
-  case ("easy"):
-    console.log("Easy selected");
-    $('.medium-remove').remove();
-    $('.hard-remove').remove();
-    maxPairs = 6;
-    matchPoints = 40;
-    timePenalty = 2000;
-    timeBonus = 5000;
-    card = $('.easy .card');
-    break;
-  case ("medium"):
-    $('.hard-remove').remove();
-    maxPairs = 10;
-    matchPoints = 50;
-    timePenalty = 3000;
-    timeBonus = 6000;
-    card = $('.medium .card');
-    break;
-  console.log("Medium selected");
-  case ("hard"):
-    console.log("Hard selected");
-    maxPairs = 14;
-    matchPoints = 60;
-    timePenalty = 4000;
-    timeBonus = 7000;
-    card = $('.hard .card');
-  Default:
-  console.log(gameMode);
-  }
+
+  // Check which game mode has been selected & adjust card deck layout width
+
 
   cardShuffle(cardPictures);
 
@@ -148,7 +125,7 @@ $( document ).ready(function() {
                 if (matchedPairs === maxPairs) {
                   gameOver = true;
                   adjustScore(timeRemaining);
-                    var scorePosition = highScorePos()
+                    let scorePosition = highScorePos()
                     if (scorePosition){
                       gameCompletePopup(scorePosition);
                     }
@@ -161,8 +138,8 @@ $( document ).ready(function() {
               }
               else if (a != b){
                 if (flippedCards) {
-                  var matchKnown = false;
-                  var check = 0;
+                  let matchKnown = false;
+                  let check = 0;
                   for (let i = 0 ; i < flippedCards.length ; i++) {
                     // Check if matching card has already been seen
                     if (flippedCards[i].picture == c.picture && flippedCards[i].index != c.index) {
@@ -263,11 +240,11 @@ $( document ).ready(function() {
 
       highScores = JSON.parse(storage.getItem("highScores"));
 
-      var l = highScores.length;
+      let l = highScores.length;
       // Boolen scorePlaced used to Stop score being listed more than once if more than 1 lower score exists.
-      var scorePlaced = false;
+      let scorePlaced = false;
       // Loop through existing scores to find correct position
-      for (var j = 0 ; ((j < l) && (scorePlaced == false)) ; j++) {
+      for (let j = 0 ; ((j < l) && (scorePlaced == false)) ; j++) {
         console.log("highScores.length = " + highScores.length)
         if (gameScore > highScores[j][1]) {
           scorePlaced = true;
@@ -295,10 +272,10 @@ $( document ).ready(function() {
   function timer(time) {
     time = new Date().getTime() + (time * 1000);
     gameTime = setInterval(function() {
-      var now = new Date().getTime()
+      let now = new Date().getTime()
       timeDiff = time - now - timeAdjust;
-      var minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+      let minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+      let seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
       timeRemaining = (minutes * 60) + seconds;
       $("#timer").html(minutes + "m " + seconds + "s ");
 
@@ -395,12 +372,12 @@ $( document ).ready(function() {
   // Shuffle cards by assigning each picture class to 2 unique random array indices
   function cardShuffle(cardsArray) {
     // console.log(c);
-    var i = 0;
-    var j = 1;
+    let i = 0;
+    let j = 1;
     console.log("CardsArray 1 = " + cardsArray[1])
-    var cardPicture = $('.card div:first-child');
+    let cardPicture = $('.card div:first-child');
     // var card = $('.card');
-    var arr = randomIndices(card.length);
+    let arr = randomIndices(card.length);
     $.each(card, function(index){
       card[arr[index]].classList.add(cardsArray[i]);
       // $(cardPicture[arr[index]]).html(cardsArray[i]);
@@ -464,5 +441,60 @@ $( document ).ready(function() {
 
       }
     }
+
+    function gameSetup() {
+      switch (gameMode) {
+      case ("easy"):
+        console.log("Easy selected");
+        $('.medium-remove').remove();
+        $('.hard-remove').remove();
+        // $('.card-deck').css('width',easyGameWidth);
+        maxPairs = 6;
+        matchPoints = 40;
+        timePenalty = 2000;
+        timeBonus = 5000;
+        card = $('.easy .card');
+        break;
+      case ("medium"):
+        $('.hard-remove').remove();
+        // $('.card-deck').css('width',mediumGameWidth);
+        maxPairs = 10;
+        matchPoints = 50;
+        timePenalty = 3000;
+        timeBonus = 6000;
+        card = $('.medium .card');
+        break;
+      console.log("Medium selected");
+      case ("hard"):
+        console.log("Hard selected");
+        // $('.card-deck').css('width',hardGameWidth);
+        maxPairs = 14;
+        matchPoints = 60;
+        timePenalty = 4000;
+        timeBonus = 7000;
+        card = $('.hard .card');
+      Default:
+      console.log(gameMode);
+      }
+    }
+
+ // https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_matchmedia
+    // function screenSize(x) {
+    //   if (x.matches) { // If media query matches
+    //     console.log("screen less than 700px");
+    //     easyGameWidth = "450px";
+    //     mediumGameWidth = "600px";
+    //     gameSetup();
+    //   }
+    //   else {
+    //     console.log("screen more than 700px");
+    //     gameSetup();
+    //   }
+    // }
+    //
+    // var x = window.matchMedia("(max-width: 700px)")
+    // screenSize(x) // Call listener function at run time
+    // x.addListener(screenSize) // Attach listener function on state changes
+
 
   });

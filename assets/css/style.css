@@ -169,6 +169,11 @@ input:checked + .slider:before {
 
 /* ************************************ game.html *********************************************** */
 
+.cards {
+  margin-left: 20px;
+}
+
+
 .game-background {
   background-image: url(../images/game_floor.png);
   height: 100%;
@@ -182,7 +187,7 @@ input:checked + .slider:before {
   background-image: url(../images/game_table.png);
   background-repeat: no-repeat;
   background-size:contain;
-  display: table;
+  /* display: table; */
   width: 1200px;
   height: 1200px;
   position: absolute;
@@ -472,14 +477,17 @@ input:checked + .slider:before {
 
 #clearScores {
 
-  display: block;
-  margin: auto;
-  transform: translate(-50px, 170px);
+  position: absolute;
   width: 150px;
   font-size: 26px;
   border-radius: 10px;
   outline: none;
   background-color: grey;
+  bottom: 5%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #clearScores:hover {
@@ -489,7 +497,7 @@ input:checked + .slider:before {
 #clearScores:active {
   background-color: #3e8e41;
   box-shadow: 0 5px #666;
-  transform: translate(-50px, 174px);
+  transform: translate(-4px, 4px);
 }
 
 
@@ -531,27 +539,9 @@ input:checked + .slider:before {
 
 }
 
-@media screen and (max-width: 415px) {
-
-}
-
-@media screen and (max-width: 385px) {
+@media screen and (max-width: 515px) {
   .menu-items {
     width: 75%;
-  }
-  .card-flip {
-    -webkit-transform: scale(0.5); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.5); /* FF3.5+ */
-     -ms-transform: scale(0.5); /* IE9 */
-      -o-transform: scale(0.5); /* Opera 10.5+ */
-         transform: scale(0.5);
-    margin: -20px;
-  }
-
-  .cards .row {
-    margin: -30px;
-    display: flex;
-    box-sizing: content-box;
   }
   .opening-screen {
     -webkit-transform: scale(0.7); /* Saf3.1+, Chrome */
@@ -560,10 +550,100 @@ input:checked + .slider:before {
       -o-transform: scale(0.7); /* Opera 10.5+ */
          transform: scale(0.7);
   }
+}
 
+@media screen and (max-width: 385px) {
+  .card-flip {
+    -webkit-transform: scale(0.4); /* Saf3.1+, Chrome */
+    -moz-transform: scale(0.4); /* FF3.5+ */
+     -ms-transform: scale(0.4); /* IE9 */
+      -o-transform: scale(0.4); /* Opera 10.5+ */
+         transform: scale(0.4);
+    margin: -25px;
+  }
+  .cards .row {
+    margin: -30px;
+  }
+  .game {
+    background-size: 50%;
+    background-position: center;
+  }
+  #quitButton, #timer, #score, #mistakes, #exit, #clearScores {
+    -webkit-transform: scale(0.6); /* Saf3.1+, Chrome */
+    -moz-transform: scale(0.6); /* FF3.5+ */
+     -ms-transform: scale(0.6); /* IE9 */
+      -o-transform: scale(0.6); /* Opera 10.5+ */
+         transform: scale(0.6);
+  }
+  #quitButton {
+    left: 5px;
+    top: -10px;
+  }
+
+  #timer {
+    top: auto;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #score {
+    top: 5px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #mistakes {
+    top: 5px;
+    right: 5px;
+  }
+
+  .high-scores {
+
+    -webkit-transform: scale(0.65) translate(-50px, 100px); /* Saf3.1+, Chrome */
+    -moz-transform: scale(0.65) translate(-50px, 100px); /* FF3.5+ */
+     -ms-transform: scale(0.65) translate(-50px, 100px); /* IE9 */
+      -o-transform: scale(0.65) translate(-50px, 100px); /* Opera 10.5+ */
+         transform: scale(0.65) translate(-50px, 100px);
+
+
+  }
+
+  .high-scores table th, .high-scores table td  {
+    padding: 0 10px;
+  }
+
+  .high-scores-background {
+    background-position: 60% 0%;
+    background-size: 210vh;
+    overflow: hidden;
+  }
 
 }
 
 @media screen and (max-width: 320px) {
+  .high-scores {
+    -webkit-transform: scale(0.6) translate(-50px,30px); /* Saf3.1+, Chrome */
+    -moz-transform: scale(0.6) translate(-50px, 30px); /* FF3.5+ */
+     -ms-transform: scale(0.6) translate(-50px, 30px); /* IE9 */
+      -o-transform: scale(0.6) translate(-50px, 30px); /* Opera 10.5+ */
+         transform: scale(0.6) translate(-50px, 30px);
 
+  }
+
+  .high-scores table th, .high-scores table td  {
+    padding: 0 5px;
+  }
+
+}
+
+@media screen and (min-width: 100px) {
+  .card-deck {
+    display: flex;
+    flex-flow: row wrap;
+  }
 }
