@@ -22,6 +22,11 @@ body {
   transform: translate(2px, 4px);
 }
 
+.container, .container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 /* ************************************ index.html *********************************************** */
 
 .opening-screen {
@@ -46,11 +51,13 @@ body {
   position: absolute;
   overflow: hidden;
   font-family: 'Caveat Brush', cursive, sans-serif;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .menu-items {
   background-color: yellow;
-  width: 25%;
+  width: 350px;
   visibility: hidden;
   border-radius: 15px;
 }
@@ -76,7 +83,6 @@ body {
 a.game-level {
     -webkit-appearance: button;
     -moz-appearance: button;
-    appearance: button;
     text-decoration: none;
     text-align: center;
     margin: auto;
@@ -168,30 +174,31 @@ input:checked + .slider:before {
 }
 
 /* ************************************ game.html *********************************************** */
-
-.cards {
-  margin-left: 20px;
+*,
+*::before,
+*::after {
+  box-sizing: content-box;
 }
 
 
 .game-background {
   background-image: url(../images/game_floor.png);
   height: 100%;
-  /* display: table; */
+  display: table;
   position: absolute;
   overflow: hidden;
   z-index: -1;
+  /* padding-left: 0;
+  padding-right: 0; */
 }
 
 .game {
   background-image: url(../images/game_table.png);
   background-repeat: no-repeat;
   background-size:contain;
-  /* display: table; */
   width: 1200px;
   height: 1200px;
   position: absolute;
-  padding-right: 20px;
 }
 
 #quitButton {
@@ -199,26 +206,29 @@ input:checked + .slider:before {
   left: 30px;
   top: 15px;
   background-color: red;
-  width: 100px;
-  height: 100px;
-  border-radius: 50px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
   text-align: center;
   z-index: 2;
   font-size: 26px;
   color: #fafafa;
 }
 
+#quitButton:hover {
+  background-color: #990000;
+}
+
 #timer {
+  position: absolute;
   background-color: #f5a442;
   width: 100px;
   border-radius: 10px;
   text-align: center;
   z-index: 2;
-  position: absolute;
   left: 45%;
   top: 15px;
   color: #fafafa;
-
   font-size: 30px;
 }
 
@@ -259,11 +269,13 @@ input:checked + .slider:before {
   transform-style: preserve-3d;
 }
 
+
 .card-flip {
   width: 100px;
   height: 160px;
   perspective: 600px;
   margin: 10px;
+  box-sizing: content-box;
 }
 
 .card__face {
@@ -309,9 +321,6 @@ input:checked + .slider:before {
   font-size: 26px;
 }
 
-#quitButton:hover {
-  background-color: #990000;
-}
 
 /* *************** Card Pictures ********************** */
 
@@ -539,41 +548,46 @@ input:checked + .slider:before {
 
 }
 
-@media screen and (max-width: 515px) {
+@media screen and (max-width: 600px) and (orientation: portrait) {
   .menu-items {
-    width: 75%;
+    width: 200px;
+  }
+  .main-menu h1 {
+    font-size: 24px;
+  }
+  .menu-buttons {
+    font-size: 16px;
+    margin: 8px;
+    width: 100px;
   }
   .opening-screen {
-    -webkit-transform: scale(0.7); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.7); /* FF3.5+ */
-     -ms-transform: scale(0.7); /* IE9 */
-      -o-transform: scale(0.7); /* Opera 10.5+ */
-         transform: scale(0.7);
+    -webkit-transform: scale(0.8); /* Saf3.1+, Chrome */
+    -moz-transform: scale(0.8); /* FF3.5+ */
+     -ms-transform: scale(0.8); /* IE9 */
+      -o-transform: scale(0.8); /* Opera 10.5+ */
+         transform: scale(0.8);
   }
-}
-
-@media screen and (max-width: 385px) {
   .card-flip {
-    -webkit-transform: scale(0.4); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.4); /* FF3.5+ */
-     -ms-transform: scale(0.4); /* IE9 */
-      -o-transform: scale(0.4); /* Opera 10.5+ */
-         transform: scale(0.4);
-    margin: -25px;
+    -webkit-transform: scale(0.8); /* Saf3.1+, Chrome */
+    -moz-transform: scale(0.8); /* FF3.5+ */
+     -ms-transform: scale(0.8); /* IE9 */
+      -o-transform: scale(0.8); /* Opera 10.5+ */
+         transform: scale(0.8);
+    margin: -8px;
   }
   .cards .row {
-    margin: -30px;
+    margin: -10px;
   }
   .game {
-    background-size: 50%;
+    background-size: 75%;
     background-position: center;
   }
-  #quitButton, #timer, #score, #mistakes, #exit, #clearScores {
-    -webkit-transform: scale(0.6); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.6); /* FF3.5+ */
-     -ms-transform: scale(0.6); /* IE9 */
-      -o-transform: scale(0.6); /* Opera 10.5+ */
-         transform: scale(0.6);
+  #quitButton, #quitButton:active, #timer, #score, #mistakes, #exit, #exit:active, #clearScores, #clearScores:active {
+    -webkit-transform: scale(0.8); /* Saf3.1+, Chrome */
+    -moz-transform: scale(0.8); /* FF3.5+ */
+     -ms-transform: scale(0.8); /* IE9 */
+      -o-transform: scale(0.8); /* Opera 10.5+ */
+         transform: scale(0.8);
   }
   #quitButton {
     left: 5px;
@@ -604,13 +618,11 @@ input:checked + .slider:before {
 
   .high-scores {
 
-    -webkit-transform: scale(0.65) translate(-50px, 100px); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.65) translate(-50px, 100px); /* FF3.5+ */
-     -ms-transform: scale(0.65) translate(-50px, 100px); /* IE9 */
-      -o-transform: scale(0.65) translate(-50px, 100px); /* Opera 10.5+ */
-         transform: scale(0.65) translate(-50px, 100px);
-
-
+    -webkit-transform: scale(0.8) translate(-50px, 40%); /* Saf3.1+, Chrome */
+    -moz-transform: scale(0.8) translate(-50px, 40%); /* FF3.5+ */
+     -ms-transform: scale(0.8) translate(-50px, 40%); /* IE9 */
+      -o-transform: scale(0.8) translate(-50px, 40%); /* Opera 10.5+ */
+         transform: scale(0.8) translate(-50px, 40%);
   }
 
   .high-scores table th, .high-scores table td  {
@@ -625,25 +637,323 @@ input:checked + .slider:before {
 
 }
 
-@media screen and (max-width: 320px) {
-  .high-scores {
-    -webkit-transform: scale(0.6) translate(-50px,30px); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.6) translate(-50px, 30px); /* FF3.5+ */
-     -ms-transform: scale(0.6) translate(-50px, 30px); /* IE9 */
-      -o-transform: scale(0.6) translate(-50px, 30px); /* Opera 10.5+ */
-         transform: scale(0.6) translate(-50px, 30px);
+@media screen and (max-width: 414px) and (orientation: portrait) {
+  .opening-screen {
+    -webkit-transform: scale(0.7); /* Saf3.1+, Chrome */
+    -moz-transform: scale(0.7); /* FF3.5+ */
+     -ms-transform: scale(0.7); /* IE9 */
+      -o-transform: scale(0.7); /* Opera 10.5+ */
+         transform: scale(0.7);
+  }
+  .card-flip {
+    -webkit-transform: scale(0.5); /* Saf3.1+, Chrome */
+    -moz-transform: scale(0.5); /* FF3.5+ */
+     -ms-transform: scale(0.5); /* IE9 */
+      -o-transform: scale(0.5); /* Opera 10.5+ */
+         transform: scale(0.5);
+    margin: -22px;
+  }
+  .cards .row {
+    margin: -30px;
+  }
+  .game {
+    background-size: 50%;
+    background-position: center;
+  }
+  #quitButton, #quitButton:active, #timer, #score, #mistakes, #exit, #exit:active, #clearScores, #clearScores:active {
+    -webkit-transform: scale(0.6); /* Saf3.1+, Chrome */
+    -moz-transform: scale(0.6); /* FF3.5+ */
+     -ms-transform: scale(0.6); /* IE9 */
+      -o-transform: scale(0.6); /* Opera 10.5+ */
+         transform: scale(0.6);
+  }
 
+  .high-scores {
+    -webkit-transform: scale(0.7) translate(-50px, 100px); /* Saf3.1+, Chrome */
+    -moz-transform: scale(0.7) translate(-50px, 100px); /* FF3.5+ */
+     -ms-transform: scale(0.7) translate(-50px, 100px); /* IE9 */
+      -o-transform: scale(0.7) translate(-50px, 100px); /* Opera 10.5+ */
+         transform: scale(0.7) translate(-50px, 100px);
+  }
+  .high-scores table th, .high-scores table td  {
+    padding: 0 10px;
+  }
+  .high-scores-background {
+    background-position: 60% 0%;
+    background-size: 210vh;
+    overflow: hidden;
+  }
+}
+
+/* Iphone 6/7/8, galaxy S5 Portrait */
+
+@media screen and (max-width: 385px) and (orientation: portrait) {
+  .card-flip {
+    -webkit-transform: scale(0.48); /* Saf3.1+, Chrome */
+    -moz-transform: scale(0.48); /* FF3.5+ */
+     -ms-transform: scale(0.48); /* IE9 */
+      -o-transform: scale(0.48); /* Opera 10.5+ */
+         transform: scale(0.48);
+    margin: -24px;
+  }
+
+  .game {
+    background-size: 45%;
+    background-position: center;
+  }
+
+  #quitButton, #quitButton:active, #timer, #score, #mistakes, #exit, #exit:active, #clearScores, #clearScores:active {
+    -webkit-transform: scale(0.6); /* Saf3.1+, Chrome */
+    -moz-transform: scale(0.6); /* FF3.5+ */
+     -ms-transform: scale(0.6); /* IE9 */
+      -o-transform: scale(0.6); /* Opera 10.5+ */
+         transform: scale(0.6);
+  }
+
+  .high-scores {
+
+    -webkit-transform: scale(0.65) translate(-50px, 100px); /* Saf3.1+, Chrome */
+    -moz-transform: scale(0.65) translate(-50px, 100px); /* FF3.5+ */
+     -ms-transform: scale(0.65) translate(-50px, 100px); /* IE9 */
+      -o-transform: scale(0.65) translate(-50px, 100px); /* Opera 10.5+ */
+         transform: scale(0.65) translate(-50px, 100px);
   }
 
   .high-scores table th, .high-scores table td  {
-    padding: 0 5px;
+    padding: 0 10px;
+  }
+
+  .high-scores-background {
+    background-position: 58% 0%;
+    background-size: 210vh;
+    overflow: hidden;
+  }
+}
+
+
+
+/* galaxy S9 & S5 Portrait*/
+
+@media screen and (max-width: 360px) and (orientation: portrait) {
+  .opening-screen {
+    -webkit-transform: scale(0.5); /* Saf3.1+, Chrome */
+    -moz-transform: scale(0.5); /* FF3.5+ */
+     -ms-transform: scale(0.5); /* IE9 */
+      -o-transform: scale(0.5); /* Opera 10.5+ */
+         transform: scale(0.5);
+  }
+
+  .card-flip {
+    -webkit-transform: scale(0.45); /* Saf3.1+, Chrome */
+    -moz-transform: scale(0.45); /* FF3.5+ */
+     -ms-transform: scale(0.45); /* IE9 */
+      -o-transform: scale(0.45); /* Opera 10.5+ */
+         transform: scale(0.45);
+    margin: -25px;
+  }
+  .high-scores table th, .high-scores table td  {
+    padding: 0 8px;
+  }
+  .high-scores-background {
+    background-position: 58% 0%;
+    background-size: 210vh;
+    overflow: hidden;
+  }
+}
+
+
+
+/* Iphone 5  Portrait 320 x 568 */
+@media screen and (max-width: 320px) and (orientation: portrait) {
+
+  .card-flip {
+    -webkit-transform: scale(0.4); /* Saf3.1+, Chrome */
+    -moz-transform: scale(0.4); /* FF3.5+ */
+     -ms-transform: scale(0.4); /* IE9 */
+      -o-transform: scale(0.4); /* Opera 10.5+ */
+         transform: scale(0.4);
+    margin: -28px;
+  }
+  .high-scores {
+    -webkit-transform: scale(0.6) translate(-75px,30px); /* Saf3.1+, Chrome */
+    -moz-transform: scale(0.6) translate(-75px, 30px); /* FF3.5+ */
+     -ms-transform: scale(0.6) translate(-75px, 30px); /* IE9 */
+      -o-transform: scale(0.6) translate(-75px, 30px); /* Opera 10.5+ */
+         transform: scale(0.6) translate(-75px, 30px);
+
+  }
+  #quitButton, #quitButton:active, #timer, #score, #mistakes, #exit, #exit:active, #clearScores, #clearScores:active {
+    -webkit-transform: scale(0.5); /* Saf3.1+, Chrome */
+    -moz-transform: scale(0.5); /* FF3.5+ */
+     -ms-transform: scale(0.5); /* IE9 */
+      -o-transform: scale(0.5); /* Opera 10.5+ */
+         transform: scale(0.5);
+  }
+  .game {
+    background-size: 40%;
+    background-position: center;
+  }
+}
+
+/* Landscape by height only */
+
+@media screen and (max-height: 415px) and (orientation: landscape) {
+  .menu-items {
+    width: 200px;
+  }
+  .main-menu h1 {
+    font-size: 24px;
+  }
+  .menu-buttons {
+    font-size: 16px;
+    margin: 8px;
+    width: 100px;
+  }
+
+  .cards .row {
+    margin: -25px;
+  }
+  .game {
+    background-size: 50%;
+    background-position: center;
+  }
+  .opening-screen {
+    -webkit-transform: scale(0.5); /* Saf3.1+, Chrome */
+    -moz-transform: scale(0.5); /* FF3.5+ */
+     -ms-transform: scale(0.5); /* IE9 */
+      -o-transform: scale(0.5); /* Opera 10.5+ */
+         transform: scale(0.5);
+  }
+  .modal {
+    -webkit-transform: scale(0.6); /* Saf3.1+, Chrome */
+    -moz-transform: scale(0.6); /* FF3.5+ */
+     -ms-transform: scale(0.6); /* IE9 */
+      -o-transform: scale(0.6); /* Opera 10.5+ */
+         transform: scale(0.6);
+    position: absolute;
+    top: -30%;
+    height: 150%;
+  }
+  a.game-level {
+    padding: 5px;
+    font-size: 26px;
+  }
+
+  .card-flip {
+    -webkit-transform: scale(0.55); /* Saf3.1+, Chrome */
+    -moz-transform: scale(0.55); /* FF3.5+ */
+     -ms-transform: scale(0.55); /* IE9 */
+      -o-transform: scale(0.55); /* Opera 10.5+ */
+         transform: scale(0.55);
+    margin: -20px;
+  }
+  #quitButton, #quitButton:active, #timer, #score, #mistakes, #exit, #exit:active, #clearScores, #clearScores:active {
+    -webkit-transform: scale(0.5); /* Saf3.1+, Chrome */
+    -moz-transform: scale(0.5); /* FF3.5+ */
+     -ms-transform: scale(0.5); /* IE9 */
+      -o-transform: scale(0.5); /* Opera 10.5+ */
+         transform: scale(0.5);
+  }
+  #quitButton {
+    left: -10px;
+    top: -15px;
+  }
+  #timer {
+    top: 50%;
+    left: auto;
+    right: 0px;
+  }
+  #score {
+    top: 2%;
+    left: auto;
+    right: -15px;
+  }
+  #mistakes {
+    top: 25%;
+    left: auto;
+    right: -15px;
+  }
+
+  .high-scores {
+    -webkit-transform: scale(0.55) translate(-50px, -30%); /* Saf3.1+, Chrome */
+    -moz-transform: scale(0.55) translate(-50px, -30%); /* FF3.5+ */
+     -ms-transform: scale(0.55) translate(-50px, -30%); /* IE9 */
+      -o-transform: scale(0.55) translate(-50px, -30%); /* Opera 10.5+ */
+         transform: scale(0.55) translate(-50px, -30%);
+  }
+  .high-scores table th, .high-scores table td  {
+    padding: 0 10px;
+  }
+  .high-scores-background {
+    background-position: 60% 0%;
+    background-size: 210vh;
+    overflow: hidden;
+  }
+}
+
+@media screen and (max-height: 384px) and (orientation: landscape) {
+  .card-flip {
+    -webkit-transform: scale(0.45); /* Saf3.1+, Chrome */
+    -moz-transform: scale(0.45); /* FF3.5+ */
+     -ms-transform: scale(0.45); /* IE9 */
+      -o-transform: scale(0.45); /* Opera 10.5+ */
+         transform: scale(0.45);
+    margin: -22px;
+  }
+  .cards .row {
+    margin: -30px;
+  }
+  .high-scores {
+    -webkit-transform: scale(0.5) translate(-50px, -40%); /* Saf3.1+, Chrome */
+    -moz-transform: scale(0.5) translate(-50px, -40%); /* FF3.5+ */
+     -ms-transform: scale(0.5) translate(-50px, -40%); /* IE9 */
+      -o-transform: scale(0.5) translate(-50px, -40%); /* Opera 10.5+ */
+         transform: scale(0.5) translate(-50px, -40%);
+  }
+  .high-scores-background {
+    background-position: 60% 0%;
+    background-size: 215vh;
+    overflow: hidden;
+  }
+}
+
+@media screen and (max-height: 360px) and (orientation: landscape) {
+
+  .high-scores {
+    -webkit-transform: scale(0.5) translate(-50px, -43%); /* Saf3.1+, Chrome */
+    -moz-transform: scale(0.5) translate(-50px, -43%); /* FF3.5+ */
+     -ms-transform: scale(0.5) translate(-50px, -43%); /* IE9 */
+      -o-transform: scale(0.5) translate(-50px, -43%); /* Opera 10.5+ */
+         transform: scale(0.5) translate(-50px, -43%);
+  }
+  #clearScores {
+    bottom: 3px;
   }
 
 }
 
-@media screen and (min-width: 100px) {
-  .card-deck {
-    display: flex;
-    flex-flow: row wrap;
+@media screen and (max-height: 320px) and (orientation: landscape) {
+  .card-flip {
+    -webkit-transform: scale(0.40); /* Saf3.1+, Chrome */
+    -moz-transform: scale(0.40); /* FF3.5+ */
+     -ms-transform: scale(0.40); /* IE9 */
+      -o-transform: scale(0.40); /* Opera 10.5+ */
+         transform: scale(0.40);
+    margin: -27px;
+  }
+  .cards .row {
+    margin: -32px;
+  }
+  .high-scores {
+    -webkit-transform: scale(0.46) translate(-70px, -60%); /* Saf3.1+, Chrome */
+    -moz-transform: scale(0.46) translate(-70px, -60%); /* FF3.5+ */
+     -ms-transform: scale(0.46) translate(-70px, -60%); /* IE9 */
+      -o-transform: scale(0.46) translate(-70px, -60%); /* Opera 10.5+ */
+         transform: scale(0.46) translate(-70px, -60%);
+  }
+  .high-scores-background {
+    background-position: 45% 0%;
+    background-size: 215vh;
+    overflow: hidden;
   }
 }

@@ -286,7 +286,7 @@ $( document ).ready(function() {
          gameOver = true;
          timesUpPopup();
          setTimeout(function() {
-           highScore();
+           
          },1000);
       } else if (gameOver) {
          clearInterval(gameTime);
