@@ -12,8 +12,6 @@ body {
   box-sizing: content-box;
 }
 
-
-
 .modal-content {
   background-color: #e9f547;
   font-size: 22px;
@@ -36,6 +34,35 @@ body {
 }
 
 /* ************************************ index.html *********************************************** */
+
+
+
+.startGameModal .modal-content {
+  border-radius: 15%;
+
+
+}
+
+.startGameModal .modal-body {
+  width: 125px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+#startButton {
+  height: 100px;
+  border-radius: 50%;
+  background-color: green;
+  color: #fff;
+  border-color: rgba(255, 0, 0, 0);
+}
+
+#startButton:active
+{
+    border-style: none;
+    border: 0px;
+    border-color: rgba(255, 0, 0, 0);
+}
 
 .opening-screen {
   position: absolute;
@@ -494,7 +521,6 @@ input:checked + .slider:before {
 }
 
 #clearScores {
-
   position: absolute;
   width: 150px;
   font-size: 26px;
@@ -520,10 +546,6 @@ input:checked + .slider:before {
 
 
 /* ******************************** Media Queries ****************************************** */
-
-
-
-
 
 @media screen and (max-width: 1024px) and (orientation: portrait) {
   .menu-items {
@@ -1007,11 +1029,11 @@ input:checked + .slider:before {
   }
 
   .high-scores {
-    -webkit-transform: scale(1.2) translate(-5%, 50%); /* Saf3.1+, Chrome */
-    -moz-transform: scale(1.2) translate(-5%, 50%); /* FF3.5+ */
-     -ms-transform: scale(1.2) translate(-5%, 50%); /* IE9 */
-      -o-transform: scale(1.2) translate(-5%, 50%); /* Opera 10.5+ */
-         transform: scale(1.2) translate(-5%, 50%);
+    -webkit-transform: scale(1.2) translate(-10%, 40%); /* Saf3.1+, Chrome */
+    -moz-transform: scale(1.2) translate(-10%, 40%); /* FF3.5+ */
+     -ms-transform: scale(1.2) translate(-10%, 40%); /* IE9 */
+      -o-transform: scale(1.2) translate(-10%, 40%); /* Opera 10.5+ */
+         transform: scale(1.2) translate(-10%, 40%);
   }
   .high-scores table th, .high-scores table td  {
     padding: 0 10px;

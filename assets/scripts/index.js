@@ -9,6 +9,7 @@ if (JSON.parse(localStorage.getItem('backgroundMusic')) != "undefined") {
   backgroundMusic = JSON.parse(localStorage.getItem('backgroundMusic'));
   if (backgroundMusic) {
     $('#bsfx').prop('checked',true);
+    $('audio')[0].play();
   }
   else {
     $('audio')[0].pause();

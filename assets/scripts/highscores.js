@@ -1,5 +1,6 @@
-var storage;
-var score = $('.score');
+let storage;
+let score = $('.score');
+let backgroundMusic;
 
   if (JSON.parse(localStorage.getItem("highScores"))){
     storage = localStorage;
@@ -12,6 +13,15 @@ var score = $('.score');
     listScores();
   }
 
+  if (JSON.parse(localStorage.getItem('backgroundMusic') != "undefined")) {
+    backgroundMusic = JSON.parse(localStorage.getItem('backgroundMusic'));
+    if (!backgroundMusic) {
+      $('audio')[0].pause();
+    }
+    else {
+      $('audio')[0].play();
+    }
+  }
 
     $('#clearScores').click(function() {
       $('#clearScoresModal').modal('toggle');

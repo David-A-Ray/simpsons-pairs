@@ -286,7 +286,7 @@ $( document ).ready(function() {
          gameOver = true;
          timesUpPopup();
          setTimeout(function() {
-           
+
          },1000);
       } else if (gameOver) {
          clearInterval(gameTime);
@@ -303,7 +303,9 @@ $( document ).ready(function() {
       let score = gameScore - timeRemaining;
       $('.modal-footer button:first').remove();
       $('#gameCompleteText').html("<p>Sorry you ran out of time</p><p>Would you like to try again?</p>");
-      // $('.modal-footer').html('<button type="button" class="btn btn-secondary"><a href="index.html">Exit to Main Menu</a></button><button type="button" class="btn btn-primary"><a href="game.html">New Game</a></button>')
+    
+
+
     }, 500);
   }
 
@@ -321,6 +323,7 @@ $( document ).ready(function() {
       $('.game-results:last').html(gameScore);
       $('.modal-footer button:first').remove();
       $('#gameCompleteText').append(`<p style="font-size: 24px; margin-top: 20px;">Would you like to play again?</p>`);
+
 
     }, 500);
   }
@@ -352,6 +355,7 @@ $( document ).ready(function() {
           onClickOrEnter();
         }
       });
+
       function onClickOrEnter() {
         let name = $('#playerName');
         name = name.val();
@@ -364,9 +368,14 @@ $( document ).ready(function() {
          $('.score-stats, .player-name').remove();
         $('.modal-footer').remove();
         $('.modal-header').html("<h2>Would you like to try again?</h2>");
+
       }
     }, 1500);
   }
+
+  $('.exit-buttons').click(function() {
+    sessionStorage.setItem('exitButtonUsed', true);
+  });
 
 
   // Shuffle cards by assigning each picture class to 2 unique random array indices
