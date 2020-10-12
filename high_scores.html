@@ -16,7 +16,7 @@
     <header>
       <a href="index.html"><button type="button" name="button" class="exit-buttons button-click" id="exit">Exit</button></a>
     </header>
-    <audio loop>
+    <audio autoplay loop>
       <source src="assets/audio/simpsons_closing_theme.mp3" type="audio/mp3">
       <p>Your browser doesn't support HTML5 audio. Here is a <a href="assets/audio/simpsons_closing_theme.mp3">link to the audio</a> instead.</p>
     </audio>
@@ -67,6 +67,7 @@
     </main>
 
     <button type="button" name="button" id="clearScores">Clear Scores</button>
+    
 
     <div class="modal fade" id="clearScoresModal" tabindex="-1" aria-labelledby="clearScoresModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
       <div class="modal-dialog modal-dialog-centered">
@@ -75,12 +76,12 @@
             <h3 class="modal-title" id="clearScoresModalLabel">Clear Scores</h3>
           </div>
           <div class="modal-body">
-            <div class="">
+            <div class="pb-5">
               <span>Are you sure you want to erase of the scores?</span>
             </div>
-            <div class="">
-              <button type="button" name="button" id="confirmClearScores" class="button-click">Yes</button>
-              <button type="button" name="button" data-dismiss="modal" class="button-click">No</button>
+            <div class="text-align-center">
+              <button type="button" name="button" data-dismiss="modal" class="btn btn-danger button-click mx-4">No</button>
+              <button type="button" name="button" id="confirmClearScores" class="btn btn-primary button-click mx-4">Yes</button>
             </div>
           </div>
 

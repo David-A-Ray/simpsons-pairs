@@ -47,65 +47,14 @@
             <li>
               <button type="button" name="button" id="settings" class="btn menu-buttons button-click" data-toggle="modal" data-target=".settingsModal">Settings</button>
             </li>
+            <li>
+              <button type="button" name="button" id="help" class="btn menu-buttons button-click" data-toggle="modal" data-target=".helpModal">Help</button>
+            </li>
           </ul>
         </div>
     </section>
 
-    <div class="modal fade settingsModal" tabindex="-1" aria-labelledby="settingsModalLabel" aria-hidden="true" data-backdrop="static">
-      <div class="modal-dialog modal-dialog-centered modal-md">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h2 class="modal-title" id="settingsModalLabel">Settings</h2>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <form class="frm1" method="post">
-              <div class="container-fluid">
-                <div class="row">
-                  <div class="col-6">
-                    <span class="setting">Sound effects</span>
-                  </div>
-                  <div class="col-6">
-                    <label class="switch">
-                      <input type="checkbox" class="slider round" name="gsfx" id="gsfx" checked>
-                      <span class="slider round"></span>
-                    </label><br>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-6">
-                    <span class="setting">Music</span>
-                  </div>
-                  <div class="col-6">
-                    <label class="switch">
-                      <input type="checkbox" class="slider round" name="bsfx" id="bsfx" checked>
-                      <span class="slider round"></span>
-                    </label><br>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-6">
-                    <span class="setting">Persistent High Scores</span>
-                  </div>
-                  <div class="col-6">
-                    <label class="switch">
-                      <input type="checkbox" class="slider round" name="phsd" id="phsd" checked>
-                      <span class="slider round"></span>
-                    </label><br>
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <input type="button" class="btn btn-success button-click" id="apply" data-dismiss="modal" value="Apply">
-            <button type="button" class="btn btn-danger button-click" id="cancel" data-dismiss="modal">Cancel</button>
-          </div>
-        </div>
-      </div>
-    </div>
+
 
     <div class="modal fade newGameModal" tabindex="-1" aria-labelledby="newGameModalLabel" aria-hidden="true" data-backdrop="static">
       <div class="modal-dialog modal-dialog-centered modal-md">
@@ -130,6 +79,91 @@
       </div>
     </div>
   </div>
+
+  <div class="modal fade settingsModal" tabindex="-1" aria-labelledby="settingsModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered modal-md">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="settingsModalLabel">Settings</h2>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form class="frm1" method="post">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-6">
+                  <span class="setting">Sound effects</span>
+                </div>
+                <div class="col-6">
+                  <label class="switch">
+                    <input type="checkbox" class="slider round" name="gsfx" id="gsfx" checked>
+                    <span class="slider round"></span>
+                  </label><br>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <span class="setting">Music</span>
+                </div>
+                <div class="col-6">
+                  <label class="switch">
+                    <input type="checkbox" class="slider round" name="bsfx" id="bsfx" checked>
+                    <span class="slider round"></span>
+                  </label><br>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <span class="setting">Persistent High Scores</span>
+                </div>
+                <div class="col-6">
+                  <label class="switch">
+                    <input type="checkbox" class="slider round" name="phsd" id="phsd" checked>
+                    <span class="slider round"></span>
+                  </label><br>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <input type="button" class="btn btn-success button-click" id="apply" data-dismiss="modal" value="Apply">
+          <button type="button" class="btn btn-danger button-click" id="cancel" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade helpModal" tabindex="-1" aria-labelledby="helpModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered modal-md">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="helpModalLabel">Help</h2>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <span>Welcome to The Simpsons Pairs</span>
+          <h3 class="pt-2">Aim of the game</h3>
+          <p>The aim of the game is to find all matching Simpsons character pairs before the time runs out. You are only allowed to turn 2 cards over at the same time, so you will need to remember where the characters are once they have been revealed. For every matching pair that you turn over you will receive 50 points and 5 extra seconds on the timer.</p>
+          <h3 class="pt-2">Mistake penalties</h3>
+          <p>If you fail to turn over a matching pair after the matching character card to the first card turned has already been revealed, you will receive time and score deductions. The level of game difficulty chosen will determine the amount of deductions received. See below for details.</p>
+          <span class="d-block">Easy (12 cards): -2 seconds & -5 points</span>
+          <span class="d-block">Medium (20 cards): -4 seconds & -10 points</span>
+          <span class="d-block">Hard (28 cards): -6 seconds & -15 points</span>
+          <h3 class="pt-2">Game settings</h3>
+          <p>Music and sound effects can be turned off in the settings menu and you can also control whether the high scores are saved after the browser is closed (Persistent High Scores) – This is enabled by default.</p>
+          <span>Have fun!</span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger button-click" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
   </body>
 </html>

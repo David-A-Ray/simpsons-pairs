@@ -23,7 +23,6 @@ $( document ).ready(function() {
   let flippedCardIndex = []
   let storageModeChanged;
   let gameSoundEffects = true;
-  let backgroundSoundEffects = true;
   let storage;
   let persistentHighScoreData;
   const cardPictures = ['homer','bart','marge','lisa','maggie','milhouse','krusty','willie', 'wiggum', 'apu', 'lovejoy', 'flanders', 'moe', 'skinner'];
@@ -37,6 +36,7 @@ $( document ).ready(function() {
 
   // Check for any high scores in local Storage
   checkDataStorage();
+  checkGameSoundEffects();
   //
   gameSetup();
 
@@ -60,6 +60,9 @@ $( document ).ready(function() {
     else {
       clickCount++;
       cardIndex = index;
+      if (gameSoundEffects) {
+        $('#cardFlip')[0].play();
+      }
         if ((matchedPairs == maxPairs - 1)&&(clickCount == 2)) {
           clearInterval(gameTime);
         }
@@ -114,6 +117,9 @@ $( document ).ready(function() {
                 z= 0;
                 matchedPairs++;
                 timeAdjust -= timeBonus;
+                if (gameSoundEffects) {
+                  $('#woohoo')[0].play();
+                }
                 console.log("Number of Matched pairs: " + matchedPairs);
                 $.each(cards, function(index) {
                   cards[index].classList.add('animate__animated','animate__bounceOutUp', 'animate__slow');
@@ -147,8 +153,10 @@ $( document ).ready(function() {
                       console.log("The match was already seen!!  PENALTY !!!!! ");
                       adjustScore(-5);
                       timeAdjust += timePenalty;
-
                       mistakes++;
+                      if (gameSoundEffects) {
+                        $('#doh')[0].play();
+                      }
                       $('#mistakes').html(`Mistakes: ${mistakes}`)
                     }
                     else {
@@ -293,19 +301,20 @@ $( document ).ready(function() {
       }
       else {
       }
+      if (gameSoundEffects && (timeDiff < 6000 && timeDiff > 0)) {
+        $('#clockTick')[0].play();
+      }
     }, 1000);
   }
 
 
   function timesUpPopup() {
     setTimeout(function() {
+      $('#clockTick')[0].pause();
       $('#gameOverModal').modal('toggle');
       let score = gameScore - timeRemaining;
       $('.modal-footer button:first').remove();
       $('#gameCompleteText').html("<p>Sorry you ran out of time</p><p>Would you like to try again?</p>");
-    
-
-
     }, 500);
   }
 
@@ -367,7 +376,7 @@ $( document ).ready(function() {
         // $('#gameCompleteText button:eq(1)').html("Yes");
          $('.score-stats, .player-name').remove();
         $('.modal-footer').remove();
-        $('.modal-header').html("<h2>Would you like to try again?</h2>");
+        $('.modal-header').html("<h2>Would you like to play again?</h2>");
 
       }
     }, 1500);
@@ -428,16 +437,16 @@ $( document ).ready(function() {
     function checkDataStorage() {
       if (localStorage.getItem("persistentHighScoreData")) {
         persistentHighScoreData = JSON.parse(localStorage.getItem("persistentHighScoreData"));
-        if(!$('#phsd').is(':checked') && persistentHighScoreData == true) {
-          $('#phsd').prop('checked', true);
+        if(persistentHighScoreData == true) {
+          // $('#phsd').prop('checked', true);
           storage = localStorage;
         }
-        else if ($('#phsd').is(':checked') && persistentHighScoreData == false) {
-          $('#phsd').prop('checked', false);
+        else if (persistentHighScoreData == false) {
+          // $('#phsd').prop('checked', false);
           storage = sessionStorage;
 
         }
-        else if (!$('#phsd').is(':checked') && persistentHighScoreData == false){
+        else if (persistentHighScoreData == false){
           storage = sessionStorage;
         }
         else {
@@ -448,6 +457,16 @@ $( document ).ready(function() {
         persistentHighScoreData = true;
         storage = localStorage;
 
+      }
+    }
+
+    function checkGameSoundEffects() {
+      if (localStorage.getItem("gameSoundEffects")) {
+        gameSoundEffects = JSON.parse(localStorage.getItem("gameSoundEffects"));
+        console.log("gameSoundEffects = " + gameSoundEffects );
+      }
+      else {
+        console.log("gameSoundEffects has not been modified" );
       }
     }
 

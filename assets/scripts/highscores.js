@@ -12,23 +12,31 @@ let backgroundMusic;
     highScores = JSON.parse(storage.getItem("highScores"));
     listScores();
   }
+  else {
+    console.log("No storage");
+  }
 
-  if (JSON.parse(localStorage.getItem('backgroundMusic') != "undefined")) {
+  if ((JSON.parse(localStorage.getItem('backgroundMusic')) == true) || (JSON.parse(localStorage.getItem('backgroundMusic')) == false)) {
     backgroundMusic = JSON.parse(localStorage.getItem('backgroundMusic'));
     if (!backgroundMusic) {
       $('audio')[0].pause();
+      console.log('line 23')
     }
     else {
       $('audio')[0].play();
+      console.log('line 27')
     }
+  }
+  else {
+    console.log("No storage 2");
   }
 
     $('#clearScores').click(function() {
       $('#clearScoresModal').modal('toggle');
 
       $('#confirmClearScores').click(function() {
-        sessionStorage.clear();
-        localStorage.clear();
+        sessionStorage.removeItem('highScores');
+        localStorage.removeItem('highScores');
         window.location.reload();
       });
     });
