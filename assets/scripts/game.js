@@ -13,6 +13,7 @@ $( document ).ready(function() {
   let gameScore = 0;
   let timeAdjust = 0;
   let timePenalty = 0;
+  let scorePenalty = 0;
   let timeBonus = 0;
   let mistakes = 0;
   let timeRemaining;
@@ -151,7 +152,7 @@ $( document ).ready(function() {
                     if (flippedCards[i].picture == c.picture && flippedCards[i].index != c.index) {
                       matchKnown = true;
                       console.log("The match was already seen!!  PENALTY !!!!! ");
-                      adjustScore(-5);
+                      adjustScore(scorePenalty);
                       timeAdjust += timePenalty;
                       mistakes++;
                       if (gameSoundEffects) {
@@ -478,8 +479,9 @@ $( document ).ready(function() {
         $('.hard-remove').remove();
         // $('.card-deck').css('width',easyGameWidth);
         maxPairs = 6;
-        matchPoints = 40;
+        matchPoints = 50;
         timePenalty = 2000;
+        scorePenalty = -5;
         timeBonus = 5000;
         card = $('.easy .card');
         break;
@@ -488,8 +490,9 @@ $( document ).ready(function() {
         // $('.card-deck').css('width',mediumGameWidth);
         maxPairs = 10;
         matchPoints = 50;
-        timePenalty = 3000;
-        timeBonus = 6000;
+        timePenalty = 5000;
+        scorePenalty = -10
+        timeBonus = 4000;
         card = $('.medium .card');
         break;
       console.log("Medium selected");
@@ -497,9 +500,10 @@ $( document ).ready(function() {
         console.log("Hard selected");
         // $('.card-deck').css('width',hardGameWidth);
         maxPairs = 14;
-        matchPoints = 60;
-        timePenalty = 4000;
-        timeBonus = 7000;
+        matchPoints = 50;
+        timePenalty = 10000;
+        scorePenalty = -20
+        timeBonus = 3000;
         card = $('.hard .card');
       Default:
       console.log(gameMode);
