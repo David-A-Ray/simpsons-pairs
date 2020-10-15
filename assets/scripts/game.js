@@ -29,22 +29,16 @@ $( document ).ready(function() {
   const cardPictures = ['homer','bart','marge','lisa','maggie','milhouse','krusty','willie', 'wiggum', 'apu', 'lovejoy', 'flanders', 'moe', 'skinner'];
   let maxPairs = 14;
   let gameMode = sessionStorage.getItem("gameMode");
-  let scorePositions = ["1st","2nd","3rd","4th","5th","6th","7th","8th","9th","10th"];
+  const scorePositions = ["1st","2nd","3rd","4th","5th","6th","7th","8th","9th","10th"];
   let matchPoints;
-  let easyGameWidth = "510px";
-  let mediumGameWidth = "625px";
-  let hardGameWidth = "860px";
 
   // Check for any high scores in local Storage
   checkDataStorage();
+  // Check for any sound effect settings in local Storage
   checkGameSoundEffects();
-  //
+  // Check which game mode has been selected & configure game accordingly
   gameSetup();
-
-
-  // Check which game mode has been selected & adjust card deck layout width
-
-
+  //create a random order of cards for the game
   cardShuffle(cardPictures);
 
   // *********************  Main Functionality of the game *********************************
@@ -55,7 +49,7 @@ $( document ).ready(function() {
       timer(60);
     }
     //Prevent clicking the same card twice to produce false True result
-    if ((cardIndex == index)&&(!$(card[index]).hasClass('is-flipped'))) {console.log("here here here 1")}
+    if ((cardIndex == index)&&(!$(card[index]).hasClass('is-flipped'))) {}
     // Prevent card still flipping at 0 seconds
     else if (gameOver) {}
     else {
@@ -75,45 +69,37 @@ $( document ).ready(function() {
           z++;
           card1Seen = false;
           card2Seen = false;
-
           if (cards[1]){
             let a = $(cards[0]).attr("class").split(" ")[1];
             let b = $(cards[1]).attr("class").split(" ")[1];
             if (flippedCards) {
               for (let i = 0 ; i < flippedCards.length ; i++) {
                 if (flippedCards[i].index ==  flippedCardIndex[0]) {
-                  console.log("Card 1 already seen!!")
                   card1Seen = true;
                 }
               }
               for (let i = 0 ; i < flippedCards.length ; i++) {
                 if (flippedCards[i].index ==  flippedCardIndex[1]) {
-                  console.log("Card 2 already seen!!")
                   card2Seen = true;
                 }
               }
               if (card1Seen == false) {
                 flippedCards.push({"picture": a,"index": flippedCardIndex[0]});
-                console.log("Card 1 not seen before");
               }
               if (card2Seen == false) {
                 flippedCards.push({"picture": b,"index": flippedCardIndex[1]});
-                console.log("Card 2 not seen before");
               }
             }
             else {
               flippedCards.push({"picture": a,"index": flippedCardIndex[0]});
               flippedCards.push({"picture": b,"index": flippedCardIndex[1]});
             }
-            console.log(flippedCards)
             let c = {"picture": a,"index": flippedCardIndex[0]};
-            console.log(`First flipped Card Picture = ${c.picture} ${c.index}`);
 
             // Added timeout to enable card flip animations to complete
             setTimeout(function() {
               // Check for matching pair
               if ((a === b)&&(!gameOver)) {
-                console.log("TRUE");
                 adjustScore(50);
                 z= 0;
                 matchedPairs++;
@@ -121,7 +107,6 @@ $( document ).ready(function() {
                 if (gameSoundEffects) {
                   $('#woohoo')[0].play();
                 }
-                console.log("Number of Matched pairs: " + matchedPairs);
                 $.each(cards, function(index) {
                   cards[index].classList.add('animate__animated','animate__bounceOutUp', 'animate__slow');
                 });
@@ -151,7 +136,6 @@ $( document ).ready(function() {
                     // Check if matching card has already been seen
                     if (flippedCards[i].picture == c.picture && flippedCards[i].index != c.index) {
                       matchKnown = true;
-                      console.log("The match was already seen!!  PENALTY !!!!! ");
                       adjustScore(scorePenalty);
                       timeAdjust += timePenalty;
                       mistakes++;
@@ -173,7 +157,6 @@ $( document ).ready(function() {
                   }
                 }
               else {
-                console.log("FALSE");
                 $.each(cards, function(index) {
                   cards[index].classList.add('is-flipped');
                 });
@@ -188,52 +171,35 @@ $( document ).ready(function() {
     });
   });
 
+  //Check if an exit button was used to access main screen to enable index.js to prevent start button.
   $('.exit-buttons').click(function() {
     sessionStorage.setItem('exitButtonUsed', true);
   });
 
-
   // **************************** GAME FUNCTIONS *********************************************
 
-
   function placeHighScore(name, scorePos) {
-
     // If no scores exist yet, add score to 1st place
     if (!JSON.parse(storage.getItem("highScores"))) {
-      console.log("No High Scores");
-      console.log("Name = " + name);
       highScores = [[name,gameScore,gameMode]];
       storage.setItem("highScores", JSON.stringify(highScores));
-      console.log("New High Score: " + highScores[0][1]);
-      console.log("Session Storage High Score: " + JSON.parse(storage.getItem("highScores"))[0][1]);
     }
     else {
       for (let i = 0 ; i < scorePositions.length ; i++) {
         if (scorePos == scorePositions[i]) {
           highScores = JSON.parse(storage.getItem("highScores"));
           highScores.splice(i,0,[name,gameScore,gameMode]);
-
           storage.setItem("highScores", JSON.stringify(highScores));
-          console.log("New High Score: " + gameScore);
-          console.log("Session Storage High Score: " + JSON.parse(storage.getItem("highScores"))[0][1]);
         }
         else if (typeof(scorePos) == "undefined") {
-          console.log("Sorry, No High score today");
         }
-
-
-
         if (highScores[10]) {
           highScores.pop();
           for (let i = 0 ; i < highScores.length ; i ++){
-            console.log(`${i+1}: ${highScores[i]}`)
           }
           storage.setItem("highScores", JSON.stringify(highScores));
         }
       }
-    }
-    for (let i = 0 ; i < highScores.length ; i ++){
-      console.log(`${i+1}: ${highScores[i]}`)
     }
   }
 
@@ -241,20 +207,16 @@ $( document ).ready(function() {
     var scorePos;
     // If no scores exist yet, add score to 1st place
     if (!JSON.parse(storage.getItem("highScores"))) {
-      console.log("No High Scores");
       scorePos = scorePositions[0]
     }
     // Else if scores do exist, find where to place score
     else if (JSON.parse(storage.getItem("highScores"))[0][1]) {
-
       highScores = JSON.parse(storage.getItem("highScores"));
-
       let l = highScores.length;
       // Boolen scorePlaced used to Stop score being listed more than once if more than 1 lower score exists.
       let scorePlaced = false;
       // Loop through existing scores to find correct position
       for (let j = 0 ; ((j < l) && (scorePlaced == false)) ; j++) {
-        console.log("highScores.length = " + highScores.length)
         if (gameScore > highScores[j][1]) {
           scorePlaced = true;
           scorePos = scorePositions[j];
@@ -263,20 +225,10 @@ $( document ).ready(function() {
             scorePlaced = true;
             scorePos = scorePositions[j+1];
         }
-        else {
-          console.log("here in the else - 307")
-        }
-      }
-
-      if (scoreplaced = false) {
-          console.log("I entered the else");
-          // gameOverPopup();
       }
     }
-    console.log("Score position " + scorePos);
     return scorePos;
   }
-
 
   function timer(time) {
     time = new Date().getTime() + (time * 1000);
@@ -287,15 +239,12 @@ $( document ).ready(function() {
       let seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
       timeRemaining = (minutes * 60) + seconds;
       $("#timer").html(minutes + "m " + seconds + "s ");
-
       if (timeDiff < 1000) {
-        console.log("Time Diff: " + timeDiff);
          clearInterval(gameTime);
          $("#timer").html("Time's Up");
          gameOver = true;
          timesUpPopup();
          setTimeout(function() {
-
          },1000);
       } else if (gameOver) {
          clearInterval(gameTime);
@@ -307,7 +256,6 @@ $( document ).ready(function() {
       }
     }, 1000);
   }
-
 
   function timesUpPopup() {
     setTimeout(function() {
@@ -333,8 +281,6 @@ $( document ).ready(function() {
       $('.game-results:last').html(gameScore);
       $('.modal-footer button:first').remove();
       $('#gameCompleteText').append(`<p style="font-size: 24px; margin-top: 20px;">Would you like to play again?</p>`);
-
-
     }, 500);
   }
 
@@ -351,10 +297,8 @@ $( document ).ready(function() {
       $('.game-results:eq(2)').html(timeRemaining);
       $('.game-results:last').html(gameScore);
       $('.modal-footer button:eq(1), .modal-footer button:eq(2)').remove();
-      // $('.modal-footer button:eq(1)').remove();
-
       $('#nameEntry').click(function() {
-        onClickOrEnter();
+        onClickOrEnter(scorePos);
       })
       //https://stackoverflow.com/questions/979662/how-to-detect-pressing-enter-on-keyboard-using-jquery
       $(document).on('keypress',function(e) {
@@ -362,44 +306,31 @@ $( document ).ready(function() {
         if(e.which == 13) {
           //https://stackoverflow.com/questions/45634088/how-to-prevent-page-from-reloading-after-form-submit-jquery/45634140
           event.preventDefault()
-          onClickOrEnter();
+          onClickOrEnter(scorePos);
         }
       });
-
-      function onClickOrEnter() {
-        let name = $('#playerName');
-        name = name.val();
-        console.log(name);
-        placeHighScore(name, scorePos);
-        $('#gameCompleteText button:first').show();
-        $('#gameCompleteText button:eq(1)').show();
-        // $('#gameCompleteText button:first').html("No");
-        // $('#gameCompleteText button:eq(1)').html("Yes");
-         $('.score-stats, .player-name').remove();
-        $('.modal-footer').remove();
-        $('.modal-header').html("<h2>Would you like to play again?</h2>");
-
-      }
     }, 1500);
   }
 
-  $('.exit-buttons').click(function() {
-    sessionStorage.setItem('exitButtonUsed', true);
-  });
-
+  function onClickOrEnter(scorePos) {
+    let name = $('#playerName');
+    name = name.val();
+      placeHighScore(name, scorePos);
+      $('#gameCompleteText button:first').show();
+      $('#gameCompleteText button:eq(1)').show();
+       $('.score-stats, .player-name').remove();
+      $('.modal-footer').remove();
+      $('.modal-header').html("<h2>Would you like to play again?</h2>");
+  }
 
   // Shuffle cards by assigning each picture class to 2 unique random array indices
   function cardShuffle(cardsArray) {
-    // console.log(c);
     let i = 0;
     let j = 1;
-    console.log("CardsArray 1 = " + cardsArray[1])
     let cardPicture = $('.card div:first-child');
-    // var card = $('.card');
     let arr = randomIndices(card.length);
     $.each(card, function(index){
       card[arr[index]].classList.add(cardsArray[i]);
-      // $(cardPicture[arr[index]]).html(cardsArray[i]);
       if ((j % 2) == 0) {
         i++;
       }
@@ -421,31 +352,17 @@ $( document ).ready(function() {
 
   function adjustScore(points) {
     gameScore += points;
-    $('#score').html('Score: ' + gameScore)
-
+    $('#score').html('Score: ' + gameScore);
   }
-
-  // Quit to main menu button
-    $('#quit').click(function() {
-      $('.main-menu').toggleClass('hide-menu');
-    });
-
-  // New Game selection
-    $('#game').click(function() {
-      $('.main-menu').toggleClass('hide-menu');
-    });
 
     function checkDataStorage() {
       if (localStorage.getItem("persistentHighScoreData")) {
         persistentHighScoreData = JSON.parse(localStorage.getItem("persistentHighScoreData"));
         if(persistentHighScoreData == true) {
-          // $('#phsd').prop('checked', true);
           storage = localStorage;
         }
         else if (persistentHighScoreData == false) {
-          // $('#phsd').prop('checked', false);
           storage = sessionStorage;
-
         }
         else if (persistentHighScoreData == false){
           storage = sessionStorage;
@@ -457,27 +374,20 @@ $( document ).ready(function() {
       else {
         persistentHighScoreData = true;
         storage = localStorage;
-
       }
     }
 
     function checkGameSoundEffects() {
       if (localStorage.getItem("gameSoundEffects")) {
         gameSoundEffects = JSON.parse(localStorage.getItem("gameSoundEffects"));
-        console.log("gameSoundEffects = " + gameSoundEffects );
-      }
-      else {
-        console.log("gameSoundEffects has not been modified" );
       }
     }
 
     function gameSetup() {
       switch (gameMode) {
       case ("easy"):
-        console.log("Easy selected");
         $('.medium-remove').remove();
         $('.hard-remove').remove();
-        // $('.card-deck').css('width',easyGameWidth);
         maxPairs = 6;
         matchPoints = 50;
         timePenalty = 2000;
@@ -487,7 +397,6 @@ $( document ).ready(function() {
         break;
       case ("medium"):
         $('.hard-remove').remove();
-        // $('.card-deck').css('width',mediumGameWidth);
         maxPairs = 10;
         matchPoints = 50;
         timePenalty = 5000;
@@ -495,38 +404,14 @@ $( document ).ready(function() {
         timeBonus = 4000;
         card = $('.medium .card');
         break;
-      console.log("Medium selected");
       case ("hard"):
-        console.log("Hard selected");
-        // $('.card-deck').css('width',hardGameWidth);
         maxPairs = 14;
         matchPoints = 50;
         timePenalty = 10000;
         scorePenalty = -20
         timeBonus = 3000;
         card = $('.hard .card');
-      Default:
-      console.log(gameMode);
       }
     }
-
- // https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_matchmedia
-    // function screenSize(x) {
-    //   if (x.matches) { // If media query matches
-    //     console.log("screen less than 700px");
-    //     easyGameWidth = "450px";
-    //     mediumGameWidth = "600px";
-    //     gameSetup();
-    //   }
-    //   else {
-    //     console.log("screen more than 700px");
-    //     gameSetup();
-    //   }
-    // }
-    //
-    // var x = window.matchMedia("(max-width: 700px)")
-    // screenSize(x) // Call listener function at run time
-    // x.addListener(screenSize) // Attach listener function on state changes
-
 
   });
