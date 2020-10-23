@@ -9,10 +9,10 @@
 ---
 
 ## Tablet Wireframes
-![](/assets/wireframes/home_page.png)
+![](/assets/wireframes/tablet.png)
 
 &nbsp;
 ---
 
-# Mobile Wireframes
-![](/assets/wireframes/mob_home.png)
+## Mobile Wireframes
+![](/assets/wireframes/mobile.png)
