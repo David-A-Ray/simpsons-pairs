@@ -24,7 +24,7 @@ As a user I would like:
   The website was initially designed using Balsamiq to create several wireframes (link below).
 \
 \
-[Wireframes](/assets/wireframes/#######.md)
+[Wireframes](/assets/wireframes/wireframes.md)
 
 - #### Typography
 The ‘Caveat Brush’ font was used throughout the game, as it is a very close resemblance to the font used in the Simpsons TV show.
@@ -89,8 +89,165 @@ ___
 - [Balsamiq](https://balsamiq.com/)
   - Wireframes were created in Balsamiq.
 - [GitHub:](https://github.com/)
-    - The GitHub package within Atom was used to manage version control and Push content to the repository.
+  - The GitHub package within Atom was used to manage version control and Push content to the repository.
 - [RealFaviconGenerator](https://realfavicongenerator.net/)
   - Used to create the favicon.
 - [CSS Autoprefixer](https://autoprefixer.github.io/)
   - All CSS code was checked to ensure compatibility with multiple browsers.
+- [Font Meme](https://fontmeme.com/fonts/simpsonfont-font/)
+  - Used to create Simpsons font for animated game intro screen.
+- [Animate.css](https://animate.style/)
+  - Used for card animations.
+
+  ___
+
+## Testing
+
+### Pre-Deployment
+Throughout the development of this site, it was previewed locally as each new element was added, and also, the built-in browser developer tools for Chrome, Edge, Opera and Firefox were used to ensure that the layout was responsive for all screen sizes. In addition, console.log messages were added to all functions in order to test and track the output of all functions and identify which logical option was being triggered.  
+
+![console output image 1](/assets/images/consolelog1.png "console output image 1")
+![console output image 2](/assets/images/consolelog2.png "console output image 2")
+
+With the console messages in place, multiple scenarios were tested to make sure that the game was working correctly.
+
+&nbsp;
+
+### Post-Deployment
+To be added
+
+&nbsp;
+
+### Issues found and fixed
+- Animation timing
+  - Initially there were multiple issues with the timings of the animations, such as the matching pairs animation was happening before the cards fully turned over, and the game over modal was also appearing too early. These issues were resolved with the ‘setTimeout’ function.
+- Card selecting
+  - The first issue noticed was that it was possible to produce a false pair match result by clicking the same card twice. Additional logic was added to catch this scenario.
+  - The second issue noticed was that it was possible to select more than 2 cards per turn and effectively break the game. This was resolved by adding a click counter to ignore more than 2 card clicks per turn.
+
+
+&nbsp;
+
+### Final checks
+
+The final checks included:
+
+- #### Code Validation
+  - [W3 HTML validator](https://validator.w3.org/#validate_by_input)
+    - All HTML code was checked and any errors found were fixed.
+  - [W3 CSS validator (jigsaw)](https://jigsaw.w3.org/css-validator/#validate_by_input)
+    - CSS code was checked and no errors were found.
+  - [JSLint](https://jslint.com/)
+    - All JavaScript/JQuery code was checked to ensure all code complies   with ES6 standards.
+
+  - #### Feature testing
+    The following items were checked and verified:
+    - ##### Main menu links
+      The Main Menu links were tested for hover effects to ensure that the colour changes to dark blue and that each link opens the correct page or modal.
+
+      ![Main Menu image 1](/assets/images/mainmenu1.png "Main Menu image 1")
+
+    &nbsp;
+    - ##### Settings modal
+      Each setting on the settings modal was tested in turn to ensure functionality across all browsers and devices. The apply and Cancel buttons were also tested to ensure that if the user has changed a setting, but then clicks cancel, the toggle switch is returned to its original location.
+
+      ![Settings modal 1](/assets/images/settingsmodal1.png "Settings modal 1")
+
+    &nbsp;
+    - ##### New Game modal
+      Hover effects were tested on the game difficulty buttons. And each button was checked to make sure the right game configuration was loaded.
+
+      ![Game difficulty menu](/assets/images/gamedifficultymenu.png "Game difficulty menu")
+
+      ###### Easy (12 cards)
+      ![Easy game mode](/assets/images/easygame.png "Easy game mode")
+      ###### Medium (20 cards)
+      ![Medium game mode](/assets/images/mediumgame.png "Medium game mode")
+      ###### Hard (28 cards)
+      ![Hard game mode](/assets/images/hardgame.png "Hard game mode")
+
+      Each game level was played to verify that the correct points and penalties were being given.
+      Mistakes were made on purpose to ensure that the score and mistake counters were displaying correctly and that the sounds effects were played.
+
+      ![Mistakes and score counters](/assets/images/mistakes.png "Mistakes and score counters")
+
+    -	##### Game Over modals
+        Each Game over scenario was tested to ensure that the correct modal displayed.
+        ###### Game complete – New high score
+        ![Game over - new high score modal](/assets/images/gamecompletehighscore.png "Game over - new high score modal")
+        ###### Game Over – Out of time
+        ![Game over - out of time](/assets/images/gameovertimesup.png "Game over - out of time")  
+        ###### Game Over – No high score
+        ![Game over - No high score](/assets/images/gameovernohighscore.png "Game over - No high score")
+
+    -	##### High scores page
+        Both the Exit and Clear Scores buttons were tested for hover effects.
+
+        ![Exit button](/assets/images/exit.png "Exit button") ![Exit button hover](/assets/images/exit_hover.png "Exit button hover")
+
+        ![Clear Scores button](/assets/images/clearscores.png "Clear Scores button") ![Clear Scores button hover](/assets/images/clearscores_hover.png "Clear Scores button hover")
+
+        The Exit button was tested to ensure it loads the Home page when clicked and the clear scores functionality was tested.
+
+        ###### High scores before
+        ![High scores before](/assets/images/highscores_before.png "High scores before")
+
+        ###### Click Clear Scores and then Yes to confirm    
+        ![Clear scores confirm](/assets/images/clearscores_clicked.png "Clear scores confirm")
+
+        ###### High scores after    
+        ![Clear scores confirm](/assets/images/highscores_after.png "Clear scores confirm")
+
+        &nbsp;
+   - #### Responsive / Device testing
+     The following devices were used to test the site:
+       - 24" Monitor
+       - 15.6" Laptop Display
+       - 10" Galaxy Tab 4.0 (Portrait and Landscape)
+       - 5.8" Samsung S8 (Portrait and Landscape)
+       - 4.7" iPhone 8 (Portrait and Landscape)
+
+       &nbsp;
+
+   - #### User Stories check
+     Does this website successfully fulfil the requirements laid out in the original User Stories?
+
+     The user requirements:
+
+     -	To play an interactive game that challenges my memory.
+
+        Yes – The game challenges the memory by requiring the player to remember where cards are positioned.
+     - To have a time limit in the game to add more of a challenge.
+
+       Yes – A time limit was added with additional time penalties.
+     - To be able to change the difficulty of the game.
+
+       Yes – The player can choose between easy, medium, and hard difficulties.
+     - To record game results in order to track and improve my performance and compete with other players.
+
+       Yes – The high scores page allows the player to record up-to 10 high scores.
+     - To be able to change some settings in the game, such as sounds.
+
+       Yes – Music, sound effects and storage method can be changed vie the settings menu.
+     - Have access to instructions for the game if required.
+
+       Yes – The Help button on the Main menu provides instructions for the game.
+
+       &nbsp;
+
+   ___
+
+   ## Deployment
+
+   The site was deployed to GitHub pages by following the below steps:
+   - Log in to the repository - https://github.com/phil-griffith/simpsons-pairs/
+   - Click <b>Settings</b>
+   - Scroll down to <b>GitHub Pages</b>
+   - Set Source to <b>Branch:main</b>
+   - Click <b>Save</b>
+
+   &nbsp;
+
+   ___
+
+   ## Credits

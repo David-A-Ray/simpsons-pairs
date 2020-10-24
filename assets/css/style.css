@@ -12,11 +12,6 @@ body {
   box-sizing: content-box;
 }
 
-/* .modal {
-  background-color: #e9f547;
-  font-size: 22px;
-  padding-left: 0;
-} */
 
 .modal-content {
   background-color: #e9f547;
@@ -245,8 +240,6 @@ input:checked + .slider:before {
   position: absolute;
   overflow: hidden;
   z-index: -1;
-  /* padding-left: 0;
-  padding-right: 0; */
 }
 
 .game {
