@@ -1,287 +1,283 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>The Simpsons Pairs</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <script type="text/javascript" src="assets/scripts/game.js" defer></script>
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-    <link rel="manifest" href="favicon/site.webmanifest">
-    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#2d89ef">
-    <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href="assets/css/style.css">
-  </head>
-  <body>
-    <header class="game-header">
-      <a href="index.html"><button type="button" name="button" id="quitButton" class="btn menu-buttons exit-buttons button-click">Quit</button></a>
-      <span id='timer'>1m 00s</span>
-      <span id="score">Score: 0</span>
-      <span id="mistakes">Mistakes: 0</span>
-    </header>
-    <main>
-      <section class="container-fluid game-background d-flex align-items-center justify-content-center">
-
-
-        <div class="game hide-object align-items-center justify-content-center d-flex">
-          <div class="cards">
-            <div class="row justify-content-center px-4">
-              <div class="card-flip easy medium hard">
-                <div class="card is-flipped">
-                  <div class="card__face card__face--front"></div>
-                  <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
-                </div>
-              </div>
-              <div class="card-flip easy medium hard">
-                <div class="card is-flipped">
-                  <div class="card__face card__face--front"></div>
-                  <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
-                </div>
-              </div>
-                <div class="card-flip easy medium hard">
-                  <div class="card is-flipped">
-                    <div class="card__face card__face--front"></div>
-                    <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>The Simpsons Pairs</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+      <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+      <script src="assets/scripts/game.js" defer></script>
+      <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+      <link rel="manifest" href="favicon/site.webmanifest">
+      <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+      <meta name="msapplication-TileColor" content="#2d89ef">
+      <meta name="theme-color" content="#ffffff">
+      <link rel="stylesheet" href="assets/css/style.css">
+   </head>
+   <body>
+      <header class="game-header">
+         <button type="button" name="button" id="quitButton" class="btn menu-buttons exit-buttons button-click" onclick="window.location.href='index.html';">Quit</button>
+         <span id='timer'>1m 00s</span>
+         <span id="score">Score: 0</span>
+         <span id="mistakes">Mistakes: 0</span>
+      </header>
+      <main>
+         <section class="container-fluid game-background d-flex align-items-center justify-content-center">
+            <div class="game hide-object align-items-center justify-content-center d-flex">
+               <div class="cards">
+                  <div class="row justify-content-center px-4">
+                     <div class="card-flip easy medium hard">
+                        <div class="card is-flipped">
+                           <div class="card__face card__face--front"></div>
+                           <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
+                        </div>
+                     </div>
+                     <div class="card-flip easy medium hard">
+                        <div class="card is-flipped">
+                           <div class="card__face card__face--front"></div>
+                           <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
+                        </div>
+                     </div>
+                     <div class="card-flip easy medium hard">
+                        <div class="card is-flipped">
+                           <div class="card__face card__face--front"></div>
+                           <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
+                        </div>
+                     </div>
+                     <div class="card-flip easy medium hard">
+                        <div class="card is-flipped">
+                           <div class="card__face card__face--front"></div>
+                           <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
+                        </div>
+                     </div>
+                     <div class="card-flip medium hard medium-remove">
+                        <div class="card is-flipped">
+                           <div class="card__face card__face--front"></div>
+                           <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
+                        </div>
+                     </div>
+                     <div class="card-flip hard hard-remove">
+                        <div class="card is-flipped">
+                           <div class="card__face card__face--front"></div>
+                           <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
+                        </div>
+                     </div>
+                     <div class="card-flip hard hard-remove">
+                        <div class="card is-flipped">
+                           <div class="card__face card__face--front"></div>
+                           <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
+                        </div>
+                     </div>
                   </div>
-                </div>
-                <div class="card-flip easy medium hard">
-                  <div class="card is-flipped">
-                    <div class="card__face card__face--front"></div>
-                    <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
+                  <div class="row justify-content-center px-4">
+                     <div class="card-flip easy medium hard">
+                        <div class="card is-flipped">
+                           <div class="card__face card__face--front"></div>
+                           <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
+                        </div>
+                     </div>
+                     <div class="card-flip easy medium hard">
+                        <div class="card is-flipped">
+                           <div class="card__face card__face--front"></div>
+                           <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
+                        </div>
+                     </div>
+                     <div class="card-flip easy medium hard">
+                        <div class="card is-flipped">
+                           <div class="card__face card__face--front"></div>
+                           <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
+                        </div>
+                     </div>
+                     <div class="card-flip easy medium hard">
+                        <div class="card is-flipped">
+                           <div class="card__face card__face--front"></div>
+                           <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
+                        </div>
+                     </div>
+                     <div class="card-flip medium hard medium-remove">
+                        <div class="card is-flipped">
+                           <div class="card__face card__face--front"></div>
+                           <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
+                        </div>
+                     </div>
+                     <div class="card-flip hard hard-remove">
+                        <div class="card is-flipped">
+                           <div class="card__face card__face--front"></div>
+                           <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
+                        </div>
+                     </div>
+                     <div class="card-flip hard hard-remove">
+                        <div class="card is-flipped">
+                           <div class="card__face card__face--front"></div>
+                           <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
+                        </div>
+                     </div>
                   </div>
-                </div>
-                <div class="card-flip medium hard medium-remove">
-                  <div class="card is-flipped">
-                    <div class="card__face card__face--front"></div>
-                    <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
+                  <div class="row justify-content-center px-4">
+                     <div class="card-flip easy medium hard">
+                        <div class="card is-flipped">
+                           <div class="card__face card__face--front"></div>
+                           <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
+                        </div>
+                     </div>
+                     <div class="card-flip easy medium hard">
+                        <div class="card is-flipped">
+                           <div class="card__face card__face--front"></div>
+                           <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
+                        </div>
+                     </div>
+                     <div class="card-flip easy medium hard">
+                        <div class="card is-flipped">
+                           <div class="card__face card__face--front"></div>
+                           <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
+                        </div>
+                     </div>
+                     <div class="card-flip easy medium hard">
+                        <div class="card is-flipped">
+                           <div class="card__face card__face--front"></div>
+                           <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
+                        </div>
+                     </div>
+                     <div class="card-flip medium hard medium-remove">
+                        <div class="card is-flipped">
+                           <div class="card__face card__face--front"></div>
+                           <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
+                        </div>
+                     </div>
+                     <div class="card-flip hard hard-remove">
+                        <div class="card is-flipped">
+                           <div class="card__face card__face--front"></div>
+                           <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
+                        </div>
+                     </div>
+                     <div class="card-flip hard hard-remove">
+                        <div class="card is-flipped">
+                           <div class="card__face card__face--front"></div>
+                           <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
+                        </div>
+                     </div>
                   </div>
-                </div>
-                <div class="card-flip hard hard-remove">
-                  <div class="card is-flipped">
-                    <div class="card__face card__face--front"></div>
-                    <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
+                  <div class="row justify-content-center px-4">
+                     <div class="card-flip medium hard medium-remove">
+                        <div class="card is-flipped">
+                           <div class="card__face card__face--front"></div>
+                           <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
+                        </div>
+                     </div>
+                     <div class="card-flip medium hard medium-remove">
+                        <div class="card is-flipped">
+                           <div class="card__face card__face--front"></div>
+                           <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
+                        </div>
+                     </div>
+                     <div class="card-flip medium hard medium-remove">
+                        <div class="card is-flipped">
+                           <div class="card__face card__face--front"></div>
+                           <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
+                        </div>
+                     </div>
+                     <div class="card-flip medium hard medium-remove">
+                        <div class="card is-flipped">
+                           <div class="card__face card__face--front"></div>
+                           <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
+                        </div>
+                     </div>
+                     <div class="card-flip medium hard medium-remove">
+                        <div class="card is-flipped">
+                           <div class="card__face card__face--front"></div>
+                           <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
+                        </div>
+                     </div>
+                     <div class="card-flip medium hard hard-remove">
+                        <div class="card is-flipped">
+                           <div class="card__face card__face--front"></div>
+                           <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
+                        </div>
+                     </div>
+                     <div class="card-flip medium hard hard-remove">
+                        <div class="card is-flipped">
+                           <div class="card__face card__face--front"></div>
+                           <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
+                        </div>
+                     </div>
                   </div>
-                </div>
-                <div class="card-flip hard hard-remove">
-                  <div class="card is-flipped">
-                    <div class="card__face card__face--front"></div>
-                    <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
-                  </div>
-                </div>
+               </div>
             </div>
-            <div class="row justify-content-center px-4">
-              <div class="card-flip easy medium hard">
-                <div class="card is-flipped">
-                  <div class="card__face card__face--front"></div>
-                  <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
-                </div>
-              </div>
-              <div class="card-flip easy medium hard">
-                <div class="card is-flipped">
-                  <div class="card__face card__face--front"></div>
-                  <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
-                </div>
-              </div>
-                <div class="card-flip easy medium hard">
-                  <div class="card is-flipped">
-                    <div class="card__face card__face--front"></div>
-                    <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
+         </section>
+         <!-- Game Over Modal-->
+         <div class="modal fade" id="gameOverModal" tabindex="-1" aria-labelledby="gameOverModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog modal-dialog-centered">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <h2 class="modal-title" id="gameOverModalLabel">GAME OVER</h2>
                   </div>
-                </div>
-                <div class="card-flip easy medium hard">
-                  <div class="card is-flipped">
-                    <div class="card__face card__face--front"></div>
-                    <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
+                  <div class="modal-body">
+                     <div id="gameCompleteText" class="container">
+                        <div class="row center-buttons no-gutters">
+                           <div class="col-6 ">
+                              <button type="button" class="btn btn-danger exit-buttons button-click" onclick="window.location.href='index.html';">No</button>
+                           </div>
+                           <div class="col-6">
+                              <button type="button" class="btn btn-primary button-click" onclick="window.location.href='game.html';">Yes</button>
+                           </div>
+                        </div>
+                        <div class="row score-stats no-gutters">
+                           <div class="col-6">
+                              <span>Mistake penalties:</span>
+                           </div>
+                           <div class="col-6">
+                              <span class="game-results"></span>
+                           </div>
+                        </div>
+                        <div class="row score-stats no-gutters">
+                           <div class="col-6">
+                              <span>Points scored:</span>
+                           </div>
+                           <div class="col-6">
+                              <span class="game-results"></span>
+                           </div>
+                        </div>
+                        <div class="row score-stats no-gutters">
+                           <div class="col-6">
+                              <span>Time Remaining Bonus:</span>
+                           </div>
+                           <div class="col-6">
+                              <span class="game-results"></span>
+                           </div>
+                        </div>
+                        <div class="row score-stats no-gutters">
+                           <div class="col-6">
+                              <span>Total score:</span>
+                           </div>
+                           <div class="col-6">
+                              <span class="game-results"></span>
+                           </div>
+                        </div>
+                        <div class="player-name">
+                           <form method="get">
+                              <label for="playerName">Please enter your name</label><br>
+                              <input type="text" id="playerName" name="playerName" value="" autocomplete="off" maxlength="16">
+                           </form>
+                        </div>
+                     </div>
                   </div>
-                </div>
-                <div class="card-flip medium hard medium-remove">
-                  <div class="card is-flipped">
-                    <div class="card__face card__face--front"></div>
-                    <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
+                  <div class="modal-footer">
+                     <button type="button" class="btn btn-success button-click" id="nameEntry">OK</button>
+                     <button type="button" class="btn btn-danger button-click exit-buttons" onclick="window.location.href='index.html';">No</button>
+                     <button type="button" class="btn btn-primary button-click" onclick="window.location.href='game.html';">Yes</button>
                   </div>
-                </div>
-                <div class="card-flip hard hard-remove">
-                  <div class="card is-flipped">
-                    <div class="card__face card__face--front"></div>
-                    <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
-                  </div>
-                </div>
-                <div class="card-flip hard hard-remove">
-                  <div class="card is-flipped">
-                    <div class="card__face card__face--front"></div>
-                    <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
-                  </div>
-                </div>
+               </div>
             </div>
-            <div class="row justify-content-center px-4">
-              <div class="card-flip easy medium hard">
-                <div class="card is-flipped">
-                  <div class="card__face card__face--front"></div>
-                  <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
-                </div>
-              </div>
-              <div class="card-flip easy medium hard">
-                <div class="card is-flipped">
-                  <div class="card__face card__face--front"></div>
-                  <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
-                </div>
-              </div>
-                <div class="card-flip easy medium hard">
-                  <div class="card is-flipped">
-                    <div class="card__face card__face--front"></div>
-                    <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
-                  </div>
-                </div>
-                <div class="card-flip easy medium hard">
-                  <div class="card is-flipped">
-                    <div class="card__face card__face--front"></div>
-                    <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
-                  </div>
-                </div>
-                <div class="card-flip medium hard medium-remove">
-                  <div class="card is-flipped">
-                    <div class="card__face card__face--front"></div>
-                    <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
-                  </div>
-                </div>
-                <div class="card-flip hard hard-remove">
-                  <div class="card is-flipped">
-                    <div class="card__face card__face--front"></div>
-                    <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
-                  </div>
-                </div>
-                <div class="card-flip hard hard-remove">
-                  <div class="card is-flipped">
-                    <div class="card__face card__face--front"></div>
-                    <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
-                  </div>
-                </div>
-            </div>
-            <div class="row justify-content-center px-4">
-              <div class="card-flip medium hard medium-remove">
-                <div class="card is-flipped">
-                  <div class="card__face card__face--front"></div>
-                  <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
-                </div>
-              </div>
-              <div class="card-flip medium hard medium-remove">
-                <div class="card is-flipped">
-                  <div class="card__face card__face--front"></div>
-                  <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
-                </div>
-              </div>
-              <div class="card-flip medium hard medium-remove">
-                <div class="card is-flipped">
-                  <div class="card__face card__face--front"></div>
-                  <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
-                </div>
-              </div>
-              <div class="card-flip medium hard medium-remove">
-                <div class="card is-flipped">
-                  <div class="card__face card__face--front"></div>
-                  <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
-                </div>
-              </div>
-              <div class="card-flip medium hard medium-remove">
-                <div class="card is-flipped">
-                  <div class="card__face card__face--front"></div>
-                  <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
-                </div>
-              </div>
-              <div class="card-flip medium hard hard-remove">
-                <div class="card is-flipped">
-                  <div class="card__face card__face--front"></div>
-                  <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
-                </div>
-              </div>
-              <div class="card-flip medium hard hard-remove">
-                <div class="card is-flipped">
-                  <div class="card__face card__face--front"></div>
-                  <div class="card__face card__face--back"><img src="assets/images/simpsons_logo.png" height="70" alt=""></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Game Over Modal-->
-      <div class="modal fade" id="gameOverModal" tabindex="-1" aria-labelledby="gameOverModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h2 class="modal-title" id="gameOverModalLabel">GAME OVER</h2>
-            </div>
-            <div class="modal-body">
-              <div id="gameCompleteText" class="container">
-                <div class="row center-buttons no-gutters">
-                  <div class="col-6 ">
-                    <a href="index.html"><button type="button" class="btn btn-danger exit-buttons button-click">No</button><a>
-                  </div>
-                  <div class="col-6">
-                    <a href="game.html"><button type="button" class="btn btn-primary button-click">Yes</button></a>
-                  </div>
-                </div>
-                <div class="row score-stats no-gutters">
-                  <div class="col-6">
-                    <span>Mistake penalties:</span>
-                  </div>
-                  <div class="col-6">
-                    <span class="game-results"></span>
-                  </div>
-                </div>
-                <div class="row score-stats no-gutters">
-                  <div class="col-6">
-                    <span>Points scored:</span>
-                  </div>
-                  <div class="col-6">
-                    <span class="game-results"></span>
-                  </div>
-                </div>
-                <div class="row score-stats no-gutters">
-                  <div class="col-6">
-                    <span>Time Remaining Bonus:</span>
-                  </div>
-                  <div class="col-6">
-                    <span class="game-results"></span>
-                  </div>
-                </div>
-                <div class="row score-stats no-gutters">
-                  <div class="col-6">
-                    <span>Total score:</span>
-                  </div>
-                  <div class="col-6">
-                    <span class="game-results"></span>
-                  </div>
-                </div>
-                <div class="player-name">
-                  <form action="" method="get">
-                    <label for="name">Please enter your name</label><br>
-                    <input type="text" id="playerName" name="playerName" value="" autocomplete="off">
-                  </form>
-                </div>
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-success button-click" id="nameEntry">OK</button>
-              <a href="index.html"><button type="button" class="btn btn-danger button-click exit-buttons">No</button></a>
-              <a href="game.html"><button type="button" class="btn btn-primary button-click">Yes</button></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
-    <audio id="woohoo" src="assets/audio/woohoo.mp3"></audio>
-    <audio id="doh" src="assets/audio/doh.mp3"></audio>
-    <audio id="cardFlip" src="assets/audio/card_flip.wav"></audio>
-    <audio id="clockTick" src="assets/audio/clock_ticking_sound.mp3"></audio>
-
-  </body>
+         </div>
+      </main>
+      <audio id="woohoo" src="assets/audio/woohoo.mp3"></audio>
+      <audio id="doh" src="assets/audio/doh.mp3"></audio>
+      <audio id="cardFlip" src="assets/audio/card_flip.wav"></audio>
+      <audio id="clockTick" src="assets/audio/clock_ticking_sound.mp3"></audio>
+   </body>
 </html>

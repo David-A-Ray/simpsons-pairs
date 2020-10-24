@@ -3,1411 +3,1679 @@
 /* ************************************ General/Global styles *********************************************** */
 
 body {
-  font-family: 'Caveat Brush', cursive, sans-serif;
+	font-family: 'Caveat Brush', cursive, sans-serif;
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: content-box;
+	box-sizing: content-box;
 }
-
 
 .modal-content {
-  background-color: #e9f547;
-  font-size: 22px;
-  border-color: #e9f547;
+	background-color: #e9f547;
+	font-size: 22px;
+	border-color: #e9f547;
 }
 
-.btn{
-  font-size: 26px;
-  min-width: 80px;
-  margin-right: 20px;
+.btn {
+	font-size: 26px;
+	min-width: 80px;
+	margin-right: 20px;
 }
 
 .button-click:active {
-  box-shadow: 0 5px #666;
-  transform: translate(2px, 4px);
+	box-shadow: 0 5px #666;
+	transform: translate(2px, 4px);
 }
 
-.container, .container-fluid {
-  padding-left: 0;
-  padding-right: 0;
+.container,
+.container-fluid {
+	padding-left: 0;
+	padding-right: 0;
 }
+
 
 /* ************************************ index.html *********************************************** */
 
-
 .startGameModal .modal-content {
-  border-radius: 15%;
+	border-radius: 15%;
 }
 
 .startGameModal .modal-body {
-  width: 125px;
-  text-align: center;
-  border-radius: 50%;
+	width: 125px;
+	text-align: center;
+	border-radius: 50%;
 }
 
 #startButton {
-  height: 100px;
-  border-radius: 50%;
-  background-color: green;
-  color: #fff;
+	height: 100px;
+	border-radius: 50%;
+	background-color: green;
+	color: #fff;
 }
 
-#startButton:active
-{
-    border-style: none;
-    border: 0px;
+#startButton:active {
+	border-style: none;
+	border: 0px;
 }
+
 #startButton:focus {
-  outline: 0;
+	outline: 0;
 }
-
 
 .opening-screen {
-  position: absolute;
-  visibility: hidden;
+	position: absolute;
+	visibility: hidden;
 }
 
 .opening-screen img {
-  display: block;
+	display: block;
 }
 
-#the, #pairs {
-  position: relative;
-  left: 55px;
+#the,
+#pairs {
+	position: relative;
+	left: 55px;
 }
 
 .main-menu {
-  background-image: url("../images/simpson_clouds.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100%;
-  position: absolute;
-  overflow: hidden;
-  font-family: 'Caveat Brush', cursive, sans-serif;
-  padding-left: 0;
-  padding-right: 0;
+	background-image: url("../images/simpson_clouds.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100%;
+	position: absolute;
+	overflow: hidden;
+	font-family: 'Caveat Brush', cursive, sans-serif;
+	padding-left: 0;
+	padding-right: 0;
 }
 
 .menu-items {
-  background-color: yellow;
-  width: 350px;
-  visibility: hidden;
-  border-radius: 15px;
+	background-color: yellow;
+	width: 350px;
+	visibility: hidden;
+	border-radius: 15px;
 }
 
 .main-menu ul {
-  list-style-type: none;
-  padding: 0;
+	list-style-type: none;
+	padding: 0;
 }
 
 .main-menu h1 {
-  padding: 20px 0;
+	padding: 20px 0;
 }
 
 .menu-buttons {
-  border-radius: 10px;
-  background-color: blue;
-  width: 150px;
-  margin: 20px 0;
-  font-size: 26px;
-  color: #fafafa;
+	border-radius: 10px;
+	background-color: blue;
+	width: 150px;
+	margin: 20px 0;
+	font-size: 26px;
+	color: #fafafa;
 }
 
 a.game-level {
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    text-decoration: none;
-    text-align: center;
-    margin: auto;
-    padding: 20px;
-    margin-top: 20px;
-    width: 150px;
-    border-radius: 10px;
-    border-width: 0;
-    background-color: #0be04f;
-    color: #fff;
-    font-size: 24px;
+	-webkit-appearance: button;
+	-moz-appearance: button;
+	text-decoration: none;
+	text-align: center;
+	margin: auto;
+	padding: 20px;
+	margin-top: 20px;
+	width: 150px;
+	border-radius: 10px;
+	border-width: 0;
+	background-color: #0be04f;
+	color: #fff;
+	font-size: 24px;
 }
 
 a.game-level:hover {
-  color: #42f57b;
-  background-color: green;
+	color: #42f57b;
+	background-color: green;
 }
 
 .setting {
-  display:inline-block;
-  margin: 15px 0;
+	display: inline-block;
+	margin: 15px 0;
 }
 
-.settingsModal .modal-body .frm1 .col-6, .settingsModal .modal-body .frm1 .col-6::before, .settingsModal .modal-body .frm1 .col-6::after {
-  box-sizing: border-box;
+.settingsModal .modal-body .frm1 .col-6,
+.settingsModal .modal-body .frm1 .col-6::before,
+.settingsModal .modal-body .frm1 .col-6::after {
+	box-sizing: border-box;
 }
-
 
 
 /* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_switch */
+
 .switch {
-  position: relative;
-  width: 50px;
-  height: 20px;
-  left: 30%;
-  margin: 15px;
+	position: relative;
+	width: 50px;
+	height: 20px;
+	left: 30%;
+	margin: 15px;
 }
 
 .switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+	opacity: 0;
+	width: 0;
+	height: 0;
 }
 
 .slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	-webkit-transition: .4s;
+	transition: .4s;
 }
 
 .slider:before {
-  position: absolute;
-  content: "";
-  height: 18px;
-  width: 18px;
-  left: 3px;
-  bottom: 1px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+	position: absolute;
+	content: "";
+	height: 18px;
+	width: 18px;
+	left: 3px;
+	bottom: 1px;
+	background-color: white;
+	-webkit-transition: .4s;
+	transition: .4s;
 }
 
-input:checked + .slider {
-  background-color: #2196F3;
+input:checked+.slider {
+	background-color: #2196F3;
 }
 
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+input:focus+.slider {
+	box-shadow: 0 0 1px #2196F3;
 }
 
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+input:checked+.slider:before {
+	-webkit-transform: translateX(26px);
+	-ms-transform: translateX(26px);
+	transform: translateX(26px);
 }
+
 
 /* Rounded sliders */
+
 .slider.round {
-  border-radius: 34px;
+	border-radius: 34px;
 }
 
 .slider.round:before {
-  border-radius: 50%;
+	border-radius: 50%;
 }
 
 .level-buttons {
-  margin: 30px 0;
+	margin: 30px 0;
 }
 
-#helpTable1 td, #helpTable2 td {
-  border: 1pt solid black;
-  padding: 3px;
-  text-align: center;
+#helpTable1 td,
+#helpTable2 td {
+	border: 1pt solid black;
+	padding: 3px;
+	text-align: center;
 }
 
-#helpTable1, #helpTable2 {
-  margin-bottom: 30px;
+#helpTable1,
+#helpTable2 {
+	margin-bottom: 30px;
 }
 
 .helpModal .modal-body span {
-  font-size: 28px;
+	font-size: 28px;
 }
 
 
 /* ************************************ game.html *********************************************** */
 
-
-
 .game-background {
-  background-image: url(../images/game_floor.png);
-  height: 100%;
-  display: table;
-  position: absolute;
-  overflow: hidden;
-  z-index: -1;
+	background-image: url(../images/game_floor.png);
+	height: 100%;
+	display: table;
+	position: absolute;
+	overflow: hidden;
+	z-index: -1;
 }
 
 .game {
-  background-image: url(../images/game_table.png);
-  background-repeat: no-repeat;
-  background-size:contain;
-  width: 1200px;
-  height: 1200px;
-  position: absolute;
+	background-image: url(../images/game_table.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 1200px;
+	height: 1200px;
+	position: absolute;
 }
 
 #quitButton {
-  position: absolute;
-  left: 30px;
-  top: 15px;
-  background-color: red;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  text-align: center;
-  z-index: 2;
-  font-size: 26px;
-  color: #fafafa;
+	position: absolute;
+	left: 30px;
+	top: 15px;
+	background-color: red;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	text-align: center;
+	z-index: 2;
+	font-size: 26px;
+	color: #fafafa;
 }
 
 #quitButton:hover {
-  background-color: #990000;
+	background-color: #990000;
 }
 
 #timer {
-  position: absolute;
-  background-color: #f5a442;
-  width: 100px;
-  border-radius: 10px;
-  text-align: center;
-  z-index: 2;
-  left: 45%;
-  top: 15px;
-  color: #fafafa;
-  font-size: 30px;
+	position: absolute;
+	background-color: #f5a442;
+	width: 100px;
+	border-radius: 10px;
+	text-align: center;
+	z-index: 2;
+	left: 45%;
+	top: 15px;
+	color: #fafafa;
+	font-size: 30px;
 }
 
 #score {
-  position: absolute;
-  top:15px;
-  color: #fff;
-  background-color: #f5a442;
-  width: 150px;
-  border-radius: 10px;
-  text-align: center;
-  font-size: 30px;
-  right:100px;
-  z-index: 2;
+	position: absolute;
+	top: 15px;
+	color: #fff;
+	background-color: #f5a442;
+	width: 150px;
+	border-radius: 10px;
+	text-align: center;
+	font-size: 30px;
+	right: 100px;
+	z-index: 2;
 }
 
 #mistakes {
-  position: absolute;
-  top:15px;
-  color: #fff;
-  background-color: #f5a442;
-  width: 150px;
-  border-radius: 10px;
-  text-align: center;
-  font-size: 30px;
-  right: 300px;
-  z-index: 2;
+	position: absolute;
+	top: 15px;
+	color: #fff;
+	background-color: #f5a442;
+	width: 150px;
+	border-radius: 10px;
+	text-align: center;
+	font-size: 30px;
+	right: 300px;
+	z-index: 2;
 }
 
 
 /* *************** Card styling and effects ********************** */
 
 .card {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transition: transform 1s;
-  transform-style: preserve-3d;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	transition: transform 1s;
+	transform-style: preserve-3d;
 }
 
-
 .card-flip {
-  width: 100px;
-  height: 160px;
-  perspective: 600px;
-  margin: 10px;
-  box-sizing: content-box;
+	width: 100px;
+	height: 160px;
+	perspective: 600px;
+	margin: 10px;
+	box-sizing: content-box;
 }
 
 .card__face {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  backface-visibility: hidden;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	backface-visibility: hidden;
 }
 
 .card__face--back {
-  background: #35c465;
-  transform: rotateY( 180deg );
+	background: #35c465;
+	transform: rotateY( 180deg);
 }
 
 .card__face--back img {
-  transform: translate(-2px, 20px);
+	transform: translate(-2px, 20px);
 }
 
 .card.is-flipped {
-  transform: rotateY(180deg);
+	transform: rotateY(180deg);
 }
 
-
 #gameCompleteText button {
-  margin: auto;
+	margin: auto;
 }
 
 #gameCompleteText button a {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 #gameCompleteText button a:hover {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 .center-buttons {
-  text-align: center;
-  margin: 20px;
+	text-align: center;
+	margin: 20px;
 }
 
 .player-name {
-  margin-top: 15px;
-  font-size: 26px;
+	margin-top: 15px;
+	font-size: 26px;
 }
 
 
 /* *************** Card Pictures ********************** */
 
 .homer {
-  background-image: url(../images/homer_simpson.png);
-  background-size: 70%;
-  background-repeat: no-repeat;
-  background-position: center;
-  border: 2px solid white;
+	background-image: url(../images/homer_simpson.png);
+	background-size: 70%;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 2px solid white;
 }
 
 .bart {
-  background-image: url(../images/bart_simpson.png);
-  background-size: 90%;
-  background-repeat: no-repeat;
-  background-position: center;
-  border: 2px solid white;
+	background-image: url(../images/bart_simpson.png);
+	background-size: 90%;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 2px solid white;
 }
 
 .marge {
-  background-image: url(../images/marge_simpson.png);
-  background-size: 50%;
-  background-repeat: no-repeat;
-  background-position: center;
-  border: 2px solid white;
+	background-image: url(../images/marge_simpson.png);
+	background-size: 50%;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 2px solid white;
 }
 
 .lisa {
-  background-image: url(../images/lisa_simpson.png);
-  background-size: 70%;
-  background-repeat: no-repeat;
-  background-position: center;
-  border: 2px solid white;
+	background-image: url(../images/lisa_simpson.png);
+	background-size: 70%;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 2px solid white;
 }
 
 .maggie {
-  background-image: url(../images/maggie.png);
-  background-size: 90%;
-  background-repeat: no-repeat;
-  background-position: center;
-  border: 2px solid white;
+	background-image: url(../images/maggie.png);
+	background-size: 90%;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 2px solid white;
 }
 
 .flanders {
-  background-image: url(../images/ned_flanders.png);
-  background-size: 85%;
-  background-repeat: no-repeat;
-  background-position: center;
-  border: 2px solid white;
+	background-image: url(../images/ned_flanders.png);
+	background-size: 85%;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 2px solid white;
 }
 
 .apu {
-  background-image: url(../images/apu_nahasapeemapetilon.png);
-  background-size: 55%;
-  background-repeat: no-repeat;
-  background-position: center;
-  border: 2px solid white;
+	background-image: url(../images/apu_nahasapeemapetilon.png);
+	background-size: 55%;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 2px solid white;
 }
 
 .wiggum {
-  background-image: url(../images/chief_wiggum.png);
-  background-size: 90%;
-  background-repeat: no-repeat;
-  background-position: center;
-  border: 2px solid white;
+	background-image: url(../images/chief_wiggum.png);
+	background-size: 90%;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 2px solid white;
 }
 
 .skinner {
-  background-image: url(../images/skinner.png);
-  background-size: 70%;
-  background-repeat: no-repeat;
-  background-position: center;
-  border: 2px solid white;
+	background-image: url(../images/skinner.png);
+	background-size: 70%;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 2px solid white;
 }
 
 .lovejoy {
-  background-image: url(../images/lovejoy.png);
-  background-size: 90%;
-  background-repeat: no-repeat;
-  background-position: center;
-  border: 2px solid white;
+	background-image: url(../images/lovejoy.png);
+	background-size: 90%;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 2px solid white;
 }
 
 .moe {
-  background-image: url(../images/moe_szyslak.png);
-  background-size: 80%;
-  background-repeat: no-repeat;
-  background-position: center;
-  border: 2px solid white;
+	background-image: url(../images/moe_szyslak.png);
+	background-size: 80%;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 2px solid white;
 }
 
 .willie {
-  background-image: url(../images/groundskeeper_willie.png);
-  background-size: 90%;
-  background-repeat: no-repeat;
-  background-position: center;
-  border: 2px solid white;
+	background-image: url(../images/groundskeeper_willie.png);
+	background-size: 90%;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 2px solid white;
 }
 
 .milhouse {
-  background-image: url(../images/milhouse_van_houten.png);
-  background-size: 75%;
-  background-repeat: no-repeat;
-  background-position: center;
-  border: 2px solid white;
+	background-image: url(../images/milhouse_van_houten.png);
+	background-size: 75%;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 2px solid white;
 }
 
 .krusty {
-  background-image: url(../images/krusty_the_clown.png);
-  background-size: 85%;
-  background-repeat: no-repeat;
-  background-position: center;
-  border: 2px solid white;
+	background-image: url(../images/krusty_the_clown.png);
+	background-size: 85%;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 2px solid white;
 }
 
 
 /* ************************************ high_scores.html *********************************************** */
 
 .high-scores-background {
-  background-image: url(../images/simpsons_chalkboard.jpg);
-  background-repeat: no-repeat;
-  background-position: 0% 0%;
-
-  background-size: 210vh;
-  overflow: hidden;
+	background-image: url(../images/simpsons_chalkboard.jpg);
+	background-repeat: no-repeat;
+	background-position: 0% 0%;
+	background-size: 210vh;
+	overflow: hidden;
 }
 
 .high-scores {
-  transform:translate(-55px, 130px);
-  color: #f2f2f2;
-  font-size: 26px;
-  font-weight: 100;
+	transform: translate(-55px, 130px);
+	color: #f2f2f2;
+	font-size: 26px;
+	font-weight: 100;
 }
 
 .high-scores table {
-  margin: auto;
+	margin: auto;
 }
 
-.high-scores table th, .high-scores table td  {
-  padding: 5px 20px;
+.high-scores table th,
+.high-scores table td {
+	padding: 5px 20px;
 }
 
 #exit {
-  font-size: 30px;
-  transform: translate(20px, 30px);
-  width: 140px;
-  border-radius: 10px;
-  outline: none;
-  background-color: #edede8;
-  color: #24d146;
+	font-size: 30px;
+	transform: translate(20px, 30px);
+	width: 140px;
+	border-radius: 10px;
+	outline: none;
+	background-color: #edede8;
+	color: #24d146;
 }
 
 #exit:hover {
-  background-color: #fafafa;
-  color: #0ffc03;
+	background-color: #fafafa;
+	color: #0ffc03;
 }
 
 #exit:active {
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translate(20px, 34px);
+	background-color: #3e8e41;
+	box-shadow: 0 5px #666;
+	transform: translate(20px, 34px);
 }
 
 #clearScores {
-  position: absolute;
-  width: 150px;
-  font-size: 26px;
-  border-radius: 10px;
-  outline: none;
-  background-color: grey;
-  bottom: 5%;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
+	position: absolute;
+	width: 150px;
+	font-size: 26px;
+	border-radius: 10px;
+	outline: none;
+	background-color: grey;
+	bottom: 5%;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #clearScores:hover {
-  background-color: #cbf2c9;
+	background-color: #cbf2c9;
 }
 
 #clearScores:active {
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translate(-4px, 4px);
+	background-color: #3e8e41;
+	box-shadow: 0 5px #666;
+	transform: translate(-4px, 4px);
 }
 
 
 /* ******************************** Media Queries ****************************************** */
 
-
 @media screen and (max-width: 1024px) and (orientation: portrait) {
-  .menu-items {
-    width: 350px;
-  }
-  .main-menu h1 {
-    font-size: 36px;
-  }
-  .menu-buttons {
-    font-size: 26px;
-    margin: 18px;
-    width: 125px;
-  }
-  .opening-screen {
-    -webkit-transform: scale(0.8); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.8); /* FF3.5+ */
-     -ms-transform: scale(0.8); /* IE9 */
-      -o-transform: scale(0.8); /* Opera 10.5+ */
-         transform: scale(0.8);
-  }
-  .card-flip {
-    -webkit-transform: scale(0.9); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.9); /* FF3.5+ */
-     -ms-transform: scale(0.9); /* IE9 */
-      -o-transform: scale(0.9); /* Opera 10.5+ */
-         transform: scale(0.9);
-    margin: 4px;
-  }
-  .cards .row {
-    margin: -10px;
-  }
-  .game {
-    background-size: 90%;
-    background-position: center;
-  }
-  #quitButton, #quitButton:active, #timer, #score, #mistakes, #exit, #exit:active, #clearScores, #clearScores:active {
-    -webkit-transform: scale(0.9); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.9); /* FF3.5+ */
-     -ms-transform: scale(0.9); /* IE9 */
-      -o-transform: scale(0.9); /* Opera 10.5+ */
-         transform: scale(0.9);
-  }
-  #quitButton {
-    left: 5px;
-  }
-
-  #timer {
-    top: auto;
-    bottom: 50px;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  #score {
-    left: 0;
-    right: 0;
-    top: 20px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  #mistakes {
-    right: 15px;
-    top: 20px;
-  }
-
-  #exit {
-    -webkit-transform: translate(25%, 75%); /* Saf3.1+, Chrome */
-    -moz-transform: translate(25%, 75%); /* FF3.5+ */
-     -ms-transform: translate(25%, 75%); /* IE9 */
-      -o-transform: translate(25%, 75%); /* Opera 10.5+ */
-         transform: translate(25%, 75%);
-  }
-  #exit:active {
-    -webkit-transform: translate(27%, 80%); /* Saf3.1+, Chrome */
-    -moz-transform: translate(27%, 80%); /* FF3.5+ */
-     -ms-transform: translate(27%, 80%); /* IE9 */
-      -o-transform: translate(27%, 80%); /* Opera 10.5+ */
-         transform: translate(27%, 80%);
-  }
-  #clearScores {
-    -webkit-transform: scale(1.2) translate(0%, 0%); /* Saf3.1+, Chrome */
-    -moz-transform: scale(1.2) translate(0%, 0%); /* FF3.5+ */
-     -ms-transform: scale(1.2) translate(0%, 0%); /* IE9 */
-      -o-transform: scale(1.2) translate(0%, 0%); /* Opera 10.5+ */
-         transform: scale(1.2) translate(0%, 0%);
-  }
-  #clearScores:active {
-    -webkit-transform: translate(1%, 3%); /* Saf3.1+, Chrome */
-    -moz-transform: translate(1%, 3%); /* FF3.5+ */
-     -ms-transform: translate(1%, 3%); /* IE9 */
-      -o-transform: translate(1%, 3%); /* Opera 10.5+ */
-         transform: translate(1%, 3%);
-  }
-
-  .high-scores {
-
-    -webkit-transform: scale(1.2) translate(-50px, 65%); /* Saf3.1+, Chrome */
-    -moz-transform: scale(1.2) translate(-50px, 65%); /* FF3.5+ */
-     -ms-transform: scale(1.2) translate(-50px, 65%); /* IE9 */
-      -o-transform: scale(1.2) translate(-50px, 65%); /* Opera 10.5+ */
-         transform: scale(1.2) translate(-50px, 65%);
-  }
-
-  .high-scores table th, .high-scores table td  {
-    padding: 0 10px;
-  }
-
-  .high-scores-background {
-    background-position: 60% 0%;
-    background-size: 210vh;
-    overflow: hidden;
-  }
-
+	.menu-items {
+		width: 350px;
+	}
+	.main-menu h1 {
+		font-size: 36px;
+	}
+	.menu-buttons {
+		font-size: 26px;
+		margin: 18px;
+		width: 125px;
+	}
+	.opening-screen {
+		-webkit-transform: scale(0.8);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.8);
+		/* FF3.5+ */
+		-ms-transform: scale(0.8);
+		/* IE9 */
+		-o-transform: scale(0.8);
+		/* Opera 10.5+ */
+		transform: scale(0.8);
+	}
+	.card-flip {
+		-webkit-transform: scale(0.9);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.9);
+		/* FF3.5+ */
+		-ms-transform: scale(0.9);
+		/* IE9 */
+		-o-transform: scale(0.9);
+		/* Opera 10.5+ */
+		transform: scale(0.9);
+		margin: 4px;
+	}
+	.cards .row {
+		margin: -10px;
+	}
+	.game {
+		background-size: 90%;
+		background-position: center;
+	}
+	#quitButton,
+	#quitButton:active,
+	#timer,
+	#score,
+	#mistakes,
+	#exit,
+	#exit:active,
+	#clearScores,
+	#clearScores:active {
+		-webkit-transform: scale(0.9);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.9);
+		/* FF3.5+ */
+		-ms-transform: scale(0.9);
+		/* IE9 */
+		-o-transform: scale(0.9);
+		/* Opera 10.5+ */
+		transform: scale(0.9);
+	}
+	#quitButton {
+		left: 5px;
+	}
+	#timer {
+		top: auto;
+		bottom: 50px;
+		left: 0;
+		right: 0;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#score {
+		left: 0;
+		right: 0;
+		top: 20px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#mistakes {
+		right: 15px;
+		top: 20px;
+	}
+	#exit {
+		-webkit-transform: translate(25%, 75%);
+		/* Saf3.1+, Chrome */
+		-moz-transform: translate(25%, 75%);
+		/* FF3.5+ */
+		-ms-transform: translate(25%, 75%);
+		/* IE9 */
+		-o-transform: translate(25%, 75%);
+		/* Opera 10.5+ */
+		transform: translate(25%, 75%);
+	}
+	#exit:active {
+		-webkit-transform: translate(27%, 80%);
+		/* Saf3.1+, Chrome */
+		-moz-transform: translate(27%, 80%);
+		/* FF3.5+ */
+		-ms-transform: translate(27%, 80%);
+		/* IE9 */
+		-o-transform: translate(27%, 80%);
+		/* Opera 10.5+ */
+		transform: translate(27%, 80%);
+	}
+	#clearScores {
+		-webkit-transform: scale(1.2) translate(0%, 0%);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(1.2) translate(0%, 0%);
+		/* FF3.5+ */
+		-ms-transform: scale(1.2) translate(0%, 0%);
+		/* IE9 */
+		-o-transform: scale(1.2) translate(0%, 0%);
+		/* Opera 10.5+ */
+		transform: scale(1.2) translate(0%, 0%);
+	}
+	#clearScores:active {
+		-webkit-transform: translate(1%, 3%);
+		/* Saf3.1+, Chrome */
+		-moz-transform: translate(1%, 3%);
+		/* FF3.5+ */
+		-ms-transform: translate(1%, 3%);
+		/* IE9 */
+		-o-transform: translate(1%, 3%);
+		/* Opera 10.5+ */
+		transform: translate(1%, 3%);
+	}
+	.high-scores {
+		-webkit-transform: scale(1.2) translate(-50px, 65%);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(1.2) translate(-50px, 65%);
+		/* FF3.5+ */
+		-ms-transform: scale(1.2) translate(-50px, 65%);
+		/* IE9 */
+		-o-transform: scale(1.2) translate(-50px, 65%);
+		/* Opera 10.5+ */
+		transform: scale(1.2) translate(-50px, 65%);
+	}
+	.high-scores table th,
+	.high-scores table td {
+		padding: 0 10px;
+	}
+	.high-scores-background {
+		background-position: 60% 0%;
+		background-size: 210vh;
+		overflow: hidden;
+	}
 }
 
 
 /* Kindle Fire */
+
 @media screen and (max-width: 800px) and (orientation: portrait) {
-  .menu-items {
-    width: 300px;
-  }
-  .main-menu h1 {
-    font-size: 30px;
-  }
-  .menu-buttons {
-    font-size: 20px;
-    margin: 15px;
-    width: 100px;
-  }
-  .high-scores {
-    -webkit-transform: translate(-50px, 55%); /* Saf3.1+, Chrome */
-    -moz-transform: translate(-50px, 55%); /* FF3.5+ */
-     -ms-transform: translate(-50px, 55%); /* IE9 */
-      -o-transform: translate(-50px, 55%); /* Opera 10.5+ */
-         transform: translate(-50px, 55%);
-  }
-  .high-scores-background {
-    background-position: 60% 0%;
-    background-size: 210vh;
-    overflow: hidden;
-  }
+	.menu-items {
+		width: 300px;
+	}
+	.main-menu h1 {
+		font-size: 30px;
+	}
+	.menu-buttons {
+		font-size: 20px;
+		margin: 15px;
+		width: 100px;
+	}
+	.high-scores {
+		-webkit-transform: translate(-50px, 55%);
+		/* Saf3.1+, Chrome */
+		-moz-transform: translate(-50px, 55%);
+		/* FF3.5+ */
+		-ms-transform: translate(-50px, 55%);
+		/* IE9 */
+		-o-transform: translate(-50px, 55%);
+		/* Opera 10.5+ */
+		transform: translate(-50px, 55%);
+	}
+	.high-scores-background {
+		background-position: 60% 0%;
+		background-size: 210vh;
+		overflow: hidden;
+	}
 }
+
 
 /* Nexus 7 */
+
 @media screen and (max-width: 600px) and (orientation: portrait) {
-  .menu-items {
-    width: 200px;
-  }
-  .main-menu h1 {
-    font-size: 24px;
-  }
-  .menu-buttons {
-    font-size: 16px;
-    margin: 8px;
-    width: 100px;
-  }
-  .card-flip {
-    -webkit-transform: scale(0.8); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.8); /* FF3.5+ */
-     -ms-transform: scale(0.8); /* IE9 */
-      -o-transform: scale(0.8); /* Opera 10.5+ */
-         transform: scale(0.8);
-    margin: -8px;
-  }
-  .modal {
-    -webkit-transform: scale(0.8); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.8); /* FF3.5+ */
-     -ms-transform: scale(0.8); /* IE9 */
-      -o-transform: scale(0.8); /* Opera 10.5+ */
-         transform: scale(0.8);
-  }
-  #quitButton, #quitButton:active, #timer, #score, #mistakes, #exit, #exit:active, #clearScores, #clearScores:active {
-    -webkit-transform: scale(0.8); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.8); /* FF3.5+ */
-     -ms-transform: scale(0.8); /* IE9 */
-      -o-transform: scale(0.8); /* Opera 10.5+ */
-         transform: scale(0.8);
-  }
-  #quitButton {
-    left: 5px;
-    top: -10px;
-  }
-
-  #timer {
-    top: auto;
-    bottom: 40px;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  #score {
-    top: 5px;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  #mistakes {
-    top: 5px;
-    right: 5px;
-  }
-  .game {
-    background-size: 75%;
-    background-position: center;
-  }
-  .high-scores {
-
-    -webkit-transform: scale(0.8) translate(-50px, 40%); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.8) translate(-50px, 40%); /* FF3.5+ */
-     -ms-transform: scale(0.8) translate(-50px, 40%); /* IE9 */
-      -o-transform: scale(0.8) translate(-50px, 40%); /* Opera 10.5+ */
-         transform: scale(0.8) translate(-50px, 40%);
-  }
+	.menu-items {
+		width: 200px;
+	}
+	.main-menu h1 {
+		font-size: 24px;
+	}
+	.menu-buttons {
+		font-size: 16px;
+		margin: 8px;
+		width: 100px;
+	}
+	.card-flip {
+		-webkit-transform: scale(0.8);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.8);
+		/* FF3.5+ */
+		-ms-transform: scale(0.8);
+		/* IE9 */
+		-o-transform: scale(0.8);
+		/* Opera 10.5+ */
+		transform: scale(0.8);
+		margin: -8px;
+	}
+	.modal {
+		-webkit-transform: scale(0.8);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.8);
+		/* FF3.5+ */
+		-ms-transform: scale(0.8);
+		/* IE9 */
+		-o-transform: scale(0.8);
+		/* Opera 10.5+ */
+		transform: scale(0.8);
+	}
+	#quitButton,
+	#quitButton:active,
+	#timer,
+	#score,
+	#mistakes,
+	#exit,
+	#exit:active,
+	#clearScores,
+	#clearScores:active {
+		-webkit-transform: scale(0.8);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.8);
+		/* FF3.5+ */
+		-ms-transform: scale(0.8);
+		/* IE9 */
+		-o-transform: scale(0.8);
+		/* Opera 10.5+ */
+		transform: scale(0.8);
+	}
+	#quitButton {
+		left: 5px;
+		top: -10px;
+	}
+	#timer {
+		top: auto;
+		bottom: 40px;
+		left: 0;
+		right: 0;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#score {
+		top: 5px;
+		left: 0;
+		right: 0;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#mistakes {
+		top: 5px;
+		right: 5px;
+	}
+	.game {
+		background-size: 75%;
+		background-position: center;
+	}
+	.high-scores {
+		-webkit-transform: scale(0.8) translate(-50px, 40%);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.8) translate(-50px, 40%);
+		/* FF3.5+ */
+		-ms-transform: scale(0.8) translate(-50px, 40%);
+		/* IE9 */
+		-o-transform: scale(0.8) translate(-50px, 40%);
+		/* Opera 10.5+ */
+		transform: scale(0.8) translate(-50px, 40%);
+	}
 }
+
 
 /* Surface Duo 540 x 720 */
+
 @media screen and (max-width: 540px) and (orientation: portrait) {
-  .opening-screen {
-    -webkit-transform: scale(0.7); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.7); /* FF3.5+ */
-     -ms-transform: scale(0.7); /* IE9 */
-      -o-transform: scale(0.7); /* Opera 10.5+ */
-         transform: scale(0.7);
-  }
-  .card-flip {
-    -webkit-transform: scale(0.6); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.6); /* FF3.5+ */
-     -ms-transform: scale(0.6); /* IE9 */
-      -o-transform: scale(0.6); /* Opera 10.5+ */
-         transform: scale(0.6);
-    margin: -15px;
-  }
-  .cards .row {
-    margin: -20px;
-  }
-  .game {
-    background-size: 58%;
-    background-position: center;
-  }
-  #quitButton, #quitButton:active, #timer, #score, #mistakes, #exit, #exit:active, #clearScores, #clearScores:active {
-    -webkit-transform: scale(0.6); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.6); /* FF3.5+ */
-     -ms-transform: scale(0.6); /* IE9 */
-      -o-transform: scale(0.6); /* Opera 10.5+ */
-         transform: scale(0.6);
-  }
-
-  .high-scores {
-    -webkit-transform: scale(0.7) translate(-50px, 100px); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.7) translate(-50px, 100px); /* FF3.5+ */
-     -ms-transform: scale(0.7) translate(-50px, 100px); /* IE9 */
-      -o-transform: scale(0.7) translate(-50px, 100px); /* Opera 10.5+ */
-         transform: scale(0.7) translate(-50px, 100px);
-  }
-  .high-scores table th, .high-scores table td  {
-    padding: 0 10px;
-  }
-  .high-scores-background {
-    background-position: 60% 0%;
-    background-size: 210vh;
-    overflow: hidden;
-  }
+	.opening-screen {
+		-webkit-transform: scale(0.7);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.7);
+		/* FF3.5+ */
+		-ms-transform: scale(0.7);
+		/* IE9 */
+		-o-transform: scale(0.7);
+		/* Opera 10.5+ */
+		transform: scale(0.7);
+	}
+	.card-flip {
+		-webkit-transform: scale(0.6);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.6);
+		/* FF3.5+ */
+		-ms-transform: scale(0.6);
+		/* IE9 */
+		-o-transform: scale(0.6);
+		/* Opera 10.5+ */
+		transform: scale(0.6);
+		margin: -15px;
+	}
+	.cards .row {
+		margin: -20px;
+	}
+	.game {
+		background-size: 58%;
+		background-position: center;
+	}
+	#quitButton,
+	#quitButton:active,
+	#timer,
+	#score,
+	#mistakes,
+	#exit,
+	#exit:active,
+	#clearScores,
+	#clearScores:active {
+		-webkit-transform: scale(0.6);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.6);
+		/* FF3.5+ */
+		-ms-transform: scale(0.6);
+		/* IE9 */
+		-o-transform: scale(0.6);
+		/* Opera 10.5+ */
+		transform: scale(0.6);
+	}
+	.high-scores {
+		-webkit-transform: scale(0.7) translate(-50px, 100px);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.7) translate(-50px, 100px);
+		/* FF3.5+ */
+		-ms-transform: scale(0.7) translate(-50px, 100px);
+		/* IE9 */
+		-o-transform: scale(0.7) translate(-50px, 100px);
+		/* Opera 10.5+ */
+		transform: scale(0.7) translate(-50px, 100px);
+	}
+	.high-scores table th,
+	.high-scores table td {
+		padding: 0 10px;
+	}
+	.high-scores-background {
+		background-position: 60% 0%;
+		background-size: 210vh;
+		overflow: hidden;
+	}
 }
-
 
 @media screen and (max-width: 414px) and (orientation: portrait) {
-
-  .card-flip {
-    -webkit-transform: scale(0.5); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.5); /* FF3.5+ */
-     -ms-transform: scale(0.5); /* IE9 */
-      -o-transform: scale(0.5); /* Opera 10.5+ */
-         transform: scale(0.5);
-    margin: -22px;
-  }
-  .cards .row {
-    margin: -30px;
-  }
-  .game {
-    background-size: 50%;
-    background-position: center;
-  }
+	.card-flip {
+		-webkit-transform: scale(0.5);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.5);
+		/* FF3.5+ */
+		-ms-transform: scale(0.5);
+		/* IE9 */
+		-o-transform: scale(0.5);
+		/* Opera 10.5+ */
+		transform: scale(0.5);
+		margin: -22px;
+	}
+	.cards .row {
+		margin: -30px;
+	}
+	.game {
+		background-size: 50%;
+		background-position: center;
+	}
 }
+
 
 /* Iphone 6/7/8, galaxy S5 Portrait */
 
 @media screen and (max-width: 385px) and (orientation: portrait) {
-  .card-flip {
-    -webkit-transform: scale(0.48); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.48); /* FF3.5+ */
-     -ms-transform: scale(0.48); /* IE9 */
-      -o-transform: scale(0.48); /* Opera 10.5+ */
-         transform: scale(0.48);
-    margin: -24px;
-  }
-
-  .game {
-    background-size: 45%;
-    background-position: center;
-  }
-
-  #quitButton, #quitButton:active, #timer, #score, #mistakes, #exit, #exit:active, #clearScores, #clearScores:active {
-    -webkit-transform: scale(0.6); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.6); /* FF3.5+ */
-     -ms-transform: scale(0.6); /* IE9 */
-      -o-transform: scale(0.6); /* Opera 10.5+ */
-         transform: scale(0.6);
-  }
-
-  .high-scores {
-
-    -webkit-transform: scale(0.65) translate(-50px, 100px); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.65) translate(-50px, 100px); /* FF3.5+ */
-     -ms-transform: scale(0.65) translate(-50px, 100px); /* IE9 */
-      -o-transform: scale(0.65) translate(-50px, 100px); /* Opera 10.5+ */
-         transform: scale(0.65) translate(-50px, 100px);
-  }
-
-  .high-scores table th, .high-scores table td  {
-    padding: 0 10px;
-  }
-
-  .high-scores-background {
-    background-position: 58% 0%;
-    background-size: 210vh;
-    overflow: hidden;
-  }
+	.card-flip {
+		-webkit-transform: scale(0.48);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.48);
+		/* FF3.5+ */
+		-ms-transform: scale(0.48);
+		/* IE9 */
+		-o-transform: scale(0.48);
+		/* Opera 10.5+ */
+		transform: scale(0.48);
+		margin: -24px;
+	}
+	.game {
+		background-size: 45%;
+		background-position: center;
+	}
+	#quitButton,
+	#quitButton:active,
+	#timer,
+	#score,
+	#mistakes,
+	#exit,
+	#exit:active,
+	#clearScores,
+	#clearScores:active {
+		-webkit-transform: scale(0.6);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.6);
+		/* FF3.5+ */
+		-ms-transform: scale(0.6);
+		/* IE9 */
+		-o-transform: scale(0.6);
+		/* Opera 10.5+ */
+		transform: scale(0.6);
+	}
+	.high-scores {
+		-webkit-transform: scale(0.65) translate(-50px, 100px);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.65) translate(-50px, 100px);
+		/* FF3.5+ */
+		-ms-transform: scale(0.65) translate(-50px, 100px);
+		/* IE9 */
+		-o-transform: scale(0.65) translate(-50px, 100px);
+		/* Opera 10.5+ */
+		transform: scale(0.65) translate(-50px, 100px);
+	}
+	.high-scores table th,
+	.high-scores table td {
+		padding: 0 10px;
+	}
+	.high-scores-background {
+		background-position: 58% 0%;
+		background-size: 210vh;
+		overflow: hidden;
+	}
 }
+
 
 /* galaxy S9 & S5 Portrait*/
 
 @media screen and (max-width: 360px) and (orientation: portrait) {
-  .opening-screen {
-    -webkit-transform: scale(0.5); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.5); /* FF3.5+ */
-     -ms-transform: scale(0.5); /* IE9 */
-      -o-transform: scale(0.5); /* Opera 10.5+ */
-         transform: scale(0.5);
-  }
-
-  .card-flip {
-    -webkit-transform: scale(0.45); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.45); /* FF3.5+ */
-     -ms-transform: scale(0.45); /* IE9 */
-      -o-transform: scale(0.45); /* Opera 10.5+ */
-         transform: scale(0.45);
-    margin: -25px;
-  }
-  .high-scores table th, .high-scores table td  {
-    padding: 0 8px;
-  }
-  .high-scores-background {
-    background-position: 58% 0%;
-    background-size: 210vh;
-    overflow: hidden;
-  }
+	.opening-screen {
+		-webkit-transform: scale(0.5);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.5);
+		/* FF3.5+ */
+		-ms-transform: scale(0.5);
+		/* IE9 */
+		-o-transform: scale(0.5);
+		/* Opera 10.5+ */
+		transform: scale(0.5);
+	}
+	.card-flip {
+		-webkit-transform: scale(0.45);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.45);
+		/* FF3.5+ */
+		-ms-transform: scale(0.45);
+		/* IE9 */
+		-o-transform: scale(0.45);
+		/* Opera 10.5+ */
+		transform: scale(0.45);
+		margin: -25px;
+	}
+	.high-scores table th,
+	.high-scores table td {
+		padding: 0 8px;
+	}
+	.high-scores-background {
+		background-position: 58% 0%;
+		background-size: 210vh;
+		overflow: hidden;
+	}
 }
-
 
 
 /* Iphone 5  Portrait 320 x 568 */
+
 @media screen and (max-width: 320px) and (orientation: portrait) {
-
-  .card-flip {
-    -webkit-transform: scale(0.4); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.4); /* FF3.5+ */
-     -ms-transform: scale(0.4); /* IE9 */
-      -o-transform: scale(0.4); /* Opera 10.5+ */
-         transform: scale(0.4);
-    margin: -28px;
-  }
-  .high-scores {
-    -webkit-transform: scale(0.6) translate(-75px,30px); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.6) translate(-75px, 30px); /* FF3.5+ */
-     -ms-transform: scale(0.6) translate(-75px, 30px); /* IE9 */
-      -o-transform: scale(0.6) translate(-75px, 30px); /* Opera 10.5+ */
-         transform: scale(0.6) translate(-75px, 30px);
-
-  }
-  #quitButton, #quitButton:active, #timer, #score, #mistakes, #exit, #exit:active, #clearScores, #clearScores:active {
-    -webkit-transform: scale(0.5); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.5); /* FF3.5+ */
-     -ms-transform: scale(0.5); /* IE9 */
-      -o-transform: scale(0.5); /* Opera 10.5+ */
-         transform: scale(0.5);
-  }
-  .game {
-    background-size: 40%;
-    background-position: center;
-  }
+	.card-flip {
+		-webkit-transform: scale(0.4);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.4);
+		/* FF3.5+ */
+		-ms-transform: scale(0.4);
+		/* IE9 */
+		-o-transform: scale(0.4);
+		/* Opera 10.5+ */
+		transform: scale(0.4);
+		margin: -28px;
+	}
+	.high-scores {
+		-webkit-transform: scale(0.6) translate(-75px, 30px);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.6) translate(-75px, 30px);
+		/* FF3.5+ */
+		-ms-transform: scale(0.6) translate(-75px, 30px);
+		/* IE9 */
+		-o-transform: scale(0.6) translate(-75px, 30px);
+		/* Opera 10.5+ */
+		transform: scale(0.6) translate(-75px, 30px);
+	}
+	#quitButton,
+	#quitButton:active,
+	#timer,
+	#score,
+	#mistakes,
+	#exit,
+	#exit:active,
+	#clearScores,
+	#clearScores:active {
+		-webkit-transform: scale(0.5);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.5);
+		/* FF3.5+ */
+		-ms-transform: scale(0.5);
+		/* IE9 */
+		-o-transform: scale(0.5);
+		/* Opera 10.5+ */
+		transform: scale(0.5);
+	}
+	.game {
+		background-size: 40%;
+		background-position: center;
+	}
 }
 
 @media screen and (max-width: 280px) and (orientation: portrait) {
-  .card-flip {
-    -webkit-transform: scale(0.37); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.37); /* FF3.5+ */
-     -ms-transform: scale(0.37); /* IE9 */
-      -o-transform: scale(0.37); /* Opera 10.5+ */
-         transform: scale(0.37);
-    margin: -28px;
-  }
-  .cards .row {
-    margin: -38px;
-  }
-  .high-scores {
-    -webkit-transform: scale(0.6) translate(-20%, 0%); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.6) translate(-20%, 0%); /* FF3.5+ */
-     -ms-transform: scale(0.6) translate(-20%, 0%); /* IE9 */
-      -o-transform: scale(0.6) translate(-20%, 0%); /* Opera 10.5+ */
-         transform: scale(0.6) translate(-20%, 0%);
-  }
-  .high-scores-background {
-    background-position: 59% 0%;
-    background-size: 190vh;
-    overflow: hidden;
-  }
+	.card-flip {
+		-webkit-transform: scale(0.37);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.37);
+		/* FF3.5+ */
+		-ms-transform: scale(0.37);
+		/* IE9 */
+		-o-transform: scale(0.37);
+		/* Opera 10.5+ */
+		transform: scale(0.37);
+		margin: -28px;
+	}
+	.cards .row {
+		margin: -38px;
+	}
+	.high-scores {
+		-webkit-transform: scale(0.6) translate(-20%, 0%);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.6) translate(-20%, 0%);
+		/* FF3.5+ */
+		-ms-transform: scale(0.6) translate(-20%, 0%);
+		/* IE9 */
+		-o-transform: scale(0.6) translate(-20%, 0%);
+		/* Opera 10.5+ */
+		transform: scale(0.6) translate(-20%, 0%);
+	}
+	.high-scores-background {
+		background-position: 59% 0%;
+		background-size: 190vh;
+		overflow: hidden;
+	}
 }
+
 
 /* Landscape by height only */
 
 @media screen and (max-height: 1024px) and (orientation: landscape) {
-  .menu-items {
-    width: 300px;
-  }
-  .main-menu h1 {
-    font-size: 30px;
-  }
-  .menu-buttons {
-    font-size: 22px;
-    margin: 15px;
-    width: 120px;
-  }
-
-  .cards .row {
-    margin: -2px;
-  }
-  .game {
-    background-size: 85%;
-    background-position: center;
-  }
-  .opening-screen {
-    -webkit-transform: scale(0.8); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.8); /* FF3.5+ */
-     -ms-transform: scale(0.8); /* IE9 */
-      -o-transform: scale(0.8); /* Opera 10.5+ */
-         transform: scale(0.8);
-  }
-  .modal {
-    -webkit-transform: scale(0.9); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.9); /* FF3.5+ */
-     -ms-transform: scale(0.9); /* IE9 */
-      -o-transform: scale(0.9); /* Opera 10.5+ */
-         transform: scale(0.9);
-    position: absolute;
-    /* top: -30%; */
-    /* height: 95%; */
-  }
-  a.game-level {
-    padding: 8px;
-    margin-top: 30px;
-    font-size: 30px;
-  }
-
-  h2#newGameModalLabel {
-    font-size: 34px;
-  }
-
-  .card-flip {
-    -webkit-transform: scale(0.85); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.85); /* FF3.5+ */
-     -ms-transform: scale(0.85); /* IE9 */
-      -o-transform: scale(0.85); /* Opera 10.5+ */
-         transform: scale(0.85);
-    margin: -1px;
-  }
-
-  .high-scores {
-    -webkit-transform: scale(1.2) translate(-10%, 40%); /* Saf3.1+, Chrome */
-    -moz-transform: scale(1.2) translate(-10%, 40%); /* FF3.5+ */
-     -ms-transform: scale(1.2) translate(-10%, 40%); /* IE9 */
-      -o-transform: scale(1.2) translate(-10%, 40%); /* Opera 10.5+ */
-         transform: scale(1.2) translate(-10%, 40%);
-  }
-  .high-scores table th, .high-scores table td  {
-    padding: 0 10px;
-  }
-  .high-scores-background {
-    background-position: 65% 0%;
-    background-size: 210vh;
-    overflow: hidden;
-  }
-  #exit {
-    -webkit-transform: translate(35%, 75%); /* Saf3.1+, Chrome */
-    -moz-transform: translate(35%, 75%); /* FF3.5+ */
-     -ms-transform: translate(35%, 75%); /* IE9 */
-      -o-transform: translate(35%, 75%); /* Opera 10.5+ */
-         transform: translate(35%, 75%);
-  }
-  #exit:active {
-    -webkit-transform: translate(27%, 80%); /* Saf3.1+, Chrome */
-    -moz-transform: translate(27%, 80%); /* FF3.5+ */
-     -ms-transform: translate(27%, 80%); /* IE9 */
-      -o-transform: translate(27%, 80%); /* Opera 10.5+ */
-         transform: translate(27%, 80%);
-  }
+	.menu-items {
+		width: 300px;
+	}
+	.main-menu h1 {
+		font-size: 30px;
+	}
+	.menu-buttons {
+		font-size: 22px;
+		margin: 15px;
+		width: 120px;
+	}
+	.cards .row {
+		margin: -2px;
+	}
+	.game {
+		background-size: 85%;
+		background-position: center;
+	}
+	.opening-screen {
+		-webkit-transform: scale(0.8);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.8);
+		/* FF3.5+ */
+		-ms-transform: scale(0.8);
+		/* IE9 */
+		-o-transform: scale(0.8);
+		/* Opera 10.5+ */
+		transform: scale(0.8);
+	}
+	.modal {
+		-webkit-transform: scale(0.9);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.9);
+		/* FF3.5+ */
+		-ms-transform: scale(0.9);
+		/* IE9 */
+		-o-transform: scale(0.9);
+		/* Opera 10.5+ */
+		transform: scale(0.9);
+		position: absolute;
+		/* top: -30%; */
+		/* height: 95%; */
+	}
+	a.game-level {
+		padding: 8px;
+		margin-top: 30px;
+		font-size: 30px;
+	}
+	h2#newGameModalLabel {
+		font-size: 34px;
+	}
+	.card-flip {
+		-webkit-transform: scale(0.85);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.85);
+		/* FF3.5+ */
+		-ms-transform: scale(0.85);
+		/* IE9 */
+		-o-transform: scale(0.85);
+		/* Opera 10.5+ */
+		transform: scale(0.85);
+		margin: -1px;
+	}
+	.high-scores {
+		-webkit-transform: scale(1.2) translate(-10%, 40%);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(1.2) translate(-10%, 40%);
+		/* FF3.5+ */
+		-ms-transform: scale(1.2) translate(-10%, 40%);
+		/* IE9 */
+		-o-transform: scale(1.2) translate(-10%, 40%);
+		/* Opera 10.5+ */
+		transform: scale(1.2) translate(-10%, 40%);
+	}
+	.high-scores table th,
+	.high-scores table td {
+		padding: 0 10px;
+	}
+	.high-scores-background {
+		background-position: 65% 0%;
+		background-size: 210vh;
+		overflow: hidden;
+	}
+	#exit {
+		-webkit-transform: translate(35%, 75%);
+		/* Saf3.1+, Chrome */
+		-moz-transform: translate(35%, 75%);
+		/* FF3.5+ */
+		-ms-transform: translate(35%, 75%);
+		/* IE9 */
+		-o-transform: translate(35%, 75%);
+		/* Opera 10.5+ */
+		transform: translate(35%, 75%);
+	}
+	#exit:active {
+		-webkit-transform: translate(27%, 80%);
+		/* Saf3.1+, Chrome */
+		-moz-transform: translate(27%, 80%);
+		/* FF3.5+ */
+		-ms-transform: translate(27%, 80%);
+		/* IE9 */
+		-o-transform: translate(27%, 80%);
+		/* Opera 10.5+ */
+		transform: translate(27%, 80%);
+	}
 }
 
 @media screen and (max-height: 950px) and (orientation: landscape) {
-
-  .high-scores {
-    -webkit-transform: scale(0.9) translate(-10%, 45%); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.9) translate(-10%, 45%); /* FF3.5+ */
-     -ms-transform: scale(0.9) translate(-10%, 45%); /* IE9 */
-      -o-transform: scale(0.9) translate(-10%, 45%); /* Opera 10.5+ */
-         transform: scale(0.9) translate(-10%, 45%);
-  }
-  .high-scores-background {
-    background-position: 75% 0%;
-    background-size: 210vh;
-    overflow: hidden;
-  }
+	.high-scores {
+		-webkit-transform: scale(0.9) translate(-10%, 45%);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.9) translate(-10%, 45%);
+		/* FF3.5+ */
+		-ms-transform: scale(0.9) translate(-10%, 45%);
+		/* IE9 */
+		-o-transform: scale(0.9) translate(-10%, 45%);
+		/* Opera 10.5+ */
+		transform: scale(0.9) translate(-10%, 45%);
+	}
+	.high-scores-background {
+		background-position: 75% 0%;
+		background-size: 210vh;
+		overflow: hidden;
+	}
 }
 
 @media screen and (max-height: 800px) and (orientation: landscape) {
-  #quitButton, #quitButton:active, #timer, #score, #mistakes, #exit, #exit:active, #clearScores, #clearScores:active {
-    -webkit-transform: scale(0.9); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.9); /* FF3.5+ */
-     -ms-transform: scale(0.9); /* IE9 */
-      -o-transform: scale(0.9); /* Opera 10.5+ */
-         transform: scale(0.9);
-  }
-  #quitButton {
-    left: 0px;
-    top: 0px;
-  }
-  #timer {
-    top: 50%;
-    left: auto;
-    right: 15px;
-  }
-  #score {
-    top: 2%;
-    left: auto;
-    right: 15px;
-  }
-  #mistakes {
-    top: 25%;
-    left: auto;
-    right: 15px;
-  }
-  .high-scores {
-    -webkit-transform: scale(0.9) translate(-10%, 25%); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.9) translate(-10%, 25%); /* FF3.5+ */
-     -ms-transform: scale(0.9) translate(-10%, 25%); /* IE9 */
-      -o-transform: scale(0.9) translate(-10%, 25%); /* Opera 10.5+ */
-         transform: scale(0.9) translate(-10%, 25%);
-  }
-  .high-scores-background {
-    background-position: 75% 0%;
-    background-size: 210vh;
-    overflow: hidden;
-  }
+	#quitButton,
+	#quitButton:active,
+	#timer,
+	#score,
+	#mistakes,
+	#exit,
+	#exit:active,
+	#clearScores,
+	#clearScores:active {
+		-webkit-transform: scale(0.9);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.9);
+		/* FF3.5+ */
+		-ms-transform: scale(0.9);
+		/* IE9 */
+		-o-transform: scale(0.9);
+		/* Opera 10.5+ */
+		transform: scale(0.9);
+	}
+	#quitButton {
+		left: 0px;
+		top: 0px;
+	}
+	#timer {
+		top: 50%;
+		left: auto;
+		right: 15px;
+	}
+	#score {
+		top: 2%;
+		left: auto;
+		right: 15px;
+	}
+	#mistakes {
+		top: 25%;
+		left: auto;
+		right: 15px;
+	}
+	.high-scores {
+		-webkit-transform: scale(0.9) translate(-10%, 25%);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.9) translate(-10%, 25%);
+		/* FF3.5+ */
+		-ms-transform: scale(0.9) translate(-10%, 25%);
+		/* IE9 */
+		-o-transform: scale(0.9) translate(-10%, 25%);
+		/* Opera 10.5+ */
+		transform: scale(0.9) translate(-10%, 25%);
+	}
+	.high-scores-background {
+		background-position: 75% 0%;
+		background-size: 210vh;
+		overflow: hidden;
+	}
 }
 
 @media screen and (max-height: 768px) and (orientation: landscape) {
-  .game {
-    background-size: 65%;
-    background-position: center;
-  }
-  .card-flip {
-    -webkit-transform: scale(0.65); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.65); /* FF3.5+ */
-     -ms-transform: scale(0.65); /* IE9 */
-      -o-transform: scale(0.65); /* Opera 10.5+ */
-         transform: scale(0.65);
-    margin: -10px;
-  }
-  .cards .row {
-    margin: -15px;
-  }
-  .high-scores {
-    -webkit-transform: scale(0.8) translate(-50px, 25%); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.8) translate(-50px, 25%); /* FF3.5+ */
-     -ms-transform: scale(0.8) translate(-50px, 25%); /* IE9 */
-      -o-transform: scale(0.8) translate(-50px, 25%); /* Opera 10.5+ */
-         transform: scale(0.8) translate(-50px, 25%);
-  }
-  .high-scores-background {
-    background-position: 65% 0%;
-    background-size: 210vh;
-    overflow: hidden;
-  }
+	.game {
+		background-size: 65%;
+		background-position: center;
+	}
+	.card-flip {
+		-webkit-transform: scale(0.65);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.65);
+		/* FF3.5+ */
+		-ms-transform: scale(0.65);
+		/* IE9 */
+		-o-transform: scale(0.65);
+		/* Opera 10.5+ */
+		transform: scale(0.65);
+		margin: -10px;
+	}
+	.cards .row {
+		margin: -15px;
+	}
+	.high-scores {
+		-webkit-transform: scale(0.8) translate(-50px, 25%);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.8) translate(-50px, 25%);
+		/* FF3.5+ */
+		-ms-transform: scale(0.8) translate(-50px, 25%);
+		/* IE9 */
+		-o-transform: scale(0.8) translate(-50px, 25%);
+		/* Opera 10.5+ */
+		transform: scale(0.8) translate(-50px, 25%);
+	}
+	.high-scores-background {
+		background-position: 65% 0%;
+		background-size: 210vh;
+		overflow: hidden;
+	}
 }
 
 @media screen and (max-height: 600px) and (orientation: landscape) {
-  .menu-items {
-    width: 250px;
-  }
-  .main-menu h1 {
-    font-size: 26px;
-  }
-  .menu-buttons {
-    font-size: 18px;
-    margin: 8px;
-    width: 120px;
-  }
-  .game {
-    background-size: 70%;
-    background-position: center;
-  }
-  .opening-screen {
-    -webkit-transform: scale(0.5); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.5); /* FF3.5+ */
-     -ms-transform: scale(0.5); /* IE9 */
-      -o-transform: scale(0.5); /* Opera 10.5+ */
-         transform: scale(0.5);
-  }
-  .modal {
-    -webkit-transform: scale(0.6); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.6); /* FF3.5+ */
-     -ms-transform: scale(0.6); /* IE9 */
-      -o-transform: scale(0.6); /* Opera 10.5+ */
-         transform: scale(0.6);
-    position: absolute;
-    top: -30%;
-    height: 150%;
-  }
-  .card-flip {
-    -webkit-transform: scale(0.7); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.7); /* FF3.5+ */
-     -ms-transform: scale(0.7); /* IE9 */
-      -o-transform: scale(0.7); /* Opera 10.5+ */
-         transform: scale(0.7);
-    margin: -10px;
-  }
-  .cards .row {
-    margin: -15px;
-  }
-  #quitButton, #quitButton:active, #timer, #score, #mistakes, #exit, #exit:active, #clearScores, #clearScores:active {
-    -webkit-transform: scale(0.7); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.7); /* FF3.5+ */
-     -ms-transform: scale(0.7); /* IE9 */
-      -o-transform: scale(0.7); /* Opera 10.5+ */
-         transform: scale(0.7);
-  }
-  #quitButton {
-    left: -10px;
-    top: -15px;
-  }
-  #timer {
-    top: 50%;
-    left: auto;
-    right: 0px;
-  }
-  #score {
-    top: 2%;
-    left: auto;
-    right: -15px;
-  }
-  #mistakes {
-    top: 25%;
-    left: auto;
-    right: -15px;
-  }
-  .high-scores {
-    -webkit-transform: scale(0.7) translate(-50px, 5%); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.7) translate(-50px, 5%); /* FF3.5+ */
-     -ms-transform: scale(0.7) translate(-50px, 5%); /* IE9 */
-      -o-transform: scale(0.7) translate(-50px, 5%); /* Opera 10.5+ */
-         transform: scale(0.7) translate(-50px, 5%);
-  }
-  .high-scores-background {
-    background-position: 70% 0%;
-    background-size: 210vh;
-    overflow: hidden;
-  }
+	.menu-items {
+		width: 250px;
+	}
+	.main-menu h1 {
+		font-size: 26px;
+	}
+	.menu-buttons {
+		font-size: 18px;
+		margin: 8px;
+		width: 120px;
+	}
+	.game {
+		background-size: 70%;
+		background-position: center;
+	}
+	.opening-screen {
+		-webkit-transform: scale(0.5);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.5);
+		/* FF3.5+ */
+		-ms-transform: scale(0.5);
+		/* IE9 */
+		-o-transform: scale(0.5);
+		/* Opera 10.5+ */
+		transform: scale(0.5);
+	}
+	.modal {
+		-webkit-transform: scale(0.6);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.6);
+		/* FF3.5+ */
+		-ms-transform: scale(0.6);
+		/* IE9 */
+		-o-transform: scale(0.6);
+		/* Opera 10.5+ */
+		transform: scale(0.6);
+		position: absolute;
+		top: -30%;
+		height: 150%;
+	}
+	.card-flip {
+		-webkit-transform: scale(0.7);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.7);
+		/* FF3.5+ */
+		-ms-transform: scale(0.7);
+		/* IE9 */
+		-o-transform: scale(0.7);
+		/* Opera 10.5+ */
+		transform: scale(0.7);
+		margin: -10px;
+	}
+	.cards .row {
+		margin: -15px;
+	}
+	#quitButton,
+	#quitButton:active,
+	#timer,
+	#score,
+	#mistakes,
+	#exit,
+	#exit:active,
+	#clearScores,
+	#clearScores:active {
+		-webkit-transform: scale(0.7);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.7);
+		/* FF3.5+ */
+		-ms-transform: scale(0.7);
+		/* IE9 */
+		-o-transform: scale(0.7);
+		/* Opera 10.5+ */
+		transform: scale(0.7);
+	}
+	#quitButton {
+		left: -10px;
+		top: -15px;
+	}
+	#timer {
+		top: 50%;
+		left: auto;
+		right: 0px;
+	}
+	#score {
+		top: 2%;
+		left: auto;
+		right: -15px;
+	}
+	#mistakes {
+		top: 25%;
+		left: auto;
+		right: -15px;
+	}
+	.high-scores {
+		-webkit-transform: scale(0.7) translate(-50px, 5%);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.7) translate(-50px, 5%);
+		/* FF3.5+ */
+		-ms-transform: scale(0.7) translate(-50px, 5%);
+		/* IE9 */
+		-o-transform: scale(0.7) translate(-50px, 5%);
+		/* Opera 10.5+ */
+		transform: scale(0.7) translate(-50px, 5%);
+	}
+	.high-scores-background {
+		background-position: 70% 0%;
+		background-size: 210vh;
+		overflow: hidden;
+	}
 }
 
 @media screen and (max-height: 540px) and (orientation: landscape) {
-  .menu-items {
-    width: 200px;
-  }
-  .main-menu h1 {
-    font-size: 24px;
-  }
-  .menu-buttons {
-    font-size: 16px;
-    margin: 8px;
-    width: 100px;
-  }
-  a.game-level {
-    padding: 5px;
-    font-size: 26px;
-  }
-  .card-flip {
-    -webkit-transform: scale(0.55); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.55); /* FF3.5+ */
-     -ms-transform: scale(0.55); /* IE9 */
-      -o-transform: scale(0.55); /* Opera 10.5+ */
-         transform: scale(0.55);
-    margin: -20px;
-  }
-  .cards .row {
-    margin: -25px;
-  }
-  .game {
-    background-size: 50%;
-    background-position: center;
-  }
-  .high-scores {
-    -webkit-transform: scale(0.55) translate(-50px, -10%); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.55) translate(-50px, -10%); /* FF3.5+ */
-     -ms-transform: scale(0.55) translate(-50px, -10%); /* IE9 */
-      -o-transform: scale(0.55) translate(-50px, -10%); /* Opera 10.5+ */
-         transform: scale(0.55) translate(-50px, -10%);
-  }
-  .high-scores-background {
-    background-position: 65% 0%;
-    background-size: 210vh;
-    overflow: hidden;
-  }
-
+	.menu-items {
+		width: 200px;
+	}
+	.main-menu h1 {
+		font-size: 24px;
+	}
+	.menu-buttons {
+		font-size: 16px;
+		margin: 8px;
+		width: 100px;
+	}
+	a.game-level {
+		padding: 5px;
+		font-size: 26px;
+	}
+	.card-flip {
+		-webkit-transform: scale(0.55);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.55);
+		/* FF3.5+ */
+		-ms-transform: scale(0.55);
+		/* IE9 */
+		-o-transform: scale(0.55);
+		/* Opera 10.5+ */
+		transform: scale(0.55);
+		margin: -20px;
+	}
+	.cards .row {
+		margin: -25px;
+	}
+	.game {
+		background-size: 50%;
+		background-position: center;
+	}
+	.high-scores {
+		-webkit-transform: scale(0.55) translate(-50px, -10%);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.55) translate(-50px, -10%);
+		/* FF3.5+ */
+		-ms-transform: scale(0.55) translate(-50px, -10%);
+		/* IE9 */
+		-o-transform: scale(0.55) translate(-50px, -10%);
+		/* Opera 10.5+ */
+		transform: scale(0.55) translate(-50px, -10%);
+	}
+	.high-scores-background {
+		background-position: 65% 0%;
+		background-size: 210vh;
+		overflow: hidden;
+	}
 }
 
 @media screen and (max-height: 415px) and (orientation: landscape) {
-  .high-scores {
-    -webkit-transform: scale(0.55) translate(-50px, -30%); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.55) translate(-50px, -30%); /* FF3.5+ */
-     -ms-transform: scale(0.55) translate(-50px, -30%); /* IE9 */
-      -o-transform: scale(0.55) translate(-50px, -30%); /* Opera 10.5+ */
-         transform: scale(0.55) translate(-50px, -30%);
-  }
-
+	.high-scores {
+		-webkit-transform: scale(0.55) translate(-50px, -30%);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.55) translate(-50px, -30%);
+		/* FF3.5+ */
+		-ms-transform: scale(0.55) translate(-50px, -30%);
+		/* IE9 */
+		-o-transform: scale(0.55) translate(-50px, -30%);
+		/* Opera 10.5+ */
+		transform: scale(0.55) translate(-50px, -30%);
+	}
 }
 
 @media screen and (max-height: 384px) and (orientation: landscape) {
-  .card-flip {
-    -webkit-transform: scale(0.45); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.45); /* FF3.5+ */
-     -ms-transform: scale(0.45); /* IE9 */
-      -o-transform: scale(0.45); /* Opera 10.5+ */
-         transform: scale(0.45);
-    margin: -22px;
-  }
-  .cards .row {
-    margin: -30px;
-  }
-  .high-scores {
-    -webkit-transform: scale(0.5) translate(-50px, -40%); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.5) translate(-50px, -40%); /* FF3.5+ */
-     -ms-transform: scale(0.5) translate(-50px, -40%); /* IE9 */
-      -o-transform: scale(0.5) translate(-50px, -40%); /* Opera 10.5+ */
-         transform: scale(0.5) translate(-50px, -40%);
-  }
-  .high-scores-background {
-    background-position: 60% 0%;
-    background-size: 215vh;
-    overflow: hidden;
-  }
-  #quitButton, #quitButton:active, #timer, #score, #mistakes, #exit, #exit:active, #clearScores, #clearScores:active {
-    -webkit-transform: scale(0.5); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.5); /* FF3.5+ */
-     -ms-transform: scale(0.5); /* IE9 */
-      -o-transform: scale(0.5); /* Opera 10.5+ */
-         transform: scale(0.5);
-  }
+	.card-flip {
+		-webkit-transform: scale(0.45);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.45);
+		/* FF3.5+ */
+		-ms-transform: scale(0.45);
+		/* IE9 */
+		-o-transform: scale(0.45);
+		/* Opera 10.5+ */
+		transform: scale(0.45);
+		margin: -22px;
+	}
+	.cards .row {
+		margin: -30px;
+	}
+	.high-scores {
+		-webkit-transform: scale(0.5) translate(-50px, -40%);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.5) translate(-50px, -40%);
+		/* FF3.5+ */
+		-ms-transform: scale(0.5) translate(-50px, -40%);
+		/* IE9 */
+		-o-transform: scale(0.5) translate(-50px, -40%);
+		/* Opera 10.5+ */
+		transform: scale(0.5) translate(-50px, -40%);
+	}
+	.high-scores-background {
+		background-position: 60% 0%;
+		background-size: 215vh;
+		overflow: hidden;
+	}
+	#quitButton,
+	#quitButton:active,
+	#timer,
+	#score,
+	#mistakes,
+	#exit,
+	#exit:active,
+	#clearScores,
+	#clearScores:active {
+		-webkit-transform: scale(0.5);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.5);
+		/* FF3.5+ */
+		-ms-transform: scale(0.5);
+		/* IE9 */
+		-o-transform: scale(0.5);
+		/* Opera 10.5+ */
+		transform: scale(0.5);
+	}
 }
 
 @media screen and (max-height: 360px) and (orientation: landscape) {
-
-  .high-scores {
-    -webkit-transform: scale(0.5) translate(-50px, -43%); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.5) translate(-50px, -43%); /* FF3.5+ */
-     -ms-transform: scale(0.5) translate(-50px, -43%); /* IE9 */
-      -o-transform: scale(0.5) translate(-50px, -43%); /* Opera 10.5+ */
-         transform: scale(0.5) translate(-50px, -43%);
-  }
-  #clearScores {
-    bottom: 3px;
-  }
-
+	.high-scores {
+		-webkit-transform: scale(0.5) translate(-50px, -43%);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.5) translate(-50px, -43%);
+		/* FF3.5+ */
+		-ms-transform: scale(0.5) translate(-50px, -43%);
+		/* IE9 */
+		-o-transform: scale(0.5) translate(-50px, -43%);
+		/* Opera 10.5+ */
+		transform: scale(0.5) translate(-50px, -43%);
+	}
+	#clearScores {
+		bottom: 3px;
+	}
 }
 
 @media screen and (max-height: 320px) and (orientation: landscape) {
-  .card-flip {
-    -webkit-transform: scale(0.40); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.40); /* FF3.5+ */
-     -ms-transform: scale(0.40); /* IE9 */
-      -o-transform: scale(0.40); /* Opera 10.5+ */
-         transform: scale(0.40);
-    margin: -27px;
-  }
-  .cards .row {
-    margin: -32px;
-  }
-  .high-scores {
-    -webkit-transform: scale(0.46) translate(-70px, -60%); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.46) translate(-70px, -60%); /* FF3.5+ */
-     -ms-transform: scale(0.46) translate(-70px, -60%); /* IE9 */
-      -o-transform: scale(0.46) translate(-70px, -60%); /* Opera 10.5+ */
-         transform: scale(0.46) translate(-70px, -60%);
-  }
-  .high-scores-background {
-    background-position: 45% 0%;
-    background-size: 215vh;
-    overflow: hidden;
-  }
+	.card-flip {
+		-webkit-transform: scale(0.40);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.40);
+		/* FF3.5+ */
+		-ms-transform: scale(0.40);
+		/* IE9 */
+		-o-transform: scale(0.40);
+		/* Opera 10.5+ */
+		transform: scale(0.40);
+		margin: -27px;
+	}
+	.cards .row {
+		margin: -32px;
+	}
+	.high-scores {
+		-webkit-transform: scale(0.46) translate(-70px, -60%);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.46) translate(-70px, -60%);
+		/* FF3.5+ */
+		-ms-transform: scale(0.46) translate(-70px, -60%);
+		/* IE9 */
+		-o-transform: scale(0.46) translate(-70px, -60%);
+		/* Opera 10.5+ */
+		transform: scale(0.46) translate(-70px, -60%);
+	}
+	.high-scores-background {
+		background-position: 45% 0%;
+		background-size: 215vh;
+		overflow: hidden;
+	}
 }
 
 @media screen and (max-height: 280px) and (orientation: landscape) {
-  .modal {
-    -webkit-transform: scale(0.5); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.5); /* FF3.5+ */
-     -ms-transform: scale(0.5); /* IE9 */
-      -o-transform: scale(0.5); /* Opera 10.5+ */
-         transform: scale(0.5);
-         position: absolute;
-         top: -40%;
-         height: 175%;
-  }
-  .card-flip {
-    -webkit-transform: scale(0.37); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.37); /* FF3.5+ */
-     -ms-transform: scale(0.37); /* IE9 */
-      -o-transform: scale(0.37); /* Opera 10.5+ */
-         transform: scale(0.37);
-    margin: -28px;
-  }
-  .cards .row {
-    margin: -38px;
-  }
-  .high-scores {
-    -webkit-transform: scale(0.37) translate(-70px, -85%); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.37) translate(-70px, -85%); /* FF3.5+ */
-     -ms-transform: scale(0.37) translate(-70px, -85%); /* IE9 */
-      -o-transform: scale(0.37) translate(-70px, -85%); /* Opera 10.5+ */
-         transform: scale(0.37) translate(-70px, -85%);
-  }
-  .high-scores-background {
-    background-position: 45% 0%;
-    background-size: 215vh;
-    overflow: hidden;
-  }
+	.modal {
+		-webkit-transform: scale(0.5);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.5);
+		/* FF3.5+ */
+		-ms-transform: scale(0.5);
+		/* IE9 */
+		-o-transform: scale(0.5);
+		/* Opera 10.5+ */
+		transform: scale(0.5);
+		position: absolute;
+		top: -40%;
+		height: 175%;
+	}
+	.card-flip {
+		-webkit-transform: scale(0.37);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.37);
+		/* FF3.5+ */
+		-ms-transform: scale(0.37);
+		/* IE9 */
+		-o-transform: scale(0.37);
+		/* Opera 10.5+ */
+		transform: scale(0.37);
+		margin: -28px;
+	}
+	.cards .row {
+		margin: -38px;
+	}
+	.high-scores {
+		-webkit-transform: scale(0.37) translate(-70px, -85%);
+		/* Saf3.1+, Chrome */
+		-moz-transform: scale(0.37) translate(-70px, -85%);
+		/* FF3.5+ */
+		-ms-transform: scale(0.37) translate(-70px, -85%);
+		/* IE9 */
+		-o-transform: scale(0.37) translate(-70px, -85%);
+		/* Opera 10.5+ */
+		transform: scale(0.37) translate(-70px, -85%);
+	}
+	.high-scores-background {
+		background-position: 45% 0%;
+		background-size: 215vh;
+		overflow: hidden;
+	}
 }

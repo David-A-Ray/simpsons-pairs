@@ -114,7 +114,7 @@ With the console messages in place, multiple scenarios were tested to make sure 
 &nbsp;
 
 ### Post-Deployment
-To be added
+To be added - Awaiting feedback
 
 &nbsp;
 
@@ -140,66 +140,70 @@ The final checks included:
   - [JSLint](https://jslint.com/)
     - All JavaScript/JQuery code was checked to ensure all code complies   with ES6 standards.
 
-  - #### Feature testing
-    The following items were checked and verified:
-    - ##### Main menu links
-      The Main Menu links were tested for hover effects to ensure that the colour changes to dark blue and that each link opens the correct page or modal.
+- #### Feature testing
+  The following items were checked and verified:
+  - ##### Main menu links
+    The Main Menu links were tested for hover effects to ensure that the colour changes to dark blue and that each link opens the correct page or modal.
 
-      ![Main Menu image 1](/assets/images/mainmenu1.png "Main Menu image 1")
-
-    &nbsp;
-    - ##### Settings modal
-      Each setting on the settings modal was tested in turn to ensure functionality across all browsers and devices. The apply and Cancel buttons were also tested to ensure that if the user has changed a setting, but then clicks cancel, the toggle switch is returned to its original location.
-
-      ![Settings modal 1](/assets/images/settingsmodal1.png "Settings modal 1")
+    ![Main Menu image 1](/assets/images/mainmenu1.png "Main Menu image 1")
 
     &nbsp;
-    - ##### New Game modal
-      Hover effects were tested on the game difficulty buttons. And each button was checked to make sure the right game configuration was loaded.
+  - ##### Settings modal
+    Each setting on the settings modal was tested in turn to ensure functionality across all browsers and devices. The apply and Cancel buttons were also tested to ensure that if the user has changed a setting, but then clicks cancel, the toggle switch is returned to its original location.
 
-      ![Game difficulty menu](/assets/images/gamedifficultymenu.png "Game difficulty menu")
+    ![Settings modal 1](/assets/images/settingsmodal1.png "Settings modal 1")
 
-      ###### Easy (12 cards)
-      ![Easy game mode](/assets/images/easygame.png "Easy game mode")
-      ###### Medium (20 cards)
-      ![Medium game mode](/assets/images/mediumgame.png "Medium game mode")
-      ###### Hard (28 cards)
-      ![Hard game mode](/assets/images/hardgame.png "Hard game mode")
+    &nbsp;
+  - ##### New Game modal
+    Hover effects were tested on the game difficulty buttons. And each button was checked to make sure the right game configuration was loaded.
 
-      Each game level was played to verify that the correct points and penalties were being given.
-      Mistakes were made on purpose to ensure that the score and mistake counters were displaying correctly and that the sounds effects were played.
+    ![Game difficulty menu](/assets/images/gamedifficultymenu.png "Game difficulty menu")
 
-      ![Mistakes and score counters](/assets/images/mistakes.png "Mistakes and score counters")
+    ###### Easy (12 cards)
+    ![Easy game mode](/assets/images/easygame.png "Easy game mode")
+    ###### Medium (20 cards)
+    ![Medium game mode](/assets/images/mediumgame.png "Medium game mode")
+    ###### Hard (28 cards)
+    ![Hard game mode](/assets/images/hardgame.png "Hard game mode")
 
-    -	##### Game Over modals
-        Each Game over scenario was tested to ensure that the correct modal displayed.
-        ###### Game complete – New high score
-        ![Game over - new high score modal](/assets/images/gamecompletehighscore.png "Game over - new high score modal")
-        ###### Game Over – Out of time
-        ![Game over - out of time](/assets/images/gameovertimesup.png "Game over - out of time")  
-        ###### Game Over – No high score
-        ![Game over - No high score](/assets/images/gameovernohighscore.png "Game over - No high score")
+    Each game level was played to verify that the correct points and penalties were being given.
+    Mistakes were made on purpose to ensure that the score and mistake counters were displaying correctly and that the sounds effects were played.
 
-    -	##### High scores page
-        Both the Exit and Clear Scores buttons were tested for hover effects.
+    &nbsp;    
+    ![Mistakes and score counters](/assets/images/mistakes.png "Mistakes and score counters")    
 
-        ![Exit button](/assets/images/exit.png "Exit button") ![Exit button hover](/assets/images/exit_hover.png "Exit button hover")
+    &nbsp;
 
-        ![Clear Scores button](/assets/images/clearscores.png "Clear Scores button") ![Clear Scores button hover](/assets/images/clearscores_hover.png "Clear Scores button hover")
+  -	##### Game Over modals
+    Each Game over scenario was tested to ensure that the correct modal displayed.
+    ###### Game complete – New high score
+    ![Game over - new high score modal](/assets/images/gamecompletehighscore.png "Game over - new high score modal")
+    ###### Game Over – Out of time
+    ![Game over - out of time](/assets/images/gameovertimesup.png "Game over - out of time")  
+    ###### Game Over – No high score
+    ![Game over - No high score](/assets/images/gameovernohighscore.png "Game over - No high score")
 
-        The Exit button was tested to ensure it loads the Home page when clicked and the clear scores functionality was tested.
+    &nbsp;
+  -	##### High scores page
+    Both the Exit and Clear Scores buttons were tested for hover effects.
 
-        ###### High scores before
-        ![High scores before](/assets/images/highscores_before.png "High scores before")
+    ![Exit button](/assets/images/exit.png "Exit button") ![Exit button hover](/assets/images/exit_hover.png "Exit button hover")
 
-        ###### Click Clear Scores and then Yes to confirm    
-        ![Clear scores confirm](/assets/images/clearscores_clicked.png "Clear scores confirm")
+    ![Clear Scores button](/assets/images/clearscores.png "Clear Scores button") ![Clear Scores button hover](/assets/images/clearscores_hover.png "Clear Scores button hover")
 
-        ###### High scores after    
-        ![Clear scores confirm](/assets/images/highscores_after.png "Clear scores confirm")
+    The Exit button was tested to ensure it loads the Home page when clicked and the clear scores functionality was tested.
 
-        &nbsp;
-   - #### Responsive / Device testing
+    ###### High scores before
+    ![High scores before](/assets/images/highscores_before.png "High scores before")
+
+    ###### Click Clear Scores and then Yes to confirm    
+    ![Clear scores confirm](/assets/images/clearscores_clicked.png "Clear scores confirm")
+
+    ###### High scores after    
+    ![Clear scores confirm](/assets/images/highscores_after.png "Clear scores confirm")
+
+    &nbsp;
+  - #### Responsive / Device testing
      The following devices were used to test the site:
        - 24" Monitor
        - 15.6" Laptop Display
@@ -251,3 +255,39 @@ The final checks included:
    ___
 
    ## Credits
+
+   ### Media
+   Some of the content for this website was taken from the following sources:
+   - Home page background
+     - [wallpaperflare.com](https://www.wallpaperflare.com/clouds-figure-background-simpsons-art-beginning-cartoon-wallpaper-uzhuk/download/2560x1440)
+   - High scores page background
+     - [wallpaperflare.com](https://www.wallpaperflare.com/bart-simpsons-the-simpsons-text-communication-yellow-indoors-wallpaper-mfoez/download/2560x1080)
+   - The Simpsons character images
+     - [Wikipedia](https://en.wikipedia.org/)   
+   - Homer sound effects
+     - [soundboard.com](https://www.soundboard.com/)
+   - Ticking clock sound effect
+     - [freesoundslibrary.com](https://www.freesoundslibrary.com/clock-ticking-sound/)   
+
+   &nbsp;
+
+   ### Code
+   Some of the code for this website was taken from the following sources:
+   - All Modals
+     - https://getbootstrap.com/docs/4.5/components/modal/
+   - Cards  
+     - https://getbootstrap.com/docs/4.5/components/card/
+   - Card flip effect
+     - https://3dtransforms.desandro.com/card-flip
+   - Card animations
+     - https://3dtransforms.desandro.com/card-flip
+   - Settings modal toggle switches
+     - https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_switch
+
+
+
+   &nbsp;
+
+
+   ### Acknowledgements
+   I would like to thank my Mentor Aaron Sinnott for all the advice that he has given me, and ..................

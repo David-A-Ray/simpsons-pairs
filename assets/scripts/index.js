@@ -49,7 +49,7 @@ $('#startButton').click(function() {
 });
 
 $('#apply').click(function() {
-  gameSoundEffects = $('#gsfx').is(':checked')
+  gameSoundEffects = $('#gsfx').is(':checked');
   backgroundMusic = $('#bsfx').is(':checked');
   persistentHighScoreData = $('#phsd').is(':checked');
   if (!backgroundMusic) {

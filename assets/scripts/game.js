@@ -1,7 +1,6 @@
 $( document ).ready(function() {
 
   let card = $('.easy .card');
-  // var card = $('.active div');
   let cards = [];
   let z = 0;
   let clickCount = 0;
@@ -21,7 +20,7 @@ $( document ).ready(function() {
   let flippedCards = [];
   let card1Seen = false;
   let card2Seen = false;
-  let flippedCardIndex = []
+  let flippedCardIndex = [];
   let storageModeChanged;
   let gameSoundEffects = true;
   let storage;
