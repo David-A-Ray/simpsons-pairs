@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
 
 /* ************************************ General/Global styles *********************************************** */
@@ -9,7 +16,8 @@ body {
 *,
 *::before,
 *::after {
-	box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	        box-sizing: content-box;
 }
 
 .modal-content {
@@ -25,8 +33,11 @@ body {
 }
 
 .button-click:active {
-	box-shadow: 0 5px #666;
-	transform: translate(2px, 4px);
+	-webkit-box-shadow: 0 5px #666;
+	        box-shadow: 0 5px #666;
+	-webkit-transform: translate(2px, 4px);
+	    -ms-transform: translate(2px, 4px);
+	        transform: translate(2px, 4px);
 }
 
 .container,
@@ -145,7 +156,8 @@ a.game-level:hover {
 .settingsModal .modal-body .frm1 .col-6,
 .settingsModal .modal-body .frm1 .col-6::before,
 .settingsModal .modal-body .frm1 .col-6::after {
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 }
 
 
@@ -174,6 +186,7 @@ a.game-level:hover {
 	bottom: 0;
 	background-color: #ccc;
 	-webkit-transition: .4s;
+	-o-transition: .4s;
 	transition: .4s;
 }
 
@@ -186,6 +199,7 @@ a.game-level:hover {
 	bottom: 1px;
 	background-color: white;
 	-webkit-transition: .4s;
+	-o-transition: .4s;
 	transition: .4s;
 }
 
@@ -194,7 +208,8 @@ input:checked+.slider {
 }
 
 input:focus+.slider {
-	box-shadow: 0 0 1px #2196F3;
+	-webkit-box-shadow: 0 0 1px #2196F3;
+	        box-shadow: 0 0 1px #2196F3;
 }
 
 input:checked+.slider:before {
@@ -319,36 +334,48 @@ input:checked+.slider:before {
 	width: 100%;
 	height: 100%;
 	position: relative;
+	-webkit-transition: -webkit-transform 1s;
+	transition: -webkit-transform 1s;
+	-o-transition: transform 1s;
 	transition: transform 1s;
-	transform-style: preserve-3d;
+	transition: transform 1s, -webkit-transform 1s;
+	-webkit-transform-style: preserve-3d;
+	        transform-style: preserve-3d;
 }
 
 .card-flip {
 	width: 100px;
 	height: 160px;
-	perspective: 600px;
+	-webkit-perspective: 600px;
+	        perspective: 600px;
 	margin: 10px;
-	box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	        box-sizing: content-box;
 }
 
 .card__face {
 	position: absolute;
 	height: 100%;
 	width: 100%;
-	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	        backface-visibility: hidden;
 }
 
 .card__face--back {
 	background: #35c465;
-	transform: rotateY( 180deg);
+	-webkit-transform: rotateY( 180deg);
+	        transform: rotateY( 180deg);
 }
 
 .card__face--back img {
-	transform: translate(-2px, 20px);
+	-webkit-transform: translate(-2px, 20px);
+	    -ms-transform: translate(-2px, 20px);
+	        transform: translate(-2px, 20px);
 }
 
 .card.is-flipped {
-	transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+	        transform: rotateY(180deg);
 }
 
 #gameCompleteText button {
@@ -500,7 +527,9 @@ input:checked+.slider:before {
 }
 
 .high-scores {
-	transform: translate(-55px, 130px);
+	-webkit-transform: translate(-55px, 130px);
+	    -ms-transform: translate(-55px, 130px);
+	        transform: translate(-55px, 130px);
 	color: #f2f2f2;
 	font-size: 26px;
 	font-weight: 100;
@@ -517,7 +546,9 @@ input:checked+.slider:before {
 
 #exit {
 	font-size: 30px;
-	transform: translate(20px, 30px);
+	-webkit-transform: translate(20px, 30px);
+	    -ms-transform: translate(20px, 30px);
+	        transform: translate(20px, 30px);
 	width: 140px;
 	border-radius: 10px;
 	outline: none;
@@ -532,8 +563,11 @@ input:checked+.slider:before {
 
 #exit:active {
 	background-color: #3e8e41;
-	box-shadow: 0 5px #666;
-	transform: translate(20px, 34px);
+	-webkit-box-shadow: 0 5px #666;
+	        box-shadow: 0 5px #666;
+	-webkit-transform: translate(20px, 34px);
+	    -ms-transform: translate(20px, 34px);
+	        transform: translate(20px, 34px);
 }
 
 #clearScores {
@@ -556,8 +590,11 @@ input:checked+.slider:before {
 
 #clearScores:active {
 	background-color: #3e8e41;
-	box-shadow: 0 5px #666;
-	transform: translate(-4px, 4px);
+	-webkit-box-shadow: 0 5px #666;
+	        box-shadow: 0 5px #666;
+	-webkit-transform: translate(-4px, 4px);
+	    -ms-transform: translate(-4px, 4px);
+	        transform: translate(-4px, 4px);
 }
 
 
@@ -578,22 +615,18 @@ input:checked+.slider:before {
 	.opening-screen {
 		-webkit-transform: scale(0.8);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.8);
 		/* FF3.5+ */
 		-ms-transform: scale(0.8);
 		/* IE9 */
-		-o-transform: scale(0.8);
 		/* Opera 10.5+ */
 		transform: scale(0.8);
 	}
 	.card-flip {
 		-webkit-transform: scale(0.9);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.9);
 		/* FF3.5+ */
 		-ms-transform: scale(0.9);
 		/* IE9 */
-		-o-transform: scale(0.9);
 		/* Opera 10.5+ */
 		transform: scale(0.9);
 		margin: 4px;
@@ -616,11 +649,9 @@ input:checked+.slider:before {
 	#clearScores:active {
 		-webkit-transform: scale(0.9);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.9);
 		/* FF3.5+ */
 		-ms-transform: scale(0.9);
 		/* IE9 */
-		-o-transform: scale(0.9);
 		/* Opera 10.5+ */
 		transform: scale(0.9);
 	}
@@ -649,55 +680,45 @@ input:checked+.slider:before {
 	#exit {
 		-webkit-transform: translate(25%, 75%);
 		/* Saf3.1+, Chrome */
-		-moz-transform: translate(25%, 75%);
 		/* FF3.5+ */
 		-ms-transform: translate(25%, 75%);
 		/* IE9 */
-		-o-transform: translate(25%, 75%);
 		/* Opera 10.5+ */
 		transform: translate(25%, 75%);
 	}
 	#exit:active {
 		-webkit-transform: translate(27%, 80%);
 		/* Saf3.1+, Chrome */
-		-moz-transform: translate(27%, 80%);
 		/* FF3.5+ */
 		-ms-transform: translate(27%, 80%);
 		/* IE9 */
-		-o-transform: translate(27%, 80%);
 		/* Opera 10.5+ */
 		transform: translate(27%, 80%);
 	}
 	#clearScores {
 		-webkit-transform: scale(1.2) translate(0%, 0%);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(1.2) translate(0%, 0%);
 		/* FF3.5+ */
 		-ms-transform: scale(1.2) translate(0%, 0%);
 		/* IE9 */
-		-o-transform: scale(1.2) translate(0%, 0%);
 		/* Opera 10.5+ */
 		transform: scale(1.2) translate(0%, 0%);
 	}
 	#clearScores:active {
 		-webkit-transform: translate(1%, 3%);
 		/* Saf3.1+, Chrome */
-		-moz-transform: translate(1%, 3%);
 		/* FF3.5+ */
 		-ms-transform: translate(1%, 3%);
 		/* IE9 */
-		-o-transform: translate(1%, 3%);
 		/* Opera 10.5+ */
 		transform: translate(1%, 3%);
 	}
 	.high-scores {
 		-webkit-transform: scale(1.2) translate(-50px, 65%);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(1.2) translate(-50px, 65%);
 		/* FF3.5+ */
 		-ms-transform: scale(1.2) translate(-50px, 65%);
 		/* IE9 */
-		-o-transform: scale(1.2) translate(-50px, 65%);
 		/* Opera 10.5+ */
 		transform: scale(1.2) translate(-50px, 65%);
 	}
@@ -730,11 +751,9 @@ input:checked+.slider:before {
 	.high-scores {
 		-webkit-transform: translate(-50px, 55%);
 		/* Saf3.1+, Chrome */
-		-moz-transform: translate(-50px, 55%);
 		/* FF3.5+ */
 		-ms-transform: translate(-50px, 55%);
 		/* IE9 */
-		-o-transform: translate(-50px, 55%);
 		/* Opera 10.5+ */
 		transform: translate(-50px, 55%);
 	}
@@ -763,11 +782,9 @@ input:checked+.slider:before {
 	.card-flip {
 		-webkit-transform: scale(0.8);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.8);
 		/* FF3.5+ */
 		-ms-transform: scale(0.8);
 		/* IE9 */
-		-o-transform: scale(0.8);
 		/* Opera 10.5+ */
 		transform: scale(0.8);
 		margin: -8px;
@@ -775,11 +792,9 @@ input:checked+.slider:before {
 	.modal {
 		-webkit-transform: scale(0.8);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.8);
 		/* FF3.5+ */
 		-ms-transform: scale(0.8);
 		/* IE9 */
-		-o-transform: scale(0.8);
 		/* Opera 10.5+ */
 		transform: scale(0.8);
 	}
@@ -794,11 +809,9 @@ input:checked+.slider:before {
 	#clearScores:active {
 		-webkit-transform: scale(0.8);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.8);
 		/* FF3.5+ */
 		-ms-transform: scale(0.8);
 		/* IE9 */
-		-o-transform: scale(0.8);
 		/* Opera 10.5+ */
 		transform: scale(0.8);
 	}
@@ -832,11 +845,9 @@ input:checked+.slider:before {
 	.high-scores {
 		-webkit-transform: scale(0.8) translate(-50px, 40%);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.8) translate(-50px, 40%);
 		/* FF3.5+ */
 		-ms-transform: scale(0.8) translate(-50px, 40%);
 		/* IE9 */
-		-o-transform: scale(0.8) translate(-50px, 40%);
 		/* Opera 10.5+ */
 		transform: scale(0.8) translate(-50px, 40%);
 	}
@@ -849,22 +860,18 @@ input:checked+.slider:before {
 	.opening-screen {
 		-webkit-transform: scale(0.7);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.7);
 		/* FF3.5+ */
 		-ms-transform: scale(0.7);
 		/* IE9 */
-		-o-transform: scale(0.7);
 		/* Opera 10.5+ */
 		transform: scale(0.7);
 	}
 	.card-flip {
 		-webkit-transform: scale(0.6);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.6);
 		/* FF3.5+ */
 		-ms-transform: scale(0.6);
 		/* IE9 */
-		-o-transform: scale(0.6);
 		/* Opera 10.5+ */
 		transform: scale(0.6);
 		margin: -15px;
@@ -887,22 +894,18 @@ input:checked+.slider:before {
 	#clearScores:active {
 		-webkit-transform: scale(0.6);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.6);
 		/* FF3.5+ */
 		-ms-transform: scale(0.6);
 		/* IE9 */
-		-o-transform: scale(0.6);
 		/* Opera 10.5+ */
 		transform: scale(0.6);
 	}
 	.high-scores {
 		-webkit-transform: scale(0.7) translate(-50px, 100px);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.7) translate(-50px, 100px);
 		/* FF3.5+ */
 		-ms-transform: scale(0.7) translate(-50px, 100px);
 		/* IE9 */
-		-o-transform: scale(0.7) translate(-50px, 100px);
 		/* Opera 10.5+ */
 		transform: scale(0.7) translate(-50px, 100px);
 	}
@@ -921,11 +924,9 @@ input:checked+.slider:before {
 	.card-flip {
 		-webkit-transform: scale(0.5);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.5);
 		/* FF3.5+ */
 		-ms-transform: scale(0.5);
 		/* IE9 */
-		-o-transform: scale(0.5);
 		/* Opera 10.5+ */
 		transform: scale(0.5);
 		margin: -22px;
@@ -946,11 +947,9 @@ input:checked+.slider:before {
 	.card-flip {
 		-webkit-transform: scale(0.48);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.48);
 		/* FF3.5+ */
 		-ms-transform: scale(0.48);
 		/* IE9 */
-		-o-transform: scale(0.48);
 		/* Opera 10.5+ */
 		transform: scale(0.48);
 		margin: -24px;
@@ -970,22 +969,18 @@ input:checked+.slider:before {
 	#clearScores:active {
 		-webkit-transform: scale(0.6);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.6);
 		/* FF3.5+ */
 		-ms-transform: scale(0.6);
 		/* IE9 */
-		-o-transform: scale(0.6);
 		/* Opera 10.5+ */
 		transform: scale(0.6);
 	}
 	.high-scores {
 		-webkit-transform: scale(0.65) translate(-50px, 100px);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.65) translate(-50px, 100px);
 		/* FF3.5+ */
 		-ms-transform: scale(0.65) translate(-50px, 100px);
 		/* IE9 */
-		-o-transform: scale(0.65) translate(-50px, 100px);
 		/* Opera 10.5+ */
 		transform: scale(0.65) translate(-50px, 100px);
 	}
@@ -1007,22 +1002,18 @@ input:checked+.slider:before {
 	.opening-screen {
 		-webkit-transform: scale(0.5);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.5);
 		/* FF3.5+ */
 		-ms-transform: scale(0.5);
 		/* IE9 */
-		-o-transform: scale(0.5);
 		/* Opera 10.5+ */
 		transform: scale(0.5);
 	}
 	.card-flip {
 		-webkit-transform: scale(0.45);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.45);
 		/* FF3.5+ */
 		-ms-transform: scale(0.45);
 		/* IE9 */
-		-o-transform: scale(0.45);
 		/* Opera 10.5+ */
 		transform: scale(0.45);
 		margin: -25px;
@@ -1045,11 +1036,9 @@ input:checked+.slider:before {
 	.card-flip {
 		-webkit-transform: scale(0.4);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.4);
 		/* FF3.5+ */
 		-ms-transform: scale(0.4);
 		/* IE9 */
-		-o-transform: scale(0.4);
 		/* Opera 10.5+ */
 		transform: scale(0.4);
 		margin: -28px;
@@ -1057,11 +1046,9 @@ input:checked+.slider:before {
 	.high-scores {
 		-webkit-transform: scale(0.6) translate(-75px, 30px);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.6) translate(-75px, 30px);
 		/* FF3.5+ */
 		-ms-transform: scale(0.6) translate(-75px, 30px);
 		/* IE9 */
-		-o-transform: scale(0.6) translate(-75px, 30px);
 		/* Opera 10.5+ */
 		transform: scale(0.6) translate(-75px, 30px);
 	}
@@ -1076,11 +1063,9 @@ input:checked+.slider:before {
 	#clearScores:active {
 		-webkit-transform: scale(0.5);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.5);
 		/* FF3.5+ */
 		-ms-transform: scale(0.5);
 		/* IE9 */
-		-o-transform: scale(0.5);
 		/* Opera 10.5+ */
 		transform: scale(0.5);
 	}
@@ -1094,11 +1079,9 @@ input:checked+.slider:before {
 	.card-flip {
 		-webkit-transform: scale(0.37);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.37);
 		/* FF3.5+ */
 		-ms-transform: scale(0.37);
 		/* IE9 */
-		-o-transform: scale(0.37);
 		/* Opera 10.5+ */
 		transform: scale(0.37);
 		margin: -28px;
@@ -1109,11 +1092,9 @@ input:checked+.slider:before {
 	.high-scores {
 		-webkit-transform: scale(0.6) translate(-20%, 0%);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.6) translate(-20%, 0%);
 		/* FF3.5+ */
 		-ms-transform: scale(0.6) translate(-20%, 0%);
 		/* IE9 */
-		-o-transform: scale(0.6) translate(-20%, 0%);
 		/* Opera 10.5+ */
 		transform: scale(0.6) translate(-20%, 0%);
 	}
@@ -1149,22 +1130,18 @@ input:checked+.slider:before {
 	.opening-screen {
 		-webkit-transform: scale(0.8);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.8);
 		/* FF3.5+ */
 		-ms-transform: scale(0.8);
 		/* IE9 */
-		-o-transform: scale(0.8);
 		/* Opera 10.5+ */
 		transform: scale(0.8);
 	}
 	.modal {
 		-webkit-transform: scale(0.9);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.9);
 		/* FF3.5+ */
 		-ms-transform: scale(0.9);
 		/* IE9 */
-		-o-transform: scale(0.9);
 		/* Opera 10.5+ */
 		transform: scale(0.9);
 		position: absolute;
@@ -1182,11 +1159,9 @@ input:checked+.slider:before {
 	.card-flip {
 		-webkit-transform: scale(0.85);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.85);
 		/* FF3.5+ */
 		-ms-transform: scale(0.85);
 		/* IE9 */
-		-o-transform: scale(0.85);
 		/* Opera 10.5+ */
 		transform: scale(0.85);
 		margin: -1px;
@@ -1194,11 +1169,9 @@ input:checked+.slider:before {
 	.high-scores {
 		-webkit-transform: scale(1.2) translate(-10%, 40%);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(1.2) translate(-10%, 40%);
 		/* FF3.5+ */
 		-ms-transform: scale(1.2) translate(-10%, 40%);
 		/* IE9 */
-		-o-transform: scale(1.2) translate(-10%, 40%);
 		/* Opera 10.5+ */
 		transform: scale(1.2) translate(-10%, 40%);
 	}
@@ -1214,22 +1187,18 @@ input:checked+.slider:before {
 	#exit {
 		-webkit-transform: translate(35%, 75%);
 		/* Saf3.1+, Chrome */
-		-moz-transform: translate(35%, 75%);
 		/* FF3.5+ */
 		-ms-transform: translate(35%, 75%);
 		/* IE9 */
-		-o-transform: translate(35%, 75%);
 		/* Opera 10.5+ */
 		transform: translate(35%, 75%);
 	}
 	#exit:active {
 		-webkit-transform: translate(27%, 80%);
 		/* Saf3.1+, Chrome */
-		-moz-transform: translate(27%, 80%);
 		/* FF3.5+ */
 		-ms-transform: translate(27%, 80%);
 		/* IE9 */
-		-o-transform: translate(27%, 80%);
 		/* Opera 10.5+ */
 		transform: translate(27%, 80%);
 	}
@@ -1239,11 +1208,9 @@ input:checked+.slider:before {
 	.high-scores {
 		-webkit-transform: scale(0.9) translate(-10%, 45%);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.9) translate(-10%, 45%);
 		/* FF3.5+ */
 		-ms-transform: scale(0.9) translate(-10%, 45%);
 		/* IE9 */
-		-o-transform: scale(0.9) translate(-10%, 45%);
 		/* Opera 10.5+ */
 		transform: scale(0.9) translate(-10%, 45%);
 	}
@@ -1266,11 +1233,9 @@ input:checked+.slider:before {
 	#clearScores:active {
 		-webkit-transform: scale(0.9);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.9);
 		/* FF3.5+ */
 		-ms-transform: scale(0.9);
 		/* IE9 */
-		-o-transform: scale(0.9);
 		/* Opera 10.5+ */
 		transform: scale(0.9);
 	}
@@ -1296,11 +1261,9 @@ input:checked+.slider:before {
 	.high-scores {
 		-webkit-transform: scale(0.9) translate(-10%, 25%);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.9) translate(-10%, 25%);
 		/* FF3.5+ */
 		-ms-transform: scale(0.9) translate(-10%, 25%);
 		/* IE9 */
-		-o-transform: scale(0.9) translate(-10%, 25%);
 		/* Opera 10.5+ */
 		transform: scale(0.9) translate(-10%, 25%);
 	}
@@ -1319,11 +1282,9 @@ input:checked+.slider:before {
 	.card-flip {
 		-webkit-transform: scale(0.65);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.65);
 		/* FF3.5+ */
 		-ms-transform: scale(0.65);
 		/* IE9 */
-		-o-transform: scale(0.65);
 		/* Opera 10.5+ */
 		transform: scale(0.65);
 		margin: -10px;
@@ -1334,11 +1295,9 @@ input:checked+.slider:before {
 	.high-scores {
 		-webkit-transform: scale(0.8) translate(-50px, 25%);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.8) translate(-50px, 25%);
 		/* FF3.5+ */
 		-ms-transform: scale(0.8) translate(-50px, 25%);
 		/* IE9 */
-		-o-transform: scale(0.8) translate(-50px, 25%);
 		/* Opera 10.5+ */
 		transform: scale(0.8) translate(-50px, 25%);
 	}
@@ -1368,22 +1327,18 @@ input:checked+.slider:before {
 	.opening-screen {
 		-webkit-transform: scale(0.5);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.5);
 		/* FF3.5+ */
 		-ms-transform: scale(0.5);
 		/* IE9 */
-		-o-transform: scale(0.5);
 		/* Opera 10.5+ */
 		transform: scale(0.5);
 	}
 	.modal {
 		-webkit-transform: scale(0.6);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.6);
 		/* FF3.5+ */
 		-ms-transform: scale(0.6);
 		/* IE9 */
-		-o-transform: scale(0.6);
 		/* Opera 10.5+ */
 		transform: scale(0.6);
 		position: absolute;
@@ -1393,11 +1348,9 @@ input:checked+.slider:before {
 	.card-flip {
 		-webkit-transform: scale(0.7);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.7);
 		/* FF3.5+ */
 		-ms-transform: scale(0.7);
 		/* IE9 */
-		-o-transform: scale(0.7);
 		/* Opera 10.5+ */
 		transform: scale(0.7);
 		margin: -10px;
@@ -1416,11 +1369,9 @@ input:checked+.slider:before {
 	#clearScores:active {
 		-webkit-transform: scale(0.7);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.7);
 		/* FF3.5+ */
 		-ms-transform: scale(0.7);
 		/* IE9 */
-		-o-transform: scale(0.7);
 		/* Opera 10.5+ */
 		transform: scale(0.7);
 	}
@@ -1446,11 +1397,9 @@ input:checked+.slider:before {
 	.high-scores {
 		-webkit-transform: scale(0.7) translate(-50px, 5%);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.7) translate(-50px, 5%);
 		/* FF3.5+ */
 		-ms-transform: scale(0.7) translate(-50px, 5%);
 		/* IE9 */
-		-o-transform: scale(0.7) translate(-50px, 5%);
 		/* Opera 10.5+ */
 		transform: scale(0.7) translate(-50px, 5%);
 	}
@@ -1480,11 +1429,9 @@ input:checked+.slider:before {
 	.card-flip {
 		-webkit-transform: scale(0.55);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.55);
 		/* FF3.5+ */
 		-ms-transform: scale(0.55);
 		/* IE9 */
-		-o-transform: scale(0.55);
 		/* Opera 10.5+ */
 		transform: scale(0.55);
 		margin: -20px;
@@ -1499,11 +1446,9 @@ input:checked+.slider:before {
 	.high-scores {
 		-webkit-transform: scale(0.55) translate(-50px, -10%);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.55) translate(-50px, -10%);
 		/* FF3.5+ */
 		-ms-transform: scale(0.55) translate(-50px, -10%);
 		/* IE9 */
-		-o-transform: scale(0.55) translate(-50px, -10%);
 		/* Opera 10.5+ */
 		transform: scale(0.55) translate(-50px, -10%);
 	}
@@ -1518,11 +1463,9 @@ input:checked+.slider:before {
 	.high-scores {
 		-webkit-transform: scale(0.55) translate(-50px, -30%);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.55) translate(-50px, -30%);
 		/* FF3.5+ */
 		-ms-transform: scale(0.55) translate(-50px, -30%);
 		/* IE9 */
-		-o-transform: scale(0.55) translate(-50px, -30%);
 		/* Opera 10.5+ */
 		transform: scale(0.55) translate(-50px, -30%);
 	}
@@ -1532,11 +1475,9 @@ input:checked+.slider:before {
 	.card-flip {
 		-webkit-transform: scale(0.45);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.45);
 		/* FF3.5+ */
 		-ms-transform: scale(0.45);
 		/* IE9 */
-		-o-transform: scale(0.45);
 		/* Opera 10.5+ */
 		transform: scale(0.45);
 		margin: -22px;
@@ -1547,11 +1488,9 @@ input:checked+.slider:before {
 	.high-scores {
 		-webkit-transform: scale(0.5) translate(-50px, -40%);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.5) translate(-50px, -40%);
 		/* FF3.5+ */
 		-ms-transform: scale(0.5) translate(-50px, -40%);
 		/* IE9 */
-		-o-transform: scale(0.5) translate(-50px, -40%);
 		/* Opera 10.5+ */
 		transform: scale(0.5) translate(-50px, -40%);
 	}
@@ -1571,11 +1510,9 @@ input:checked+.slider:before {
 	#clearScores:active {
 		-webkit-transform: scale(0.5);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.5);
 		/* FF3.5+ */
 		-ms-transform: scale(0.5);
 		/* IE9 */
-		-o-transform: scale(0.5);
 		/* Opera 10.5+ */
 		transform: scale(0.5);
 	}
@@ -1585,11 +1522,9 @@ input:checked+.slider:before {
 	.high-scores {
 		-webkit-transform: scale(0.5) translate(-50px, -43%);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.5) translate(-50px, -43%);
 		/* FF3.5+ */
 		-ms-transform: scale(0.5) translate(-50px, -43%);
 		/* IE9 */
-		-o-transform: scale(0.5) translate(-50px, -43%);
 		/* Opera 10.5+ */
 		transform: scale(0.5) translate(-50px, -43%);
 	}
@@ -1602,11 +1537,9 @@ input:checked+.slider:before {
 	.card-flip {
 		-webkit-transform: scale(0.40);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.40);
 		/* FF3.5+ */
 		-ms-transform: scale(0.40);
 		/* IE9 */
-		-o-transform: scale(0.40);
 		/* Opera 10.5+ */
 		transform: scale(0.40);
 		margin: -27px;
@@ -1617,11 +1550,9 @@ input:checked+.slider:before {
 	.high-scores {
 		-webkit-transform: scale(0.46) translate(-70px, -60%);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.46) translate(-70px, -60%);
 		/* FF3.5+ */
 		-ms-transform: scale(0.46) translate(-70px, -60%);
 		/* IE9 */
-		-o-transform: scale(0.46) translate(-70px, -60%);
 		/* Opera 10.5+ */
 		transform: scale(0.46) translate(-70px, -60%);
 	}
@@ -1636,11 +1567,9 @@ input:checked+.slider:before {
 	.modal {
 		-webkit-transform: scale(0.5);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.5);
 		/* FF3.5+ */
 		-ms-transform: scale(0.5);
 		/* IE9 */
-		-o-transform: scale(0.5);
 		/* Opera 10.5+ */
 		transform: scale(0.5);
 		position: absolute;
@@ -1650,11 +1579,9 @@ input:checked+.slider:before {
 	.card-flip {
 		-webkit-transform: scale(0.37);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.37);
 		/* FF3.5+ */
 		-ms-transform: scale(0.37);
 		/* IE9 */
-		-o-transform: scale(0.37);
 		/* Opera 10.5+ */
 		transform: scale(0.37);
 		margin: -28px;
@@ -1665,11 +1592,9 @@ input:checked+.slider:before {
 	.high-scores {
 		-webkit-transform: scale(0.37) translate(-70px, -85%);
 		/* Saf3.1+, Chrome */
-		-moz-transform: scale(0.37) translate(-70px, -85%);
 		/* FF3.5+ */
 		-ms-transform: scale(0.37) translate(-70px, -85%);
 		/* IE9 */
-		-o-transform: scale(0.37) translate(-70px, -85%);
 		/* Opera 10.5+ */
 		transform: scale(0.37) translate(-70px, -85%);
 	}
