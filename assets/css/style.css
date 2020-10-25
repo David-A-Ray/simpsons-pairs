@@ -363,6 +363,8 @@ input:checked+.slider:before {
   -webkit-transform: translate3d(0,0,0);
   visibility:visible;
   backface-visibility: hidden;
+	-webkit-transition-property: opacity;
+  -webkit-transition-timing-function: linear;
 }
 
 .card__face--back {
@@ -371,6 +373,8 @@ input:checked+.slider:before {
 	-webkit-transform: rotateY( 180deg);
 	        transform: rotateY( 180deg);
 	z-index: 3;
+	-webkit-transition-property: opacity;
+  -webkit-transition-timing-function: linear;
 }
 
 .card__face--back img {
