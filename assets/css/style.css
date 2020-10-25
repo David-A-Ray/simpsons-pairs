@@ -357,6 +357,7 @@ input:checked+.slider:before {
 	position: absolute;
 	height: 100%;
 	width: 100%;
+	-webkit-transform-style: preserve-3d;
 	-webkit-perspective: 0;
   -webkit-backface-visibility: hidden;
   -webkit-transform: translate3d(0,0,0);
@@ -366,12 +367,14 @@ input:checked+.slider:before {
 
 .card__face--back {
 	background: #35c465;
+	-webkit-transform-style: preserve-3d;
 	-webkit-transform: rotateY( 180deg);
 	        transform: rotateY( 180deg);
 	z-index: 3;
 }
 
 .card__face--back img {
+	-webkit-transform-style: preserve-3d;
 	-webkit-transform: translate(-2px, 20px);
 	    -ms-transform: translate(-2px, 20px);
 	        transform: translate(-2px, 20px);
@@ -379,6 +382,7 @@ input:checked+.slider:before {
 }
 
 .card.is-flipped {
+	-webkit-transform-style: preserve-3d;
 	-webkit-transform: rotateY(180deg);
 	        transform: rotateY(180deg);
 }
