@@ -368,12 +368,14 @@ input:checked+.slider:before {
 	background: #35c465;
 	-webkit-transform: rotateY( 180deg);
 	        transform: rotateY( 180deg);
+	z-index: 3;
 }
 
 .card__face--back img {
 	-webkit-transform: translate(-2px, 20px);
 	    -ms-transform: translate(-2px, 20px);
 	        transform: translate(-2px, 20px);
+	z-index: 3;
 }
 
 .card.is-flipped {
