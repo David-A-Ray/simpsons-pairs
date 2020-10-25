@@ -1,6 +1,6 @@
-[![alt text](/assets/images/##########.png "Click to open site")](https://phil-griffith.github.io/###########/)
+[![The Simpsons Pairs](/assets/images/simpsons_logo.png "Click to open site")](https://phil-griffith.github.io/simpsons-pairs/)
 
-![alt text](/assets/images/##########.jpg "Responsive demo")
+![Responsive Simpsons Pairs](/assets/images/responsive_pairs.png "Responsive Simpsons Pairs")
 
 The Simpsons Pairs is a remake of the well-known Pairs game, that has been designed for a single player as opposed to the traditional pairs game, which is normally played by 2 or more players.
 
@@ -27,7 +27,7 @@ As a user I would like:
 [Wireframes](/assets/wireframes/wireframes.md)
 
 - #### Typography
-The ‘Caveat Brush’ font was used throughout the game, as it is a very close resemblance to the font used in the Simpsons TV show.
+  The ‘Caveat Brush’ font was used throughout the game, as it is a very close resemblance to the font used in the Simpsons TV show.
 
 - #### Colours
   - Yellow (Simpsons characters shade) – Main menu & a lighter shade of yellow is also used for all modals.
@@ -37,13 +37,13 @@ The ‘Caveat Brush’ font was used throughout the game, as it is a very close 
   - Light Grey & Green – High Scores Exit Button (typical School exit door light).
   - Dark Grey – High Scores Clear Scores button. Used to resemble a typical black board eraser.
 
-- #### backgrounds
+- #### Backgrounds
   - Clouds - Home Page. This was used to simulate the opening credits of the Simpsons show, along with the animated text.
   - Bart Simpson writing on blackboard – High Scores page. Another scene from the opening credits is where Bart is writing lines on the school black. Instead he is writing out all of the High Scores.
   - Simpsons Kitchen table – Game page. The game background consists of the blue circle and chequered pattern representing the Simpsons kitchen table and floor.
 
 - #### Code Rationale
-Due to modern browsers incorporating audio auto-play blocking by default, a decision was made to add a start button to the home page which when pressed, satisfies the interaction with screen requirement, and thus triggers the animations and music.
+  Due to modern browsers incorporating audio auto-play blocking by default, a decision was made to add a start button to the home page which when pressed, satisfies the interaction with screen requirement, and thus triggers the animations and music.
 
 ___
 
@@ -51,9 +51,9 @@ ___
 
 ### Existing Features
 -	Home page:
-  - Animated text and main menu, and Simpsons theme tune music
-  - Main menu with links to all site pages, settings menu and help modal.
-  - Settings menu with controls to enable/disable Music, Sound effects and Persistent Storage (toggles between local storage and session storage).
+    - Animated text and main menu, and Simpsons theme tune music
+    - Main menu with links to all site pages, settings menu and help modal.
+    - Settings menu with controls to enable/disable Music, Sound effects and Persistent Storage (toggles between local storage and session storage).
 - High Scores page:
   - A ‘Clear Scores’ button which will clear high score data from local and session storage.
   - An ‘Exit’ button that will take the user back to the Home page.
