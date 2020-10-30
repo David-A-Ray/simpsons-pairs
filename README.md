@@ -115,8 +115,7 @@ With the console messages in place, multiple scenarios were tested to make sure 
 &nbsp;
 
 ### Post-Deployment
-To be added - Awaiting feedback
-
+Once the game was deployed, it was tested on multiple devices and feedback was also requested from friends and co-workers.
 &nbsp;
 
 ### Issues found and fixed
@@ -125,7 +124,10 @@ To be added - Awaiting feedback
 - Card selecting
   - The first issue noticed was that it was possible to produce a false pair match result by clicking the same card twice. Additional logic was added to catch this scenario.
   - The second issue noticed was that it was possible to select more than 2 cards per turn and effectively break the game. This was resolved by adding a click counter to ignore more than 2 card clicks per turn.
-
+- Apple display issues
+  - After deploying the project an issue was reported where the card backs where not being displayed, meaning that the picture was visible. This was resolved by amending the CSS and JavaScript to put the picture background image inside it's original child container.
+- Apple animations
+ - An issue was noticed with the animations not working on apple devices. However, this was found to be due to the Reduced Motion setting in Apples Accessibility Options menu.  
 
 &nbsp;
 

@@ -60,7 +60,7 @@ $( document ).ready(function() {
         if ((matchedPairs == maxPairs - 1)&&(clickCount == 2)) {
           clearInterval(gameTime);
         }
-        // Prevent more than 2 cards being selected
+        // Clickcound check to prevent more than 2 cards being flipped at one time
         if (clickCount <= 2) {
           card[index].classList.remove('is-flipped');
           cards[z] = card[index];
@@ -69,8 +69,10 @@ $( document ).ready(function() {
           card1Seen = false;
           card2Seen = false;
           if (cards[1]){
+            // Find card character name by it's class name
             let a = $(cards[0]).find('.card__face').first().attr("class").split(" ")[2];
             let b = $(cards[1]).find('.card__face').first().attr("class").split(" ")[2];
+            // Check if card has already been revealed
             if (flippedCards) {
               for (let i = 0 ; i < flippedCards.length ; i++) {
                 if (flippedCards[i].index ==  flippedCardIndex[0]) {
@@ -82,6 +84,7 @@ $( document ).ready(function() {
                   card2Seen = true;
                 }
               }
+              // Store the names of flipped card characters
               if (card1Seen == false) {
                 flippedCards.push({"picture": a,"index": flippedCardIndex[0]});
               }
@@ -93,8 +96,8 @@ $( document ).ready(function() {
               flippedCards.push({"picture": a,"index": flippedCardIndex[0]});
               flippedCards.push({"picture": b,"index": flippedCardIndex[1]});
             }
+            // Object to store the name and index of the first card turned
             let c = {"picture": a,"index": flippedCardIndex[0]};
-
             // Added timeout to enable card flip animations to complete
             setTimeout(function() {
               // Check for matching pair
@@ -111,7 +114,6 @@ $( document ).ready(function() {
                 });
                 cards[1] = null;
                 clickCount = 0;
-
                 // Check if all pairs have been matched
                 if (matchedPairs === maxPairs) {
                   gameOver = true;
@@ -132,7 +134,7 @@ $( document ).ready(function() {
                   let matchKnown = false;
                   let check = 0;
                   for (let i = 0 ; i < flippedCards.length ; i++) {
-                    // Check if matching card has already been seen
+                    // Check if matching card has already been seen by comparing picture and index number
                     if (flippedCards[i].picture == c.picture && flippedCards[i].index != c.index) {
                       matchKnown = true;
                       adjustScore(scorePenalty);
@@ -176,7 +178,7 @@ $( document ).ready(function() {
   });
 
   // **************************** GAME FUNCTIONS *********************************************
-
+ // Add high score to correct position
   function placeHighScore(name, scorePos) {
     // If no scores exist yet, add score to 1st place
     if (!JSON.parse(storage.getItem("highScores"))) {
@@ -201,7 +203,7 @@ $( document ).ready(function() {
       }
     }
   }
-
+  // Calculate the score position
   function highScorePos() {
     var scorePos;
     // If no scores exist yet, add score to 1st place
@@ -228,7 +230,7 @@ $( document ).ready(function() {
     }
     return scorePos;
   }
-
+  // Game timer
   function timer(time) {
     time = new Date().getTime() + (time * 1000);
     gameTime = setInterval(function() {
@@ -297,7 +299,7 @@ $( document ).ready(function() {
       $('.game-results:last').html(gameScore);
       $('.modal-footer button:eq(1), .modal-footer button:eq(2)').remove();
       $('#nameEntry').click(function() {
-        onClickOrEnter(scorePos);
+        scoreNameEntry(scorePos);
       })
       //https://stackoverflow.com/questions/979662/how-to-detect-pressing-enter-on-keyboard-using-jquery
       $(document).on('keypress',function(e) {
@@ -305,13 +307,13 @@ $( document ).ready(function() {
         if(e.which == 13) {
           //https://stackoverflow.com/questions/45634088/how-to-prevent-page-from-reloading-after-form-submit-jquery/45634140
           event.preventDefault()
-          onClickOrEnter(scorePos);
+          scoreNameEntry(scorePos);
         }
       });
     }, 1500);
   }
-
-  function onClickOrEnter(scorePos) {
+  // Store player name and score
+  function scoreNameEntry(scorePos) {
     let name = $('#playerName');
     name = name.val();
       placeHighScore(name, scorePos);
@@ -321,7 +323,6 @@ $( document ).ready(function() {
       $('.modal-footer').remove();
       $('.modal-header').html("<h2>Would you like to play again?</h2>");
   }
-
   // Shuffle cards by assigning each picture class to 2 unique random array indices
   function cardShuffle(cardsArray) {
     let i = 0;
@@ -336,7 +337,6 @@ $( document ).ready(function() {
      j++;
     });
   }
-
   // generate randomised array of unique index numbers
   //https://stackoverflow.com/questions/2380019/generate-unique-random-numbers-between-1-and-100
   function randomIndices(arrayLength) {
@@ -375,13 +375,13 @@ $( document ).ready(function() {
         storage = localStorage;
       }
     }
-
+    // Check sound effects setting
     function checkGameSoundEffects() {
       if (localStorage.getItem("gameSoundEffects")) {
         gameSoundEffects = JSON.parse(localStorage.getItem("gameSoundEffects"));
       }
     }
-
+    // Display correct number of cards and set score points and penalties
     function gameSetup() {
       switch (gameMode) {
       case ("easy"):
@@ -412,5 +412,4 @@ $( document ).ready(function() {
         card = $('.hard .card');
       }
     }
-
-  });
+});
