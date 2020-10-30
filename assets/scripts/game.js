@@ -69,8 +69,8 @@ $( document ).ready(function() {
           card1Seen = false;
           card2Seen = false;
           if (cards[1]){
-            let a = $(cards[0]).attr("class").split(" ")[1];
-            let b = $(cards[1]).attr("class").split(" ")[1];
+            let a = $(cards[0]).find('.card__face').first().attr("class").split(" ")[2];
+            let b = $(cards[1]).find('.card__face').first().attr("class").split(" ")[2];
             if (flippedCards) {
               for (let i = 0 ; i < flippedCards.length ; i++) {
                 if (flippedCards[i].index ==  flippedCardIndex[0]) {
@@ -329,7 +329,7 @@ $( document ).ready(function() {
     let cardPicture = $('.card div:first-child');
     let arr = randomIndices(card.length);
     $.each(card, function(index){
-      card[arr[index]].classList.add(cardsArray[i]);
+      cardPicture[arr[index]].classList.add(cardsArray[i]);
       if ((j % 2) == 0) {
         i++;
       }
