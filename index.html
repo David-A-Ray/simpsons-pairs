@@ -10,6 +10,7 @@
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
       <script src="assets/scripts/index.js" defer></script>
+      <script src="assets/scripts/common.js" defer></script>
       <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
       <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
       <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
@@ -21,9 +22,11 @@
    </head>
    <body>
       <div class="modal fade startGameModal" tabindex="-1" aria-hidden="true" data-backdrop="static">
-         <div class="modal-dialog modal-dialog-centered modal-sm align-items-center">
+         <div class="modal-dialog modal-dialog-centered modal-md align-items-center">
             <div class="modal-content align-items-center">
                <div class="modal-body">
+                  <button type="button" name="button" id="speakerButton"><img src="assets/images/speaker_on.png" alt="Mute button" width="50px"> </button>
+                  <p>Click the speaker above to mute the game before it starts. Music and sound effects can also be controlled from the settings menu.</p>
                   <button type="button" name="button" data-dismiss="modal" id="startButton" class="button-click">Push to start</button>
                </div>
             </div>
