@@ -2,6 +2,7 @@ let storage;
 let backgroundMusic;
 let gameSoundEffects;
 let persistentHighScoreData;
+let muteButtonClicked;
 const defaultScores = [
   ['Bart', 600, 'Hard'],
   ['Lisa', 600, 'Hard'],
