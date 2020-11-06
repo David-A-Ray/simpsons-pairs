@@ -2,7 +2,7 @@ $(document).ready(function() {
   let score = $('.score');
   let backgroundMusic;
 
-  checkDataStorage()
+  checkDataStorage();
 
   // Check local storage and session storage for high scores
   if (JSON.parse(localStorage.getItem("highScores"))) {
@@ -23,16 +23,17 @@ $(document).ready(function() {
       localStorage.removeItem('highScores');
       highScores = defaultScores;
       storage.setItem("highScores", JSON.stringify(highScores));
-      listScores()
+      listScores();
       window.location.reload();
     });
   });
 
   // Insert high scores into highscores.html table
   function listScores() {
-    for (let i = 0;
-      (i < highScores.length) && (i < 10); i++) {
-      $(score[i]).html(`<td>${scorePositions[i]}</td><td>${highScores[i][0]}</td><td>${highScores[i][1]}</td><td style="text-transform: uppercase;">${highScores[i][2]}</td>`);
+    for (let i = 0; (i < highScores.length) && (i < 10); i++) {
+      $(score[i]).html(`<td>${scorePositions[i]}</td><td>${highScores[i][0]}
+      </td><td>${highScores[i][1]}</td><td style="text-transform: uppercase;">
+      ${highScores[i][2]}</td>`);
     }
   }
 });

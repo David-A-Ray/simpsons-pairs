@@ -4,7 +4,7 @@ $(document).ready(function() {
   $('#bsfx').prop('checked', true);
   $('#phsd').prop('checked', true);
 
-  checkDataStorage()
+  checkDataStorage();
 
   // Workaround for Web Browsers blocking audio autoplay
   $('#startButton').click(function() {
@@ -20,10 +20,12 @@ $(document).ready(function() {
 
   // Check if mute button was set in local storage
   if (!muteButtonClicked || (backgroundMusic || gameSoundEffects)) {
-    $('#speakerButton').html('<img src="assets/images/speaker_on.png" alt="Mute button" width="50px">');
+    $('#speakerButton').html('<img src="assets/images/speaker_on.png"' +
+    'alt="Mute button" width="50px">');
     muteButtonClicked = false;
   } else {
-    $('#speakerButton').html('<img src="assets/images/speaker_off.png" alt="Mute button" width="50px">');
+    $('#speakerButton').html('<img src="assets/images/speaker_off.png"' +
+    'alt="Mute button" width="50px">');
   }
 
   // Check if background music was set in local storage
@@ -39,7 +41,8 @@ $(document).ready(function() {
     $('#gsfx').prop('checked', false);
   }
 
-  // Check if exit button was used to get to home screen to prevent start button popup
+  /* Check if exit button was used to get to home screen to prevent
+  start button popup */
   if (JSON.parse(sessionStorage.getItem('exitButtonUsed'))) {
     openingScreenAnimations();
     sessionStorage.setItem('exitButtonUsed', false);
@@ -48,7 +51,7 @@ $(document).ready(function() {
   }
 
 
-  // ***************** Settings Menu Confirm and Cancel buttons ******************
+  // *************** Settings Menu Confirm and Cancel buttons *****************
 
   // Confirm settings
   $('#apply').click(function() {
@@ -94,11 +97,12 @@ $(document).ready(function() {
   });
 
 
-  // ********************* Mute button on opening modal ****************************
+  // ******************* Mute button on opening modal **************************
 
   $('#speakerButton').click(function() {
     if (muteButtonClicked == false) {
-      $('#speakerButton').html('<img src="assets/images/speaker_off.png" alt="Mute button" width="50px">');
+      $('#speakerButton').html('<img src="assets/images/speaker_off.png"' +
+      'alt="Mute button" width="50px">');
       muteButtonClicked = true;
       localStorage.setItem('muteButtonClicked', true);
       $('#gsfx').prop('checked', false);
@@ -109,7 +113,8 @@ $(document).ready(function() {
       localStorage.setItem('gameSoundEffects', false);
       $('audio')[0].pause();
     } else {
-      $('#speakerButton').html('<img src="assets/images/speaker_on.png" alt="Mute button" width="50px">');
+      $('#speakerButton').html('<img src="assets/images/speaker_on.png"' +
+      'alt="Mute button" width="50px">');
       muteButtonClicked = false;
       localStorage.setItem('muteButtonClicked', false);
       $('#gsfx').prop('checked', true);
@@ -121,7 +126,8 @@ $(document).ready(function() {
     }
   });
 
-  // Game difficulty select. Assign selection to session storage to be retrieved by game.js
+  /* Game difficulty select. Assign selection to session storage to be
+  retrieved by game.js */
   $('#easy').click(function() {
     sessionStorage.setItem("gameMode", "easy");
   });
@@ -134,7 +140,8 @@ $(document).ready(function() {
 
   // After clicking Start button, check for sound settings and start animations
   function openingScreenAnimations() {
-    $('.opening-screen')[0].classList.add('animate__animated', 'animate__zoomIn', 'animate__slow');
+    $('.opening-screen')[0].classList.add('animate__animated',
+    'animate__zoomIn', 'animate__slow');
     if (backgroundMusic && !muteButtonClicked) {
       $('audio')[0].play();
     } else {
@@ -144,7 +151,8 @@ $(document).ready(function() {
     setTimeout(function() {
       $('.opening-screen')[0].classList.add('animate__zoomOutUp');
       $('.menu-items').css('visibility', 'visible');
-      $('.menu-items')[0].classList.add('animate__animated', 'animate__backInUp', 'animate__delay-1s');
+      $('.menu-items')[0].classList.add('animate__animated',
+      'animate__backInUp', 'animate__delay-1s');
     }, 3000);
   }
 });

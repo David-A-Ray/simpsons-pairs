@@ -14,8 +14,9 @@ const defaultScores = [
   ['Homer', 250, 'Easy'],
   ['Homer', 200, 'Easy'],
   ['Homer', 195, 'Easy']
-]
-const scorePositions = ["1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th", "10th"];
+];
+const scorePositions = ["1st", "2nd", "3rd", "4th", "5th",
+ "6th", "7th", "8th", "9th", "10th"];
 
 // Check local and session storage for settings and assign values to variables.
 checkDataStorage();
@@ -32,11 +33,11 @@ function highScorePos(gameScore) {
   // If scores do exist, find score position
   highScores = JSON.parse(storage.getItem("highScores"));
   let l = highScores.length;
-  // Boolen scorePlaced used to Stop score being listed more than once if more than 1 lower score exists.
+  /* Boolen scorePlaced used to Stop score being listed more than once
+   if more than 1 lower score exists. */
   let scorePlaced = false;
   // Loop through existing scores to find correct position
-  for (let j = 0;
-    ((j < l) && (scorePlaced == false)); j++) {
+  for (let j = 0; ((j < l) && (scorePlaced == false)); j++) {
     if (gameScore > highScores[j][1]) {
       scorePlaced = true;
       scorePos = scorePositions[j];
@@ -68,7 +69,8 @@ function placeHighScore(name, scorePos, gameScore, gameMode) {
 function checkDataStorage() {
   // Check local storage for storage mode setting (local or session).
   if (localStorage.getItem("persistentHighScoreData")) {
-    persistentHighScoreData = JSON.parse(localStorage.getItem("persistentHighScoreData"));
+    persistentHighScoreData = JSON.parse(localStorage
+      .getItem("persistentHighScoreData"));
     if (persistentHighScoreData == true) {
       storage = localStorage;
     } else if (persistentHighScoreData == false) {
@@ -103,7 +105,8 @@ function checkDataStorage() {
   }
 }
 
-//Check if an exit button was used to access main screen to enable index.js to prevent start button.
+/* Check if an exit button was used to access main screen to
+ enable index.js to prevent start button. */
 $('.exit-buttons').click(function() {
   sessionStorage.setItem('exitButtonUsed', true);
 });
