@@ -103,7 +103,9 @@ $(document).ready(function() {
       localStorage.setItem('muteButtonClicked', true);
       $('#gsfx').prop('checked', false);
       $('#bsfx').prop('checked', false);
+      backgroundMusic = false;
       localStorage.setItem('backgroundMusic', false);
+      gameSoundEffects = false;
       localStorage.setItem('gameSoundEffects', false);
       $('audio')[0].pause();
     } else {
@@ -112,7 +114,9 @@ $(document).ready(function() {
       localStorage.setItem('muteButtonClicked', false);
       $('#gsfx').prop('checked', true);
       $('#bsfx').prop('checked', true);
+      backgroundMusic = true;
       localStorage.setItem('backgroundMusic', true);
+      gameSoundEffects = true;
       localStorage.setItem('gameSoundEffects', true);
     }
   });

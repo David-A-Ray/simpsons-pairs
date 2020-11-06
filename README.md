@@ -44,7 +44,7 @@ As a user I would like:
   - Simpsons Kitchen table – Game page. The game background consists of the blue circle and chequered pattern representing the Simpsons kitchen table and floor.
 
 - #### Code Rationale
-  Due to modern browsers incorporating audio auto-play blocking by default, a decision was made to add a start button to the home page which when pressed, satisfies the interaction with screen requirement, and thus triggers the animations and music.
+  Due to modern browsers incorporating audio auto-play blocking by default, a decision was made to add a start button to the home page which when pressed, satisfies the interaction with screen requirement, and thus triggers the animations and music. However, a mute button has also been added to the start modal, to give users the option of preventing the music from playing when they click start.
 
 ___
 
@@ -127,7 +127,7 @@ Once the game was deployed, it was tested on multiple devices and feedback was a
 - Apple display issues
   - After deploying the project an issue was reported where the card backs where not being displayed, meaning that the picture was visible. This was resolved by amending the CSS and JavaScript to put the picture background image inside it's original child container.
 - Apple animations
- - An issue was noticed with the animations not working on apple devices. However, this was found to be due to the Reduced Motion setting in Apples Accessibility Options menu.  
+  - An issue was noticed with the animations not working on apple devices. However, this was found to be due to the Reduced Motion setting in Apples Accessibility Options menu.  
 
 &nbsp;
 

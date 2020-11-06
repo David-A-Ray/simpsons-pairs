@@ -26,7 +26,7 @@ $(document).ready(function() {
   let gameMode = sessionStorage.getItem("gameMode");
   let matchPoints;
 
-  // Check for any high scores in local Storage
+  // Check local and session storage for settings and assign values to variables.
   checkDataStorage();
   // Check which game mode has been selected & configure game accordingly
   gameSetup();
@@ -57,7 +57,7 @@ $(document).ready(function() {
         if ((matchedPairs == maxPairs - 1) && (clickCount == 2)) {
           clearInterval(gameTime);
         }
-        // Clickcound check to prevent more than 2 cards being flipped at one time
+        // Click count check to prevent more than 2 cards being flipped at one time
         if (clickCount <= 2) {
           card[index].classList.remove('is-flipped');
           cards[z] = card[index];
@@ -136,7 +136,10 @@ $(document).ready(function() {
                   } else {
                     gameOverPopup();
                   }
-                } else if (gameOver) {}
+                  // Empty statement to prevent winning the game when the time is up.
+                } else if (gameOver) {
+                  // Do nothing
+                }
               } else if (a != b) {
                 if (flippedCards) {
                   let matchKnown = false;
