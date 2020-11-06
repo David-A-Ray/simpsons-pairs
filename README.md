@@ -1,7 +1,7 @@
 
 [![The Simpsons Pairs](/assets/images/simpsons_logo.png "Click to open site")](https://phil-griffith.github.io/simpsons-pairs/)
 
-![Responsive Simpsons Pairs](/assets/images/responsive_pairs.png "Responsive Simpsons Pairs")
+![Responsive Simpsons Pairs](/documentation/images/responsive_pairs.png "Responsive Simpsons Pairs")
 
 The Simpsons Pairs is a remake of the well-known Pairs game, that has been designed for a single player as opposed to the traditional pairs game, which is normally played by 2 or more players.
 
@@ -25,7 +25,7 @@ As a user I would like:
   The website was initially designed using Balsamiq to create several wireframes (link below).
 \
 \
-[Wireframes](/assets/wireframes/wireframes.md)
+[Wireframes](/documentation/wireframes/wireframes.md)
 
 - #### Typography
   The ‘Caveat Brush’ font was used throughout the game, as it is a very close resemblance to the font used in the Simpsons TV show.
@@ -107,8 +107,8 @@ ___
 ### Pre-Deployment
 Throughout the development of this site, it was previewed locally as each new element was added, and also, the built-in browser developer tools for Chrome, Edge, Opera and Firefox were used to ensure that the layout was responsive for all screen sizes. In addition, console.log messages were added to all functions in order to test and track the output of all functions and identify which logical option was being triggered.  
 
-![console output image 1](/assets/images/consolelog1.png "console output image 1")
-![console output image 2](/assets/images/consolelog2.png "console output image 2")
+![console output image 1](/documentation/images/consolelog1.png "console output image 1")
+![console output image 2](/documentation/images/consolelog2.png "console output image 2")
 
 With the console messages in place, multiple scenarios were tested to make sure that the game was working correctly.
 
@@ -148,62 +148,62 @@ The final checks included:
   - ##### Main menu links
     The Main Menu links were tested for hover effects to ensure that the colour changes to dark blue and that each link opens the correct page or modal.
 
-    ![Main Menu image 1](/assets/images/mainmenu1.png "Main Menu image 1")
+    ![Main Menu image 1](/documentation/images/mainmenu1.png "Main Menu image 1")
 
     &nbsp;
   - ##### Settings modal
     Each setting on the settings modal was tested in turn to ensure functionality across all browsers and devices. The apply and Cancel buttons were also tested to ensure that if the user has changed a setting, but then clicks cancel, the toggle switch is returned to its original location.
 
-    ![Settings modal 1](/assets/images/settingsmodal1.png "Settings modal 1")
+    ![Settings modal 1](/documentation/images/settingsmodal1.png "Settings modal 1")
 
     &nbsp;
   - ##### New Game modal
     Hover effects were tested on the game difficulty buttons. And each button was checked to make sure the right game configuration was loaded.
 
-    ![Game difficulty menu](/assets/images/gamedifficultymenu.png "Game difficulty menu")
+    ![Game difficulty menu](/documentation/images/gamedifficultymenu.png "Game difficulty menu")
 
     ###### Easy (12 cards)
-    ![Easy game mode](/assets/images/easygame.png "Easy game mode")
+    ![Easy game mode](/documentation/images/easygame.png "Easy game mode")
     ###### Medium (20 cards)
-    ![Medium game mode](/assets/images/mediumgame.png "Medium game mode")
+    ![Medium game mode](/documentation/images/mediumgame.png "Medium game mode")
     ###### Hard (28 cards)
-    ![Hard game mode](/assets/images/hardgame.png "Hard game mode")
+    ![Hard game mode](/documentation/images/hardgame.png "Hard game mode")
 
     Each game level was played to verify that the correct points and penalties were being given.
     Mistakes were made on purpose to ensure that the score and mistake counters were displaying correctly and that the sounds effects were played.
 
     &nbsp;    
-    ![Mistakes and score counters](/assets/images/mistakes.png "Mistakes and score counters")    
+    ![Mistakes and score counters](/documentation/images/mistakes.png "Mistakes and score counters")    
 
     &nbsp;
 
   -	##### Game Over modals
     Each Game over scenario was tested to ensure that the correct modal displayed.
     ###### Game complete – New high score
-    ![Game over - new high score modal](/assets/images/gamecompletehighscore.png "Game over - new high score modal")
+    ![Game over - new high score modal](/documentation/images/gamecompletehighscore.png "Game over - new high score modal")
     ###### Game Over – Out of time
-    ![Game over - out of time](/assets/images/gameovertimesup.png "Game over - out of time")  
+    ![Game over - out of time](/documentation/images/gameovertimesup.png "Game over - out of time")  
     ###### Game Over – No high score
-    ![Game over - No high score](/assets/images/gameovernohighscore.png "Game over - No high score")
+    ![Game over - No high score](/documentation/images/gameovernohighscore.png "Game over - No high score")
 
     &nbsp;
   -	##### High scores page
     Both the Exit and Clear Scores buttons were tested for hover effects.
 
-    ![Exit button](/assets/images/exit.png "Exit button") ![Exit button hover](/assets/images/exit_hover.png "Exit button hover")
+    ![Exit button](/documentation/images/exit.png "Exit button") ![Exit button hover](/documentation/images/exit_hover.png "Exit button hover")
 
-    ![Clear Scores button](/assets/images/clearscores.png "Clear Scores button") ![Clear Scores button hover](/assets/images/clearscores_hover.png "Clear Scores button hover")
+    ![Clear Scores button](/documentation/images/clearscores.png "Clear Scores button") ![Clear Scores button hover](/documentation/images/clearscores_hover.png "Clear Scores button hover")
 
     The Exit button was tested to ensure it loads the Home page when clicked and the clear scores functionality was tested.
 
     ###### High scores before
-    ![High scores before](/assets/images/highscores_before.png "High scores before")
+    ![High scores before](/documentation/images/highscores_before.png "High scores before")
 
     ###### Click Clear Scores and then Yes to confirm    
-    ![Clear scores confirm](/assets/images/clearscores_clicked.png "Clear scores confirm")
+    ![Clear scores confirm](/documentation/images/clearscores_clicked.png "Clear scores confirm")
 
     ###### High scores after    
-    ![Clear scores confirm](/assets/images/highscores_after.png "Clear scores confirm")
+    ![Clear scores confirm](/documentation/images/highscores_after.png "Clear scores confirm")
 
     &nbsp;
   - #### Responsive / Device testing
@@ -224,21 +224,48 @@ The final checks included:
      -	To play an interactive game that challenges my memory.
 
         Yes – The game challenges the memory by requiring the player to remember where cards are positioned.
+
+        ![Card Positions](/documentation/images/card_positions.png "Card Positions")
+
+        &nbsp;
+
      - To have a time limit in the game to add more of a challenge.
 
        Yes – A time limit was added with additional time penalties.
+
+       ![Timer](/documentation/images/timer.png "Timer")
+
+       &nbsp;
+
      - To be able to change the difficulty of the game.
 
        Yes – The player can choose between easy, medium, and hard difficulties.
+
+        ![Game difficulty select](/documentation/images/gamedifficultymenu.png "Game difficulty select")
+
+        &nbsp;
+
      - To record game results in order to track and improve my performance and compete with other players.
 
        Yes – The high scores page allows the player to record up-to 10 high scores.
+
+       ![High scores page](/documentation/images/highscores_before.png "High scores page")
+
+       &nbsp;
+
      - To be able to change some settings in the game, such as sounds.
 
        Yes – Music, sound effects and storage method can be changed vie the settings menu.
+
+        ![Settings modal 1](/documentation/images/settingsmodal1.png "Settings modal 1")
+
+        &nbsp;
+
      - Have access to instructions for the game if required.
 
        Yes – The Help button on the Main menu provides instructions for the game.
+
+        ![Help](/documentation/images/help.png "Help")
 
        &nbsp;
 
@@ -293,4 +320,4 @@ The final checks included:
 
 
    ### Acknowledgements
-   I would like to thank my Mentor Aaron Sinnott for all the advice that he has given me, and ..................
+   I would like to thank my Mentor Aaron Sinnott for all the advice that he has given me, and also, Ciaran Brady, Michael McCann, Jonathan O'Brien, Kasia, Andriy Saltanchuk, Ross Clark, Adrian Looney and David Johnston for their feedback.

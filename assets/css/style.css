@@ -36,7 +36,7 @@ body {
 .btn {
 	font-size: 26px;
 	min-width: 80px;
-	margin-right: 20px;
+	margin: 0 20px;
 }
 
 .button-click:active {
@@ -1051,6 +1051,9 @@ input:checked+.slider:before {
 		background-position: 58% 0%;
 		background-size: 210vh;
 		overflow: hidden;
+	}
+	#clearScoresModal .btn {
+		margin: 0 12px !important;
 	}
 }
 
